@@ -13,7 +13,7 @@
 </head>
 <body>
   <h1>Política de Privacidade — Radar Brasil</h1>
-  <p class="muted">Última atualização: 6 de setembro de 2026</p>
+  <p class="muted">Última atualização: 10 de setembro de 2026</p>
 
   <p>Radar Brasil é um aplicativo Android de apoio à condução que usa a localização do dispositivo para emitir alertas por voz sobre pontos de fiscalização eletrônica provenientes de fontes oficiais.</p>
 
@@ -21,10 +21,14 @@
   <p>Durante uma viagem iniciada pelo usuário, o aplicativo acessa a localização precisa, velocidade e direção de deslocamento do dispositivo para calcular localmente a aproximação de pontos oficiais. Esses dados de localização não são enviados para servidores do Radar Brasil, não são vendidos, não são usados para publicidade e não são armazenados como histórico de trajetos.</p>
 
   <h2>Funcionamento em segundo plano</h2>
-  <p>Depois que o usuário toca em “Iniciar viagem”, Radar Brasil mantém um serviço de localização em primeiro plano, com notificação persistente, para continuar emitindo alertas enquanto outro aplicativo — como um navegador — estiver aberto ou enquanto a tela estiver apagada. O usuário pode encerrar a viagem pelo aplicativo ou pela notificação.</p>
+  <p>Depois que o usuário muda “Monitoramento de viagem” de OFF para ON, Radar Brasil mantém um serviço de localização em primeiro plano, com notificação persistente, para continuar emitindo alertas enquanto outro aplicativo — como um navegador — estiver aberto ou enquanto a tela estiver apagada. O usuário pode encerrar a viagem mudando o controle para OFF ou pela notificação.</p>
 
   <h2>Dados oficiais de radares</h2>
   <p>O aplicativo inclui uma base de pontos de fiscalização obtida de publicações oficiais e pode baixar versões atualizadas dessa base pela internet. As atualizações são validadas e assinadas criptograficamente antes de serem aceitas. A solicitação de atualização não inclui latitude, longitude nem histórico de viagem do usuário. Como em uma requisição web comum, o provedor de hospedagem pode receber metadados técnicos necessários à entrega do arquivo, como endereço IP e identificação do cliente.</p>
+
+  <h2>Independência e fontes das informações</h2>
+  <p>Radar Brasil é um aplicativo independente desenvolvido pela QED. Não é um aplicativo governamental, não representa nenhuma entidade pública e não possui afiliação, endosso ou autorização governamental.</p>
+  <p>A versão atual usa exclusivamente cinco fontes governamentais para gerar alertas; esta lista é completa: <a href="https://dadosabertos.sp.gov.br/dataset/radar">DER-SP — Dados Abertos / Radar</a>, <a href="https://www.cetsp.com.br/consultas/fiscalizacao-eletronica-do-transito.aspx">CET-SP — Fiscalização Eletrônica do Trânsito</a>, <a href="https://portais.santoandre.sp.gov.br/observatoriomob/fiscalizacao-eletronica-de-transito-radares/">Prefeitura de Santo André — Fiscalização Eletrônica de Trânsito (Radares)</a>, <a href="https://der.se.gov.br/localizacao-de-radares-fixos/">DER-SE — Localização de Radares Fixos</a> e <a href="https://prefeitura.poa.br/eptc/medidores-eletronicos-de-velocidade">Prefeitura de Porto Alegre / EPTC — Medidores Eletrônicos de Velocidade</a>. Nenhuma outra fonte governamental é usada para gerar alertas nesta versão.</p>
 
   <h2>Notificações e áudio</h2>
   <p>A permissão de notificações é usada para exibir o aviso persistente da viagem. Os alertas são reproduzidos por meio do mecanismo de texto para fala disponível no Android. O Radar Brasil não grava áudio nem acessa o microfone.</p>
