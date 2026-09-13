@@ -1,56 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lost Time</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #1d1c22;
-      color: #f8f7fa;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    main {
-      width: min(720px, calc(100% - 32px));
-    }
-
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(34px, 7vw, 64px);
-      line-height: 1;
-      letter-spacing: 0;
-    }
-
-    p {
-      margin: 0 0 24px;
-      color: #cdc6d4;
-      font-size: 20px;
-    }
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 8px;
-      background: #ff5c6c;
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-    }
-  </style>
+  <meta name="description" content="Portfolio of Augusto Massayoshi Yojo de Lima: Android products, on-device AI, signal processing, research and software engineering.">
+  <meta name="theme-color" content="#f6f7f4">
+  <title>Augusto Massayoshi | Engineering Portfolio</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <main>
-    <h1>Lost Time</h1>
-    <p>Official downloads and support pages for Lost Time.</p>
-    <a href="./windows-companion/">Windows Companion</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Augusto Massayoshi home">
+        <span class="brand-mark" aria-hidden="true">AM</span>
+        <span>Augusto Massayoshi</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Mobile work</a>
+        <a href="#capstone">Capstone</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/qedxyzyt-dot" rel="noreferrer">GitHub</a>
+        <a class="nav-cta" href="./resume.pdf">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Electrical engineering · telecommunications · USP</p>
+          <h1>Engineering systems that can be measured, tested and trusted.</h1>
+          <p class="lead">I work across AI/ML evaluation, signal processing, Android and cloud software. My projects emphasize reproducible experiments, privacy-aware design and careful validation on real systems.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
+            <a class="button secondary" href="./resume.pdf">Download resume</a>
+          </div>
+          <p class="hero-note">São Paulo, Brazil · Portuguese (native) · English (fluent)</p>
+        </div>
+
+        <div>
+          <div class="hero-visual" aria-label="Abstract signal and systems illustration">
+            <svg viewBox="0 0 520 520" role="img" aria-labelledby="hero-title hero-desc">
+              <title id="hero-title">Signal, model and validation diagram</title>
+              <desc id="hero-desc">A measured signal passes through an evaluation block and produces validated outputs.</desc>
+              <path d="M55 300 C105 300, 90 210, 140 210 S175 365, 225 365 260 150, 310 150 345 315, 395 315 420 245, 468 245" fill="none" stroke="#0f5f78" stroke-width="9" stroke-linecap="round"/>
+              <circle cx="92" cy="300" r="11" fill="#d64f38"/>
+              <circle cx="225" cy="365" r="11" fill="#d64f38"/>
+              <circle cx="310" cy="150" r="11" fill="#d64f38"/>
+              <rect x="167" y="77" width="187" height="76" rx="18" fill="#111827"/>
+              <text x="260" y="108" fill="#ffffff" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="700">EVALUATE</text>
+              <text x="260" y="132" fill="#aab5c2" text-anchor="middle" font-family="system-ui" font-size="12">model · signal · system</text>
+              <path d="M260 154 V206" stroke="#111827" stroke-width="3" stroke-dasharray="7 8"/>
+              <rect x="119" y="408" width="282" height="62" rx="16" fill="#dff0f4" stroke="#b7dce5"/>
+              <text x="260" y="434" fill="#0a4457" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="750">MEASURE → COMPARE → VERIFY</text>
+              <text x="260" y="455" fill="#49626a" text-anchor="middle" font-family="system-ui" font-size="11">reproducible evidence over intuition</text>
+            </svg>
+          </div>
+          <div class="metrics-strip" aria-label="Portfolio summary">
+            <div class="metric"><strong>6</strong><span>Android projects</span></div>
+            <div class="metric"><strong>1</strong><span>Telecom capstone</span></div>
+            <div class="metric"><strong>PT / EN</strong><span>Working languages</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Mobile products built around hard constraints.</h2>
+          </div>
+          <p>These projects span digital wellbeing, on-device speech AI, accessibility, document security, road safety and Android system integrations. The common thread is deliberate engineering: explicit privacy boundaries, device-level QA and measurable behavior.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project" id="project-lost-time">
+            <div class="project-visual">
+              <svg viewBox="0 0 420 310" role="img" aria-labelledby="lt-title">
+                <title id="lt-title">Lost Time digital wellbeing illustration</title>
+                <rect x="83" y="24" width="254" height="262" rx="36" fill="#161821"/>
+                <circle cx="210" cy="132" r="67" fill="none" stroke="#3f4655" stroke-width="16"/>
+                <path d="M210 65 A67 67 0 1 1 151 164" fill="none" stroke="#ff6679" stroke-width="16" stroke-linecap="round"/>
+                <text x="210" y="137" text-anchor="middle" fill="white" font-family="system-ui" font-size="35" font-weight="800">3h 42m</text>
+                <rect x="125" y="221" width="170" height="13" rx="6" fill="#2e3440"/>
+                <rect x="125" y="221" width="104" height="13" rx="6" fill="#ff6679"/>
+                <circle cx="116" cy="55" r="5" fill="#8992a0"/>
+                <circle cx="304" cy="55" r="5" fill="#8992a0"/>
+              </svg>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">01 · Digital wellbeing</span>
+              <h3>Lost Time</h3>
+              <p>An Android screen-time system that turns app usage into actionable limits, overlays, history and reports. Built in Kotlin with background services, local analytics, widgets and a Windows companion.</p>
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Room</span><span class="tag">Windows companion</span></div>
+              <div class="project-links"><a href="https://play.google.com/store/apps/details?id=com.losttimeapp.tracker" rel="noreferrer">Google Play ↗</a><a href="./windows-companion/">Windows companion</a></div>
+            </div>
+          </article>
+
+          <article class="project" id="project-voice2text">
+            <div class="project-visual">
+              <svg viewBox="0 0 420 310" role="img" aria-labelledby="v2t-title">
+                <title id="v2t-title">Voice2Text waveform and transcription illustration</title>
+                <rect x="38" y="35" width="344" height="240" rx="28" fill="#eff7f1" stroke="#bdd7c4"/>
+                <g stroke="#208754" stroke-width="7" stroke-linecap="round">
+                  <path d="M78 112v37"/><path d="M98 91v79"/><path d="M118 105v51"/><path d="M138 72v117"/><path d="M158 101v59"/><path d="M178 84v94"/><path d="M198 111v39"/>
+                </g>
+                <rect x="230" y="83" width="108" height="13" rx="6" fill="#275b43"/>
+                <rect x="230" y="110" width="84" height="9" rx="5" fill="#8aa79a"/>
+                <rect x="230" y="131" width="100" height="9" rx="5" fill="#8aa79a"/>
+                <rect x="78" y="221" width="260" height="17" rx="8" fill="#d6e8db"/>
+                <rect x="78" y="221" width="191" height="17" rx="8" fill="#208754"/>
+              </svg>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">02 · On-device AI</span>
+              <h3>Voice2Text</h3>
+              <p>Private Android transcription for meetings and eligible media capture. Whisper runs locally, with local translation and optional on-device text processing through llama.cpp/Qwen models; audio and transcripts remain on the device.</p>
+              <div class="tags"><span class="tag">Whisper.cpp</span><span class="tag">llama.cpp</span><span class="tag">Kotlin</span><span class="tag">Local AI</span></div>
+            </div>
+          </article>
+
+          <article class="project" id="project-radar-brasil">
+            <div class="project-visual">
+              <svg viewBox="0 0 420 310" role="img" aria-labelledby="radar-title">
+                <title id="radar-title">Radar Brasil road-safety illustration</title>
+                <path d="M33 226 C104 167 104 93 186 88 255 83 283 162 388 119" fill="none" stroke="#26313b" stroke-width="54" stroke-linecap="round"/>
+                <path d="M33 226 C104 167 104 93 186 88 255 83 283 162 388 119" fill="none" stroke="#f4f6f5" stroke-width="4" stroke-dasharray="14 15" stroke-linecap="round"/>
+                <circle cx="274" cy="130" r="43" fill="#ffffff" stroke="#df4a3e" stroke-width="8"/>
+                <text x="274" y="139" text-anchor="middle" font-family="system-ui" font-size="27" font-weight="850" fill="#26313b">60</text>
+                <path d="M236 205c25-48 51-66 77-53 22 11 29 36 16 58" fill="none" stroke="#0f5f78" stroke-width="7" stroke-linecap="round"/>
+                <path d="M244 221c31-57 67-77 101-59" fill="none" stroke="#8bb9c6" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">03 · Geospatial systems</span>
+              <h3>Radar Brasil</h3>
+              <p>An audio-first road-safety companion designed to coexist with navigation apps. Its data pipeline privileges official Brazilian traffic-authority sources, preserves provenance and rejects guessed coordinates, limits or directions.</p>
+              <div class="tags"><span class="tag">Android</span><span class="tag">Geospatial data</span><span class="tag">Python pipelines</span><span class="tag">Official-source QA</span></div>
+              <div class="project-links"><a href="./radar-brasil/privacy.html">Privacy approach</a></div>
+            </div>
+          </article>
+
+          <article class="project" id="project-better-notifications">
+            <div class="project-visual">
+              <svg viewBox="0 0 420 310" role="img" aria-labelledby="bn-title">
+                <title id="bn-title">Better Notifications edge-lighting illustration</title>
+                <rect x="103" y="22" width="214" height="266" rx="35" fill="#171a20"/>
+                <rect x="117" y="37" width="186" height="236" rx="25" fill="#252a31"/>
+                <rect x="126" y="47" width="168" height="216" rx="21" fill="#111418"/>
+                <path d="M132 61 Q210 28 288 61" fill="none" stroke="#55d7ff" stroke-width="9" stroke-linecap="round"/>
+                <path d="M291 67 Q319 155 291 243" fill="none" stroke="#9a72ff" stroke-width="9" stroke-linecap="round"/>
+                <path d="M287 250 Q210 282 133 250" fill="none" stroke="#ff6a7a" stroke-width="9" stroke-linecap="round"/>
+                <path d="M129 242 Q101 155 129 68" fill="none" stroke="#ffbd55" stroke-width="9" stroke-linecap="round"/>
+                <rect x="154" y="125" width="112" height="60" rx="18" fill="#2f3641"/>
+                <circle cx="174" cy="155" r="10" fill="#55d7ff"/>
+                <rect x="193" y="143" width="54" height="7" rx="4" fill="#d6dbe2"/>
+                <rect x="193" y="160" width="42" height="6" rx="3" fill="#747f8d"/>
+              </svg>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">04 · Android rendering</span>
+              <h3>Better Notifications</h3>
+              <p>A configurable notification edge-lighting system with multiple rendering modes, app-matched color and privacy-first event handling. The core visual path reacts to notification events without consuming message content.</p>
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">WindowManager</span><span class="tag">Choreographer</span><span class="tag">Privacy by design</span></div>
+              <div class="project-links"><a href="./better-notifications/privacy.html">Privacy policy</a></div>
+            </div>
+          </article>
+
+          <article class="project" id="project-select-anywhere">
+            <div class="project-visual">
+              <svg viewBox="0 0 420 310" role="img" aria-labelledby="sa-title">
+                <title id="sa-title">Select Anywhere text-selection illustration</title>
+                <rect x="47" y="41" width="326" height="228" rx="24" fill="#fbfbfa" stroke="#d4d9df"/>
+                <rect x="82" y="86" width="250" height="12" rx="6" fill="#aeb6bf"/>
+                <rect x="82" y="116" width="204" height="12" rx="6" fill="#aeb6bf"/>
+                <rect x="82" y="146" width="236" height="29" rx="7" fill="#b9e3eb"/>
+                <rect x="82" y="184" width="178" height="12" rx="6" fill="#aeb6bf"/>
+                <circle cx="84" cy="174" r="11" fill="#0f5f78"/>
+                <path d="M84 174v43" stroke="#0f5f78" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="317" cy="147" r="11" fill="#0f5f78"/>
+                <path d="M317 147v-38" stroke="#0f5f78" stroke-width="5" stroke-linecap="round"/>
+                <rect x="132" y="221" width="156" height="29" rx="14" fill="#111827"/>
+                <text x="210" y="240" text-anchor="middle" fill="white" font-family="system-ui" font-size="12" font-weight="750">COPY SELECTED TEXT</text>
+              </svg>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">05 · Accessibility & OCR</span>
+              <h3>Select Anywhere</h3>
+              <p>A one-shot Android selector for text that other apps do not expose through their own selection UI. It combines Accessibility geometry with local OCR while protecting native gestures and keeping captured content on-device.</p>
+              <div class="tags"><span class="tag">Jetpack Compose</span><span class="tag">Accessibility</span><span class="tag">Local OCR</span><span class="tag">Unicode geometry</span></div>
+              <div class="project-links"><a href="./select-anywhere/">Project & support</a></div>
+            </div>
+          </article>
+
+          <article class="project" id="project-easy-sign">
+            <div class="project-visual">
+              <svg viewBox="0 0 420 310" role="img" aria-labelledby="es-title">
+                <title id="es-title">Easy Sign document-signing illustration</title>
+                <path d="M110 32h146l55 55v190H110z" fill="#ffffff" stroke="#cbd2d9" stroke-width="3"/>
+                <path d="M256 32v55h55" fill="#e9edf1" stroke="#cbd2d9" stroke-width="3"/>
+                <rect x="144" y="106" width="129" height="10" rx="5" fill="#c9cfd6"/>
+                <rect x="144" y="132" width="102" height="9" rx="5" fill="#d7dce1"/>
+                <rect x="144" y="157" width="118" height="9" rx="5" fill="#d7dce1"/>
+                <path d="M142 226c22-45 33 25 53-12 12-23 16 6 26-8 11-15 14 16 30 8 12-6 18-18 29-11" fill="none" stroke="#0f5f78" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M151 244h129" stroke="#d64f38" stroke-width="3"/>
+                <circle cx="315" cy="227" r="37" fill="#111827"/>
+                <path d="M297 227l12 12 24-28" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="project-copy">
+              <span class="project-index">06 · Documents & security</span>
+              <h3>Easy Sign</h3>
+              <p>A local-first PDF signing utility with vector ink, reusable signatures, structural PDF preservation and protected signing workflows. Its security track uses Android Keystore and region-gated ICP-Brasil support.</p>
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">PDFBox</span><span class="tag">Android Keystore</span><span class="tag">Vector graphics</span></div>
+              <div class="project-links"><a href="./easy-sign/privacy-policy.html">Privacy policy</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capstone">
+      <div class="container">
+        <div class="capstone">
+          <div>
+            <p class="eyebrow">Telecommunications capstone · USP</p>
+            <h2>Real-time speech denoising & virtual microphone.</h2>
+            <p>A collaborative engineering project that benchmarked classical and neural denoisers under a shared harness, then carried the selected signal path toward a Windows virtual-capture prototype.</p>
+            <ul>
+              <li>Compared causal STFT, OM-LSA/IMCRA, RNNoise, WebRTC APM and DeepFilterNet3.</li>
+              <li>Used objective measurements and blind listening rather than a single quality metric.</li>
+              <li>Validated block timing and transport integrity, and documented where VM scheduling prevented a defensible end-to-end real-time claim.</li>
+            </ul>
+            <div class="project-links"><a href="https://github.com/gamathias14/reducao-de-ruido-algoritmica" rel="noreferrer">Collaborative repository ↗</a></div>
+          </div>
+          <div class="capstone-visual">
+            <svg viewBox="0 0 500 430" role="img" aria-labelledby="cap-title">
+              <title id="cap-title">Audio denoising signal chain illustration</title>
+              <g fill="none" stroke-linecap="round">
+                <path d="M35 118 C55 118 55 62 75 62s20 111 40 111 20-81 40-81 20 33 40 33 20-57 40-57 20 89 40 89 20-39 40-39 20 18 40 18" stroke="#708295" stroke-width="6"/>
+                <path d="M35 315 C55 315 55 284 75 284s20 62 40 62 20-48 40-48 20 17 40 17 20-31 40-31 20 47 40 47 20-23 40-23 20 10 40 10" stroke="#61c2d4" stroke-width="7"/>
+              </g>
+              <rect x="330" y="90" width="135" height="80" rx="18" fill="#192332" stroke="#334154"/>
+              <text x="397" y="122" text-anchor="middle" fill="white" font-family="system-ui" font-size="14" font-weight="800">DENOISER</text>
+              <text x="397" y="145" text-anchor="middle" fill="#9db0c4" font-family="system-ui" font-size="11">benchmark · select</text>
+              <path d="M303 126h27" stroke="#d64f38" stroke-width="5"/>
+              <path d="M330 313h-27" stroke="#61c2d4" stroke-width="5"/>
+              <rect x="327" y="271" width="141" height="83" rx="18" fill="#0f5f78"/>
+              <text x="397" y="303" text-anchor="middle" fill="white" font-family="system-ui" font-size="14" font-weight="800">VIRTUAL MIC</text>
+              <text x="397" y="327" text-anchor="middle" fill="#b8dfe7" font-family="system-ui" font-size="11">transport · capture</text>
+              <path d="M397 170v101" stroke="#d64f38" stroke-width="4" stroke-dasharray="7 9"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Engineering with evidence as the interface.</h2>
+        </div>
+        <div>
+          <p>I study Electrical Engineering with a Telecommunications emphasis at the University of São Paulo. My strongest work sits at the boundary between models and systems: designing experiments, interrogating failure modes, building the software around the model and turning results into clear technical decisions.</p>
+          <ul class="capability-list">
+            <li>AI / model evaluation</li>
+            <li>Python & scientific computing</li>
+            <li>Signal processing</li>
+            <li>Kotlin / Android</li>
+            <li>Automated testing</li>
+            <li>AWS serverless systems</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="button primary" href="./resume.pdf">Resume</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/augusto-massayoshi-yojo-de-lima/" rel="noreferrer">LinkedIn</a>
+            <a class="button secondary" href="mailto:augustomassayoshi@usp.br">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© 2026 Augusto Massayoshi Yojo de Lima</span>
+      <div class="footer-links">
+        <a href="https://github.com/qedxyzyt-dot" rel="noreferrer">GitHub</a>
+        <a href="./resume.pdf">Resume</a>
+        <a href="mailto:augustomassayoshi@usp.br">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
