@@ -37,14 +37,14 @@
    </figure>`).join("");
  frame.innerHTML=`<div class="ps-v12">
   <div class="ps-v12-head"><small>${config.kicker}</small><h2>${config.title}</h2><p>${config.body}</p>
-   <p class="ps-v12-source">EVIDÊNCIA / PNGS ORIGINAIS · 2160 × 3840 · HASHES SHA-256 CONFERIDOS</p>
+   <p class="ps-v12-source">ARTES ORIGINAIS · GOOGLE PLAY · 2160 × 3840</p>
   </div>
   <div class="ps-v12-gallery" tabindex="0" role="group" aria-label="Três artes promocionais originais de ${config.name}; role para explorar no celular">
    ${art}
   </div>
   <p class="ps-v12-hint">Toque em uma imagem para ampliá-la. No celular, deslize horizontalmente para explorar as três peças.</p>
  </div>
- <figcaption>Peças de divulgação preparadas para a Google Play, recuperadas em leitura do projeto original no Galaxy e conferidas por hash SHA-256. As imagens preservam a composição original; não são capturas feitas nesta sessão nem prova de licença de moldura de terceiros.</figcaption>`;
+ <figcaption>Artes promocionais originais preparadas para a Google Play, preservadas em seu enquadramento completo. Integridade das imagens conferida por SHA-256.</figcaption>`;
  const evidence=document.querySelector(".case-facts>div:nth-child(3) strong");
  if(evidence)evidence.textContent="Artes promocionais originais · integridade por SHA-256";
 })();

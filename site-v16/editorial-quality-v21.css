@@ -1,0 +1,100 @@
+/* V21 · Editorial polish and interaction contrast.
+   Preserve product-owned colors and original screenshot bytes. */
+
+/* A legacy .project > p rule reset margin-top:auto on technology rows.
+   Restoring auto margin anchors the technical footer and CTA to each row's baseline. */
+.project-grid > .project {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+/* The hidden attribute must beat the alignment rule when searching/filtering. */
+#grid > article.project[hidden] {display:none!important;}
+.project-grid > .project > p.project-techline {
+  margin-top:auto !important;
+  margin-bottom:12px !important;
+}
+.project-grid > .project > .project-case-link {
+  flex-shrink:0;
+}
+.project-grid > .project > .project-evidence {
+  line-height:1.55;
+}
+
+/* Unified platinum focus, including the search field previously inheriting
+   a violet outline and violet box shadow from old theme layers. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline-color:var(--ds-accent) !important;
+}
+.search-label input:focus,
+.search-label input:focus-visible {
+  outline:2px solid var(--ds-accent) !important;
+  outline-offset:3px;
+  border-color:var(--ds-accent) !important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--ds-accent) 18%,transparent) !important;
+}
+.search-label:focus-within {
+  border-color:transparent;
+}
+
+/* All arrows are inlined by inline-arrows-v14.js when JS is available.
+   Preserve a legible no-JavaScript fallback without recoloring product logos. */
+.project .project-case-link img.ui-inline-arrow,
+.cosmos-primary img.ui-inline-arrow,
+.case-action-primary img.ui-inline-arrow {
+  filter:none !important;
+}
+@media (prefers-color-scheme:dark) {
+  .tech-index-data-link img[src*="ui-arrow-"],
+  .other-work-actions img[src*="ui-arrow-"],
+  .project .project-link img[src*="ui-arrow-"],
+  .case-action-secondary img[src*="ui-arrow-"],
+  .case-crumb a img[src*="ui-arrow-"],
+  .case-back-subtle img[src*="ui-arrow-"] {
+    filter:invert(1);
+  }
+  .search-label input:focus,
+  .search-label input:focus-visible {
+    box-shadow:0 0 0 3px rgb(204 210 218 / 20%) !important;
+  }
+}
+
+/* Easy Sign promotional arts: give original images an editorial mat and
+   maintain complete source aspect ratio; do not draw or retouch phone UI. */
+.ps-easy .ps-v12-art > a {
+  padding:clamp(8px,1.1vw,14px);
+  border:1px solid #5f6672;
+  border-radius:14px;
+  background:#181d27;
+  box-shadow:0 8px 24px rgb(0 0 0 / 14%);
+}
+.ps-easy .ps-v12-art > a img {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:9 / 16;
+  object-fit:contain;
+  background:#f5f5f4;
+  border-radius:7px;
+}
+.ps-easy .ps-v12-art > a:hover {
+  border-color:#CCD2DA;
+}
+html[data-project="easy-sign"] .case-media-replaced.playstore-v12-frame > figcaption {
+  background:#171c25 !important;
+  color:#E1E5EB !important;
+  border-top:1px solid #49515f !important;
+  padding:17px 24px !important;
+  font-size:12px;
+  line-height:1.65;
+}
+@media(max-width:700px) {
+  .ps-easy .ps-v12-art > a {padding:9px;border-radius:12px}
+  .ps-easy .ps-v12-art > a img {border-radius:5px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .ps-easy .ps-v12-art > a {transition:none}
+}
