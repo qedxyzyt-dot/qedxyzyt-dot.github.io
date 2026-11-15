@@ -1,0 +1,4 @@
+.iee-paper-crest{display:grid;place-items:center;min-height:218px;padding:12px;border-radius:13px;background:#fcfaf7}
+.iee-paper-crest img{display:block;width:min(100%,220px);max-height:216px;height:auto;object-fit:contain}
+html[data-project="iee"] .case-brand-identity img{object-fit:contain;background:#fcfbf7;padding:5px;border-radius:10px}
+@media(max-width:800px){.iee-paper-crest{width:min(100%,235px);min-height:180px}.iee-paper-crest img{width:190px}}

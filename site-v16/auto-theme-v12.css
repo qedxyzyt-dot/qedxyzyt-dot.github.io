@@ -1,0 +1,152 @@
+/* V12 — system-synced appearance; no stored theme or frontend detection.
+   Keep the editorial hero, product imagery, and project-owned colors untouched.
+   The light design remains the default; only dark-preference users see these tokens. */
+:root { color-scheme: light; }
+@media (prefers-color-scheme: dark) {
+ :root {
+  color-scheme:dark;
+  --bg:#111217;--canvas:#111217;--offwhite:#111217;
+  --surface:#1e2027;--paper:#1e2027;--surface-alt:#171920;
+  --ink:#f0edf3;--subtle:#bcb9c4;--faint:#a29fab;
+  --line:#393a45;--border:#393a45;
+  --accent:#eeebf2;--accent-dark:#d2cfe1;
+  --muted:#aba7b4;
+ }
+ body,.case-body{background:#111217;color:var(--ink)}
+ ::selection{background:#636077;color:#fff}
+ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#b7acff}
+ .skip{background:#282932;color:#fff}
+ .site-header,.case-body .case-header{
+  background:rgba(20,21,27,.96);border-color:#393944;
+  box-shadow:0 2px 16px rgba(0,0,0,.22);
+ }
+ .brand,.case-brand,.case-brand strong{color:#f3f0f5}
+ .brand-glyph,.case-header .case-brand span{background:#edeaf0;color:#17181d}
+ .nav-links a,.case-nav>div>a:not(.case-nav-cta){color:#d6d3dd}
+ .nav-links a:hover,.case-nav>div>a:not(.case-nav-cta):hover{color:#fff}
+ .nav-links a:not(.nav-contact)::after{background:#e2dfed}
+ .nav-links .nav-contact,.case-header .case-nav-cta{
+  background:#e7e4ed;color:#18191f;border-color:#e7e4ed
+ }
+ .nav-links .nav-contact:hover,.case-header .case-nav-cta:hover{
+  background:#d0cce0;color:#13141a;border-color:#d0cce0
+ }
+ .nav-links .nav-contact img,.case-header .case-nav-cta img{filter:none}
+ .nav-menu-toggle{background:#26272e;border-color:#56535e;color:#fff}
+ .nav-menu-toggle:hover{background:#383944}
+ .nav-menu-toggle img{filter:invert(1)}
+ .mobile-nav{background:rgba(25,25,32,.98);border-color:#46444e;box-shadow:0 22px 35px rgba(0,0,0,.35)}
+ .mobile-nav a{background:#24252c;border-color:#494753;color:#eeebf3}
+ .mobile-nav a:hover,.mobile-nav a:focus-visible{background:#373741;border-color:#9993a5;color:#fff}
+ .noscript-nav{background:#24252c;color:#f0edf5}
+
+ /* Hero is intentionally dark in both browser modes; identity and contrast stay stable. */
+ .cosmos-hero{background:#101014;color:#f5f2ec}
+ .strip{background:#18191e}
+ .section{background:#111217}
+ .eyebrow,.project-type,.number{color:#a5a1af}
+ .section-head h2,.section-head>p{color:#efedf2}
+ .section-head>p{color:#bcb8c5}
+ .filter-bar{border-color:#42414a}
+ .filter{color:#c0bdca}
+ .filter:hover{background:#2c2d37;color:#fff}
+ .filter.active{background:#e2deeb;color:#18191f}
+ .search-label input{background:#202129;color:#f0eef5;border-color:#54515e}
+ .search-label input::placeholder{color:#aaa6b5}
+ .search-label input:focus{border-color:#b5aad5;box-shadow:0 0 0 3px rgba(155,141,196,.22)}
+ .result-count{color:#b1aeb9}
+ .project,.project.featured{
+  background:#1e2027;border:1px solid #3c3c47;
+  box-shadow:0 3px 14px rgba(0,0,0,.07)
+ }
+ .project:hover,.project:focus-within{box-shadow:0 16px 34px rgba(0,0,0,.28)}
+ .project h3{color:#f2eff4}
+ .project>.project-objective{color:#f0edf2!important}
+ .project>.project-objective>span{color:#b7b3c0}
+ .project>.project-objective+p:not(.project-evidence){color:#bbb8c2!important}
+ .project>p:not(.project-type):not(.project-evidence){color:#bbb8c2}
+ .project .tech span,.project.featured .tech span{
+  background:#30313b;color:#e0dce6
+ }
+ .project-evidence{border-top-color:#42404d;color:#b0adbb}
+ .project-link,.project-case-link{color:#e5e0ec;border-bottom-color:#8f8b9b}
+ .project-link:hover,.project-case-link:hover{color:#fff;border-bottom-color:#ece8f3}
+ .project .phase-live{background:#1b4739;color:#b6f2d4}
+ .project .phase-research{background:#373254;color:#dcd5ff}
+ .project .phase-build{background:#4a392a;color:#ffe4b1}
+ .project .phase-private,.project .phase-mixed{background:#313844;color:#d1ddea}
+ .empty{background:#202229;border-color:#66636e;color:#e7e3ef}
+
+ /* Technical table / university timeline remain editorial, not illustrations. */
+ .tech-index-section{background:#171920;color:#edeaf2;border-color:#383943}
+ .tech-index-lead .eyebrow,.tech-index-lead h2 em{color:#b3acbd}
+ .tech-index-lead>p:not(.eyebrow){color:#bdb9c5}
+ .tech-index-data-link,.tech-index-foot a{color:#e3dfea;border-color:#817b8c}
+ .tech-index-table-wrap{background:#1e2027;border-color:#44424e}
+ .tech-index-table thead{background:#2a2a32;color:#f3f0f5}
+ .tech-index-table tbody tr{border-bottom-color:#3b3c47}
+ .tech-index-table tbody tr:hover{background:#292a34}
+ .tech-index-table tbody th,.tech-index-table tbody td{color:#c7c3d0}
+ .tech-index-table tbody th,.tech-index-table td:nth-child(2){color:#f0ecf3}
+ .tech-unconfirmed,.tech-index-foot{color:#a9a4b2}
+ .timeline,.timeline li{border-color:#3c3a46}
+ .timeline time{color:#c9bfda}
+ .timeline h3{color:#f0edf2}
+ .timeline p{color:#b6b2c1}
+ .education-section{background:#171920;border-color:#3d3b46}
+ .education-item{background:#202129;border-color:#44424d}
+ .education-ident{background:#eeeae4} /* keeps institutional dark ink legible */
+ .education-overline,.education-period,.education-footnote{color:#aba6b5}
+ .education-period{border-color:#44424d}
+ .education-intro h2 em{color:#cdc5d1}
+ .education-intro>p:last-child,.education-item p:not(.education-overline){color:#c0bcc8}
+ .education-item h3{color:#f1edf2}
+ .contact-section{background:#202025;border-color:#3b3a44}
+ .footer{background:#131318;border-color:#36343e}
+ .footer .wrap{color:#bcb6c2}
+ .footer-socials a{background:#202127;border-color:#55515e;color:#ebe8ef}
+
+ /* Project detail shell. Dark project art and verified photos are never filtered. */
+ .case-body .case-story,.case-body .case-thinking,.case-body .case-end{background:#111217;color:#eeeaf1}
+ .case-body .case-scroll-strip{background:#24252c;color:#d8d4df}
+ .case-story-index>span,.case-section-head>div>p,.case-end>span{color:#aeabba}
+ .case-story-index h2,.case-section-head h2,.case-end h2{color:#f0ecf3}
+ .case-story-index h2 em,.case-section-head h2 em,.case-end h2 em{color:#c5b8d3}
+ .case-big-question{color:#f2eff5}
+ .case-decision,.case-section-head>p{color:#bdb9c4}
+ .case-role{color:#b4b0bc;border-color:#484651}
+ .case-body .case-architecture{background:#191a21!important;border-color:#3d3b46}
+ .case-body .case-architecture .case-section-head>p{color:#bdb9c7}
+ .case-process li{background:#22242d;border-color:#42414d}
+ .case-process li strong{color:#efebf4}
+ .case-thinking .case-pillar{background:#202129;border-color:#44424e}
+ .case-pillar h3{color:#f2eff5}
+ .case-pillar p{color:#c2bdca}
+ .pillar-n{color:#b7b2c1}
+ .case-back-big{background:#33343d;border:1px solid #595563}
+ .case-back-big:hover{background:#494752}
+ .case-back-subtle{color:#e6e2ea}
+ .case-footer{background:#171820;border-color:#3d3b46}
+ .case-footer .wrap{color:#bab5c1}
+
+ /* Flow remains connected and aligned on both horizontal and vertical layouts. */
+ .case-process.app-flow .app-flow-step{color:#efeaf3}
+ .case-process.app-flow .app-flow-step strong{color:#efebf3}
+ .case-process.app-flow .app-flow-step.is-end strong{color:#f8d19f}
+ .case-process.app-flow .app-flow-step::before{
+  background:#22242b;border-color:#cac5d4;box-shadow:0 0 0 5px #191a21
+ }
+ .case-process.app-flow .app-flow-step.is-start::before{background:#ece8f2;border-color:#ece8f2}
+ .case-process.app-flow .app-flow-step.is-end::before{background:#e3bf91;border-color:#e3bf91}
+ .case-process.app-flow .is-start .process-n{color:#18191f}
+ .case-process.app-flow .process-n{color:#f5eff9}
+ .case-process.app-flow .is-end .process-n{color:#18191f}
+ .case-process.app-flow .app-flow-phase{color:#aaa4b7}
+ .case-process.app-flow .app-flow-step:not(:last-child)::after{
+  background:#77717f
+ }
+ .case-process.app-flow .app-flow-connector{
+  border-color:#d4ccdb;background:#191a21;box-shadow:0 0 0 2px #191a21
+ }
+ .case-process.app-flow .app-flow-step:hover::before{box-shadow:0 0 0 6px #34323c}
+}

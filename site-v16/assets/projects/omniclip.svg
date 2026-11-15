@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">OmniClip Enhanced mark</title>
+  <desc id="desc">Two device outlines connected by bidirectional transfer arrows.</desc>
+  <rect width="1024" height="1024" rx="224" fill="#101720"/>
+  <rect x="164" y="188" width="292" height="430" rx="66" fill="none" stroke="#F4F8FC" stroke-width="46"/>
+  <rect x="568" y="406" width="292" height="430" rx="66" fill="none" stroke="#83A6FF" stroke-width="46"/>
+  <path d="M392 404h246l-62-62" fill="none" stroke="#55D39A" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M638 620H392l62 62" fill="none" stroke="#83A6FF" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="310" cy="548" r="16" fill="#55D39A"/>
+  <circle cx="714" cy="476" r="16" fill="#F4F8FC"/>
+</svg>

@@ -1,0 +1,35 @@
+/* V15 — tech-aware search and accurate academic status.
+   Inherits the V14 light/dark palette and the spacing system. */
+.search-label{width:min(355px,100%);min-width:215px;flex-shrink:1}
+.search-label input{width:100%;min-height:46px;font-size:14px}
+.search-examples{
+ margin:11px 0 0;
+ color:var(--subtle);
+ font:500 12px/1.6 var(--body,"Segoe UI",Arial,sans-serif);
+}
+.result-count{margin-top:10px}
+.education-item .education-average{
+ display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;
+ border-top:1px solid var(--line);margin:14px 0 0;
+ padding:12px 0 0;line-height:1.35;
+ font-size:13px;font-weight:650;color:var(--subtle)
+}
+.education-average strong{
+ color:var(--ds-accent);
+ font-size:22px;font-weight:780;
+ font-variant-numeric:tabular-nums lining-nums;
+ letter-spacing:-.03em
+}
+@media (prefers-color-scheme:dark){
+ .search-examples{color:#bdbac7}
+ .education-item .education-average{border-color:#44424d;color:#c9c4d0}
+ .education-average strong{color:#aaf3d9}
+}
+@media(max-width:1000px){
+ .search-label{width:min(310px,100%)}
+}
+@media(max-width:730px){
+ .search-label{width:100%;min-width:0}
+ .search-examples{margin-top:9px;font-size:12px}
+ .education-average strong{font-size:20px}
+}

@@ -1,0 +1,228 @@
+/* V13: a restrained, evidence-first editorial system for the ASUS staging.
+   Semantic status/provenance remains on detailed case pages; no fake screenshots. */
+:root {
+ --ds-accent:#176e60;
+ --ds-accent-strong:#105748;
+ --ds-on-accent:#fff;
+ --ds-space-1:4px;--ds-space-2:8px;--ds-space-3:12px;
+ --ds-space-4:16px;--ds-space-6:24px;--ds-space-8:32px;
+ --ds-space-12:48px;
+ --ds-card-radius:22px;--ds-card-inset:12px;
+ --ds-inner-radius:calc(var(--ds-card-radius) - var(--ds-card-inset));
+ --ds-ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-padding-top:86px}
+body{font-family:var(--body,"Segoe UI",Arial,sans-serif);font-kerning:normal}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+h1,h2,h3{font-style:normal;text-wrap:balance}
+h1 em,h2 em,h3 em,.cosmos-core h1 em,.education-intro h2 em,
+.case-section-head h2 em,.case-story-index h2 em,.case-end h2 em{
+ font:inherit;color:inherit;text-shadow:none
+}
+.eyebrow,.cosmos-overline,.case-eyebrow,.case-kicker,
+.project-type,.project-preview figcaption,.case-section-head>div>p{
+ font-family:var(--body,"Segoe UI",Arial,sans-serif);
+ letter-spacing:.045em;font-weight:700
+}
+.number,.cosmos-counter,#cosmos-rail-position,.timeline time,
+.v2t-status time,[datetime],.tech-index-table td:nth-child(2){
+ font-variant-numeric:tabular-nums lining-nums
+}
+.cosmos-hero{isolation:isolate}
+.cosmos-rings,.atelier-beams{display:none!important}
+.cosmos-overline{letter-spacing:.06em;font-size:11px}
+.cosmos-core h1{
+ font-family:var(--display,"Segoe UI",Arial,sans-serif);
+ max-width:810px;font-size:clamp(43px,5.9vw,84px);
+ line-height:1.025;letter-spacing:-.06em;font-weight:750;
+ margin-block:18px 20px;text-wrap:balance;text-transform:none!important
+}
+.cosmos-core h1 span{display:block;color:#f5f1ee}
+.cosmos-core h1 span:last-child{color:#aaf3d9}
+.cosmos-deck{max-width:630px;color:#d3cfd7;font-size:clamp(15px,1.25vw,18px);line-height:1.7}
+.cosmos-actions{gap:12px;margin-top:28px}
+.cosmos-actions>a{display:inline-flex;align-items:center;justify-content:center;gap:15px;
+ font-size:13px;letter-spacing:.01em;font-weight:750;min-height:52px;
+ padding:12px 20px;border-radius:10px}
+.cosmos-primary{background:#aaf3d9!important;color:#12241f!important;border-color:#aaf3d9!important;
+ box-shadow:0 7px 23px rgba(53,171,141,.14)}
+.cosmos-primary:hover{background:#c5ffe8!important;border-color:#c5ffe8!important}
+.cosmos-secondary{background:transparent!important;border-color:#65616d!important;color:#efeaf2!important}
+.cosmos-social{gap:18px}
+.cosmos-social a{font-family:var(--body,"Segoe UI",sans-serif);font-size:12px;font-weight:650}
+.cosmos-social a{min-height:42px}
+.cosmos-lower{color:#b9b6c3}
+.cosmos-pointer,.cosmos-hero .signal-dot{display:none}
+.cosmos-hero .cosmos-node .cosmos-label{font-family:var(--body,"Segoe UI",sans-serif)}
+.section-head{gap:24px;margin-bottom:34px}
+.section-head h2{font-size:clamp(34px,4vw,58px);line-height:1.1;letter-spacing:-.053em;max-width:800px}
+.section-head>p{font-size:15px;line-height:1.65}
+.filter-bar{margin-top:0;padding-block:15px}
+.filter{font-size:13px}
+.result-count{font:650 12px/1.6 var(--body,"Segoe UI",sans-serif)}
+.project-grid{gap:16px;align-items:stretch}
+.project,.project.featured{
+ background:var(--surface)!important;border:1px solid var(--line)!important;
+ border-radius:var(--ds-card-radius)!important;padding:var(--ds-card-inset)!important;
+ box-shadow:none;overflow:hidden;isolation:isolate;
+ transition:border-color .22s ease,box-shadow .3s ease,transform .3s var(--ds-ease)
+}
+.project::before,.project::after{display:none!important}
+.project:hover,.project:focus-within{
+ border-color:var(--ds-accent)!important;
+ box-shadow:0 14px 34px rgba(5,23,24,.1);transform:translateY(-3px)
+}
+.project> :not(.project-portrait):not(.project-preview){margin-left:10px;margin-right:10px}
+.project .project-top{min-height:24px;margin-top:4px;margin-bottom:12px;padding:0}
+.project-top .number{font:700 12px/1.4 var(--body,"Segoe UI",sans-serif);
+ color:var(--faint);letter-spacing:.02em}
+.project-portrait,.project .project-portrait,.project-preview{
+ width:100%;margin:0 0 18px!important;
+ border:1px solid var(--line)!important;
+ border-radius:var(--ds-inner-radius)!important;
+ overflow:hidden;flex:none
+}
+.project .project-portrait{min-height:178px;max-height:210px}
+.project .portrait-logo{width:78px;height:78px;object-fit:contain}
+.project-preview{
+ display:grid;grid-template-rows:minmax(0,1fr) auto;
+ height:219px;background:#f2f3f1;position:relative
+}
+.project-preview-image{display:block;width:100%;height:188px;
+ min-height:0;object-fit:cover;object-position:center 43%;background:#f8f8f7
+}
+.project-preview[data-evidence="fuvest"] .project-preview-image{object-position:center top;object-fit:cover}
+.project-preview[data-evidence="select-anywhere"] .project-preview-image{object-position:center center}
+.project-preview figcaption{padding:7px 11px 8px;background:#f5f5f3;color:#414148;
+ font-size:10px;line-height:1.25;text-align:center;min-height:29px;letter-spacing:.01em
+}
+.project-preview:not(.is-ready):not(.is-error){background:linear-gradient(115deg,#e7e9e8,#f7f8f7,#e7e9e8)}
+.project-preview:not(.is-ready):not(.is-error)::before{content:"";position:absolute;inset:0;
+ background:linear-gradient(100deg,transparent 24%,rgba(255,255,255,.36) 50%,transparent 76%);
+ transform:translateX(-100%);pointer-events:none;z-index:1;
+ animation:ds-preview-loading 1.8s ease-in-out infinite}
+@keyframes ds-preview-loading{to{transform:translateX(100%)}}
+.project-preview.is-error::after{
+ content:"Prévia indisponível · veja os detalhes do projeto";position:absolute;inset:0;
+ display:grid;place-items:center;padding:25px;text-align:center;
+ font-size:12px;color:#f3f1f4;background:#292933
+}
+.project .project-type{font:700 11px/1.5 var(--body,"Segoe UI",sans-serif);
+ letter-spacing:.025em;color:var(--subtle);text-transform:none;margin-bottom:8px}
+.project h3{font-family:var(--display,"Segoe UI",sans-serif);
+ font-size:clamp(24px,2.3vw,32px);font-weight:750;
+ line-height:1.17;letter-spacing:-.04em;margin-bottom:11px;text-wrap:balance;
+ overflow-wrap:anywhere
+}
+.project>.project-objective{
+ color:var(--ink)!important;display:block!important;
+ font:690 clamp(16px,1.24vw,19px)/1.48 var(--body,"Segoe UI",sans-serif)!important;
+ margin-top:0!important;margin-bottom:12px!important;
+ padding:0!important;border:0!important;
+ letter-spacing:-.012em
+}
+.project>.project-objective+p:not(.project-evidence){
+ color:var(--subtle)!important;font-size:13px!important;line-height:1.65!important;
+ margin-bottom:16px!important;-webkit-line-clamp:4
+}
+.project .project-techline{
+ margin-top:auto;margin-bottom:12px;
+ padding-top:10px;border-top:1px solid var(--line);
+ font:650 11px/1.6 var(--body,"Segoe UI",sans-serif);
+ color:var(--subtle);letter-spacing:0;overflow-wrap:anywhere
+}
+.project .project-evidence{border-top:0;padding:0;margin-top:0;margin-bottom:13px;
+ color:var(--subtle);font-size:11px;line-height:1.55}
+.project .project-case-link{
+ display:flex;align-items:center;justify-content:space-between;
+ align-self:stretch;gap:12px;min-height:47px;
+ padding:11px 14px;border:1px solid var(--ds-accent);
+ border-radius:10px;background:var(--ds-accent);color:var(--ds-on-accent);
+ text-decoration:none;font:750 13px/1.45 var(--body,"Segoe UI",sans-serif);
+ margin-top:12px!important;margin-bottom:10px;
+ transition:transform .18s var(--ds-ease),background .18s,border-color .18s
+}
+.project .project-case-link:hover,.project .project-case-link:focus-visible{
+ background:var(--ds-accent-strong);border-color:var(--ds-accent-strong);
+ color:var(--ds-on-accent);transform:translateY(-1px)
+}
+.project .project-case-link img{width:16px;height:16px;filter:invert(1);display:block}
+.project .project-link{font:700 12px/1.5 var(--body,"Segoe UI",sans-serif);
+ color:var(--ds-accent);border:0;text-decoration:underline;text-underline-offset:3px;
+ margin:0 10px 7px}
+.project .project-link:hover{color:var(--ds-accent-strong)}
+.project .phase{display:none}
+.project .tech{display:none}
+.tech-index-lead h2,.education-intro h2,.case-section-head h2,.case-story-index h2,.case-end h2{
+ letter-spacing:-.05em;text-wrap:balance
+}
+.tech-index-data-link{color:var(--ds-accent);text-decoration-thickness:1px}
+.case-heading-grid h1{font-style:normal;text-wrap:balance}
+.case-body :is(h1,h2,h3) em{font-style:normal!important;font-family:inherit!important;color:inherit!important;letter-spacing:inherit!important}
+.case-heading-actions{gap:12px}
+.case-heading-actions a{border-radius:10px;min-height:46px}
+.case-heading-actions .case-action-primary{background:#aaf3d9;color:#12241f;border-color:#aaf3d9}
+.case-heading-actions .case-action-primary:hover{background:#d0ffef;border-color:#d0ffef}
+.case-artframe,.case-artframe .case-art{border-radius:14px}
+.case-artframe .case-artframe-label{display:none}
+.case-scroll-strip{display:none}
+.case-section-head .case-kicker{font-family:var(--body,"Segoe UI",sans-serif)}
+.back-to-top{
+ position:fixed;z-index:90;right:20px;bottom:20px;
+ display:inline-flex;align-items:center;justify-content:center;gap:8px;
+ min-height:48px;padding:10px 14px;border:1px solid var(--line);
+ background:var(--surface);color:var(--ink);border-radius:12px;
+ box-shadow:0 10px 35px rgba(0,0,0,.18);
+ font:700 12px var(--body,"Segoe UI",sans-serif);
+ text-decoration:none;opacity:0;visibility:hidden;
+ transform:translateY(9px);pointer-events:none;
+ transition:opacity .22s ease,transform .22s var(--ds-ease),visibility .22s
+}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+.back-to-top img{width:16px;height:16px;transform:rotate(-45deg)}
+.back-to-top:hover{border-color:var(--ds-accent);color:var(--ds-accent)}
+@media (prefers-color-scheme:dark){
+ :root{--ds-accent:#aaf3d9;--ds-accent-strong:#d0ffea;--ds-on-accent:#11241d}
+ .project-preview{border-color:#45444d;background:#282931}
+ .project-preview img{background:#24252e}
+ .project-preview figcaption{background:#24252b;color:#d5d2df}
+ .project-preview:not(.is-ready):not(.is-error){background:linear-gradient(115deg,#272932,#363840,#272932)}
+ .project .project-case-link img{filter:none}
+ .project .project-type,.project-top .number{color:#bcb8c6}
+ .project .project-techline,.project .project-evidence{color:#bdb9c5}
+ .project .project-link{color:#aaf3d9}
+ .project .project-link:hover{color:#d0ffea}
+ .project:hover,.project:focus-within{box-shadow:0 17px 38px rgba(0,0,0,.3)}
+ .back-to-top{background:#282932;border-color:#56545e;color:#f5f2f7}
+}
+@media(max-width:850px){
+ .cosmos-projects .cosmos-node{display:none!important}
+ .cosmos-hero::before{display:none!important}
+ .cosmos-lower{display:none!important}
+ .cosmos-core h1{text-shadow:none}
+}
+@media(max-width:730px){
+ .cosmos-core h1{font-size:clamp(37px,11.8vw,60px);letter-spacing:-.055em;line-height:1.08}
+ .cosmos-core h1 span{display:block}
+ .cosmos-actions{gap:9px}
+ .cosmos-actions>a{min-height:47px;padding:11px 15px;font-size:12px}
+ .section-head h2{font-size:clamp(32px,9vw,44px)}
+ .project-grid{gap:12px}
+ .project,.project.featured{border-radius:18px!important;--ds-card-radius:18px;--ds-card-inset:9px;padding:9px!important}
+ .project> :not(.project-portrait):not(.project-preview){margin-left:12px;margin-right:12px}
+ .project .project-portrait{min-height:180px}
+ .project-preview{height:234px}
+ .project-preview-image{height:203px}
+ .project .project-case-link{min-height:48px}
+ .back-to-top{right:12px;bottom:12px;padding:10px 12px}
+}
+@media(max-width:400px){
+ .cosmos-core h1{font-size:clamp(35px,11.2vw,46px)}
+ .back-to-top span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .project,.project .project-case-link,.back-to-top{transition:none!important}
+ .project-preview:not(.is-ready):not(.is-error)::before{animation:none;display:none}
+ .project:hover,.project .project-case-link:hover{transform:none!important}
+ html{scroll-behavior:auto}
+}

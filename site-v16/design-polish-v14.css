@@ -1,0 +1,116 @@
+/* V14 — logo consistency, link arrows with inherited color, and faithful photo framing.
+   Keeps the existing V13 layout and automatic light/dark theme. */
+:root{
+ --link-icon-contrast:#176e60;
+ --on-link-surface:#ffffff;
+ --frame-border:#514d5a;
+ --frame-bg:#201e28;
+}
+svg.ui-inline-arrow{
+ display:inline-block;vertical-align:-.17em;flex-shrink:0;
+ stroke:currentColor!important;fill:none!important;filter:none!important;
+ transition:transform .18s cubic-bezier(.22,1,.36,1)
+}
+a:hover svg.ui-inline-arrow,a:focus-visible svg.ui-inline-arrow{
+ transform:translate(1px,-1px)
+}
+.project .project-link{
+ display:inline-flex;align-items:center;gap:7px;
+ color:var(--ds-accent);text-decoration-thickness:1px;
+ text-underline-offset:3px
+}
+.project .project-link:hover,.project .project-link:focus-visible{
+ color:var(--ds-accent-strong)
+}
+.project .project-link svg.ui-inline-arrow{width:15px;height:15px}
+.project .project-case-link svg.ui-inline-arrow{width:16px;height:16px;color:inherit}
+.project .project-case-link:hover svg.ui-inline-arrow{transform:translate(1px,-1px)}
+.back-to-top svg.ui-inline-arrow{width:16px;height:16px;transform:rotate(-45deg)}
+.back-to-top:hover svg.ui-inline-arrow{transform:rotate(-45deg) translate(1px,-1px)}
+.cosmos-actions a svg.ui-inline-arrow,.nav-contact svg.ui-inline-arrow{
+ width:18px;height:18px
+}
+.case-heading-actions a svg.ui-inline-arrow{width:16px;height:16px}
+.case-crumb a svg.ui-inline-arrow{width:15px;height:15px}
+.case-header a svg.ui-inline-arrow{width:14px;height:14px}
+a:focus-visible,button:focus-visible{
+ outline:3px solid var(--ds-accent);outline-offset:3px
+}
+/* Keep every card's actual project logo; product imagery belongs to its case gallery. */
+.project .project-portrait{display:flex!important;align-items:center;justify-content:center}
+.project .project-portrait .portrait-logo{display:block;position:relative;z-index:2}
+.project .project-portrait .portrait-ghost{z-index:1}
+/* The V13 light metadata was 4.39:1; darken it for >=4.5:1 WCAG AA. */
+.project .project-top .number{color:#66646c}
+@media(prefers-color-scheme:dark){.project .project-top .number{color:#c5c1cf}}
+/* Original Google Play promotional images contain their own phone compositions.
+   Surround the complete source image with a restrained mat; do not crop, fake a
+   Pixel frame, or alter the verified PNGs. */
+.losttime-v12-frame .ltv12{
+ background:linear-gradient(120deg,#1a1720,#211c28);
+}
+.losttime-v12-frame .ltv12-play-gallery{
+ gap:clamp(14px,1.9vw,28px);
+ align-items:stretch;
+}
+.losttime-v12-frame .ltv12-play-figure{
+ display:flex;flex-direction:column;min-width:0
+}
+.losttime-v12-frame .ltv12-play-figure>a{
+ display:block;box-sizing:border-box;width:100%;
+ padding:clamp(12px,1.55vw,23px);
+ border-radius:18px;
+ border:1px solid #675d6d;
+ background:#282330;
+ box-shadow:none;
+ line-height:0;
+ transition:border-color .16s ease,background .16s ease
+}
+.losttime-v12-frame .ltv12-play-figure>a:hover{
+ border-color:#a795ab;background:#2d2735
+}
+.losttime-v12-frame .ltv12-play-figure>a:focus-visible{
+ outline:3px solid #b8ffe5;outline-offset:4px
+}
+.losttime-v12-frame .ltv12-play-figure>a img{
+ display:block;width:100%;height:auto;
+ aspect-ratio:9 / 16;object-fit:contain;
+ background:#0d0b13;
+ border:1px solid #4c4653;
+ border-radius:9px;
+ box-shadow:0 2px 10px rgba(0,0,0,.12)
+}
+.losttime-v12-frame .ltv12-play-figure figcaption{
+ margin-top:13px;gap:8px;line-height:1.5
+}
+.losttime-v12-frame .ltv12-play-figure figcaption span{
+ font-family:"Segoe UI",Arial,sans-serif;color:#f1c4da
+}
+.losttime-v12-frame .ltv12-play-figure figcaption strong{color:#f8eef4}
+.losttime-v12-frame .ltv12-device>a{
+ border-color:#756776;box-shadow:none
+}
+@media(prefers-color-scheme:dark){
+ /* Fallback if scripting is disabled: external SVG images cannot inherit link text color. */
+ .project-link img.ui-inline-arrow,.case-action-secondary img.ui-inline-arrow,
+ .case-crumb a img.ui-inline-arrow,.case-back-subtle img.ui-inline-arrow,
+ .back-to-top img.ui-inline-arrow{filter:invert(1)}
+ :root{--link-icon-contrast:#aaf3d9;--on-link-surface:#11241d}
+ .project .project-link,.project .project-link svg.ui-inline-arrow{color:#aaf3d9}
+ .project .project-link:hover,.project .project-link:focus-visible{color:#d0ffea}
+ .project .project-case-link,.project .project-case-link svg.ui-inline-arrow{color:#11241d}
+ .back-to-top{color:#f5f2f7}
+ .back-to-top svg.ui-inline-arrow{stroke:currentColor}
+}
+@media(max-width:700px){
+ .losttime-v12-frame .ltv12-play-gallery{gap:14px}
+ .losttime-v12-frame .ltv12-play-figure>a{
+  padding:13px;border-radius:15px
+ }
+ .losttime-v12-frame .ltv12-play-figure>a img{border-radius:7px}
+}
+@media(prefers-reduced-motion:reduce){
+ svg.ui-inline-arrow,.losttime-v12-frame .ltv12-play-figure>a{transition:none!important}
+ a:hover svg.ui-inline-arrow,a:focus-visible svg.ui-inline-arrow{transform:none}
+ .back-to-top svg.ui-inline-arrow{transform:rotate(-45deg)!important}
+}

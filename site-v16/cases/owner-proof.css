@@ -1,0 +1,43 @@
+/* Cash Map & OmniClip: evidence first. Never manufacture empty phone mocks. */
+.owner-proof-gallery{padding:clamp(22px,4vw,52px);min-height:450px;background:#191c21;color:#f2f1f4;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(24px,3vw,46px)}
+.owner-proof-gallery.owner-proof-cash-map{background:#182321}
+.owner-proof-gallery.owner-proof-omniclip{background:#0d1b27}
+.owner-proof-intro>small{font:750 10px/1.6 ui-monospace,Consolas,monospace;color:#a0c4b9;letter-spacing:.11em}
+.owner-proof-omniclip .owner-proof-intro>small{color:#8fabdf}
+.owner-proof-intro h3{font-size:clamp(36px,4.2vw,67px);line-height:1.05;letter-spacing:-.072em;margin:18px 0 23px;max-width:560px}
+.owner-proof-intro p{color:#c6cecc;font-size:15px;line-height:1.85;max-width:570px}
+.owner-proof-note{display:block;margin-top:33px;color:#a7bbb8;border-top:1px solid #42534f;padding-top:15px;font:11px/1.7 ui-monospace,Consolas,monospace}
+.owner-proof-shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:center;min-width:0}
+.owner-proof-gallery.is-missing .owner-proof-shots{display:none}
+.owner-proof-gallery.has-evidence .owner-proof-features{display:none}
+.owner-proof-shot{min-width:0;margin:0}
+.owner-proof-view{border:1px solid rgba(218,225,224,.26);background:#191f27;border-radius:12px;overflow:hidden;display:grid;place-items:center;min-width:0}
+.owner-proof-view>.owner-proof-image{display:block;width:100%;height:auto;object-fit:contain}
+.owner-proof-shot figcaption{padding-top:10px;font:750 10px/1.65 ui-monospace,Consolas,monospace;color:#d7e2e0;text-align:center}
+.owner-proof-omniclip .owner-proof-shots{grid-template-columns:minmax(220px,370px);justify-content:center}
+.owner-proof-features{display:grid;gap:11px;min-width:0}
+.owner-proof-feature{position:relative;padding:clamp(18px,2.5vw,25px);background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.18);border-radius:10px}
+.owner-proof-feature:before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;background:#52b998;border-radius:3px}
+.owner-proof-omniclip .owner-proof-feature:before{background:#7e9fee}
+.owner-proof-feature>span{font:750 10px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.1em;color:#9ecabb}
+.owner-proof-omniclip .owner-proof-feature>span{color:#a5bdf8}
+.owner-proof-feature h4{font-size:clamp(17px,2vw,23px);letter-spacing:-.035em;line-height:1.2;margin:9px 0}
+.owner-proof-feature p{font:13px/1.6 Segoe UI,Arial,sans-serif;color:#abbab6;margin:0}
+@media(max-width:1000px){
+ .owner-proof-gallery{grid-template-columns:1fr}
+ .owner-proof-intro{max-width:780px}
+ .owner-proof-shots{max-width:940px;width:100%;margin-inline:auto}
+ .owner-proof-features{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+}
+@media(max-width:680px){
+ .owner-proof-gallery{padding:27px 16px;gap:20px}
+ .owner-proof-intro h3{font-size:clamp(34px,9vw,47px);margin:12px 0}
+ .owner-proof-intro p{font-size:13px}
+ .owner-proof-note{margin-top:20px}
+ .owner-proof-features{grid-template-columns:1fr}
+ .owner-proof-feature{padding:16px 18px}
+ .owner-proof-feature h4{font-size:19px}
+ .owner-proof-shots{display:flex;align-items:flex-start;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:17px}
+ .owner-proof-shot{flex:0 0 min(72vw,340px);scroll-snap-align:center}
+ .owner-proof-omniclip .owner-proof-shot{flex-basis:min(83vw,365px)}
+}

@@ -1,0 +1,101 @@
+/* Lost Time: presentation of genuine Play Store screenshots inside an original
+   vector-sharp Android handset shell. Never a Google-provided device render.
+   The source assets include promotional copy; crop only the embedded app UI. */
+.lt-vitrine{
+  --lt-coral:#f27378;
+  display:grid;grid-template-columns:minmax(270px,.53fr) minmax(0,1fr);
+  align-items:center;gap:clamp(20px,3.5vw,60px);
+  background:radial-gradient(ellipse 70% 76% at 76% 50%,#2c2538 0%,#211a25 63%,#19161d 100%);
+  padding:clamp(32px,4.5vw,72px) clamp(24px,4vw,64px);
+  min-height:700px;color:#fbf6f8;overflow:hidden
+}
+.lt-copy{position:relative;z-index:3;max-width:490px}
+.lt-copy>small{display:block;color:#f7a7ac;font:700 11px/1.65 ui-monospace,Consolas,monospace;letter-spacing:.135em}
+.lt-copy h3{font-family:"Bahnschrift","Arial Narrow","Segoe UI",sans-serif;
+  font-weight:750;font-size:clamp(47px,5.2vw,84px);letter-spacing:-.075em;line-height:.98;
+  margin:27px 0 32px;color:#faf8fa}
+.lt-copy h3 em{font:italic 400 .94em Georgia,serif;color:#ffacae;letter-spacing:-.06em}
+.lt-copy p{max-width:440px;font:400 clamp(14px,1.3vw,18px)/1.79 "Segoe UI",Arial,sans-serif;color:#d3c8d3;margin:0}
+.lt-copy-features{display:flex;gap:7px;flex-wrap:wrap;margin-top:34px}
+.lt-copy-features span{font:700 10px/1.4 ui-monospace,Consolas,monospace;
+  color:#ead6e2;background:rgba(255,255,255,.07);padding:9px 12px;
+  border-radius:99px;border:1px solid rgba(255,255,255,.15)}
+.lt-showcase{display:flex;gap:clamp(2px,.65vw,10px);align-items:center;justify-content:center;
+  perspective:1500px;min-width:0;min-height:620px;padding:15px 4px 28px;isolation:isolate}
+.lt-handset{flex:0 1 clamp(175px,15.8vw,275px);position:relative;min-width:0;margin:0;
+  transform-style:preserve-3d;transition:transform .34s cubic-bezier(.16,1,.3,1),filter .34s ease;
+  filter:drop-shadow(0 19px 22px rgba(0,0,0,.36))}
+.lt-handset--first{transform:perspective(1300px) rotateY(14deg) rotateZ(-4deg) translate(14px,25px)}
+.lt-handset--center{transform:perspective(1300px) translateZ(62px) translateY(-16px);z-index:3}
+.lt-handset--last{transform:perspective(1300px) rotateY(-14deg) rotateZ(4deg) translate(-14px,25px)}
+.lt-device{position:relative;width:100%;aspect-ratio:260/532;border-radius:clamp(29px,3.25vw,48px);
+  padding:0;box-sizing:border-box;
+  background:linear-gradient(145deg,#7d7584 0%,#302e3b 8%,#0e1118 33%,#292b38 62%,#6d5c66 95%);
+  border:clamp(3px,.33vw,6px) solid #10121a;
+  box-shadow:0 0 0 1px #615b6a,0 0 0 3px rgba(10,10,17,.6),
+    6px 12px 22px rgba(5,3,9,.6),-3px -2px 11px rgba(249,243,255,.10),
+    inset 0 0 0 1px rgba(235,222,239,.37);overflow:visible}
+.lt-device-metal{position:absolute;inset:-2px;border-radius:inherit;
+  border:1px solid rgba(206,195,220,.55);pointer-events:none;z-index:3}
+.lt-device-glass{position:absolute;inset:5px;border-radius:clamp(23px,2.9vw,42px);
+  background:#090b11;border:2px solid #090a10;overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.15),0 0 0 1px rgba(1,1,6,.8)}
+.lt-device-glass:after{content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(117deg,rgba(255,255,255,.10) 0%,transparent 12%,transparent 75%,rgba(255,255,255,.035) 95%);
+  pointer-events:none;z-index:3}
+.lt-device-screen{position:absolute;inset:0;border-radius:inherit;overflow:hidden;background:#0c0a16}
+.lt-device-screen img{position:absolute;display:block;max-width:none;
+  width:175%;height:150.707%;left:-37.5%;top:-39.596%;
+  object-fit:fill;image-rendering:auto;pointer-events:none;user-select:none}
+.lt-device-camera{position:absolute;width:11px;height:11px;border-radius:50%;
+  left:50%;top:10px;transform:translateX(-50%);z-index:4;
+  background:radial-gradient(circle at 42% 44%,#182642 0 24%,#03040a 33% 63%,#343b4d 71%,#06080d 100%);
+  box-shadow:0 0 0 2px rgba(10,12,18,.75),inset 0 0 2px #65708b;pointer-events:none}
+.lt-device-power,.lt-device-volume{position:absolute;right:-7px;width:4px;z-index:-1;
+  background:linear-gradient(90deg,#373643,#86808e 48%,#373743);border-radius:2px;
+  box-shadow:1px 0 2px rgba(0,0,0,.7)}
+.lt-device-power{height:49px;top:22%}
+.lt-device-volume{height:69px;top:35%}
+.lt-handset figcaption{display:grid;gap:5px;text-align:center;margin-top:28px;
+  color:#e7d4e0;font:700 11px/1.45 ui-monospace,Consolas,monospace}
+.lt-handset figcaption span{color:#f0a3b8;letter-spacing:.09em;font-size:10px}
+.lt-handset figcaption strong{font-weight:650;font-size:13px}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .lt-handset:hover{z-index:5;transform:translateY(-23px) translateZ(75px) rotateY(0) rotateZ(0) scale(1.035);
+    filter:drop-shadow(0 31px 25px rgba(0,0,0,.44))}
+}
+@media(max-width:1100px){
+  .lt-vitrine{grid-template-columns:1fr;min-height:0;gap:25px}
+  .lt-copy{max-width:800px}
+  .lt-copy h3{font-size:clamp(48px,8vw,73px);margin:18px 0}
+  .lt-showcase{min-height:0;max-width:900px;width:100%;margin:0 auto;padding-top:28px}
+  .lt-handset{flex-basis:clamp(185px,24vw,265px)}
+}
+@media(max-width:680px){
+  .lt-vitrine{padding:27px 0 32px;gap:16px}
+  .lt-copy{padding-inline:23px}
+  .lt-copy h3{font-size:clamp(42px,11.4vw,60px);line-height:1.02;margin:16px 0}
+  .lt-copy p{font-size:14px;line-height:1.75}
+  .lt-copy-features{margin-top:21px}
+  .lt-showcase{box-sizing:border-box;min-height:0;max-width:none;width:100%;
+    justify-content:flex-start;align-items:flex-start;gap:18px;
+    padding:23px max(16px,calc((100vw - 278px)/2)) 22px;
+    overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;
+    scrollbar-width:thin;scrollbar-color:#9e7d91 #211a25;perspective:none}
+  .lt-showcase::-webkit-scrollbar{height:5px}
+  .lt-showcase::-webkit-scrollbar-thumb{background:#9e7d91;border-radius:10px}
+  .lt-showcase::-webkit-scrollbar-track{background:#211a25}
+  .lt-handset,.lt-handset--first,.lt-handset--center,.lt-handset--last{flex:0 0 min(72vw,268px);
+    transform:none;filter:drop-shadow(0 14px 16px rgba(0,0,0,.35));scroll-snap-align:center}
+  .lt-device{border-radius:42px}
+  .lt-device-glass{border-radius:35px}
+  .lt-handset figcaption{margin-top:22px}
+}
+@media(max-width:365px){
+ .lt-copy{padding-inline:17px}
+ .lt-showcase{padding-inline:calc((100vw - 235px)/2)}
+ .lt-handset,.lt-handset--first,.lt-handset--center,.lt-handset--last{flex-basis:235px}
+}
+@media(prefers-reduced-motion:reduce){
+ .lt-handset{transition:none!important}
+}

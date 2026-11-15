@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">Jarvis — núcleo de quatro segmentos</title>
+<desc id="desc">Adaptação vetorial da imagem criada por Augustus, jarvis_logo.png. Quatro segmentos ciano, núcleo luminoso e três indicadores sobre uma placa escura.</desc>
+<defs>
+    <linearGradient id="chassis" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#193b4b"/><stop offset=".36" stop-color="#071822"/><stop offset=".68" stop-color="#020e16"/><stop offset="1" stop-color="#143142"/></linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#00b5e5"/><stop offset=".34" stop-color="#97ffff"/><stop offset=".64" stop-color="#00a6ce"/><stop offset="1" stop-color="#3bffff"/></linearGradient>
+    <linearGradient id="segment" x1="0" y1="0" x2=".82" y2="1"><stop stop-color="#ecffff"/><stop offset=".15" stop-color="#36ffff"/><stop offset=".45" stop-color="#00efee"/><stop offset=".72" stop-color="#00b5d5"/><stop offset="1" stop-color="#64ffff"/></linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#137193"/><stop offset=".5" stop-color="#003857"/><stop offset="1" stop-color="#07516c"/></linearGradient>
+    <radialGradient id="core"><stop stop-color="#edffff"/><stop offset=".08" stop-color="#9fffff"/><stop offset=".23" stop-color="#00f0fa"/><stop offset=".48" stop-color="#007c9a"/><stop offset=".76" stop-color="#04354b"/><stop offset="1" stop-color="#04121e"/></radialGradient>
+    <radialGradient id="node"><stop stop-color="white"/><stop offset=".3" stop-color="#61ffff"/><stop offset=".65" stop-color="#00d8f0"/><stop offset="1" stop-color="#004e6b"/></radialGradient>
+    <filter id="glow" x="-.25" y="-.25" width="1.5" height="1.5"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<g id="chassis">
+  <rect x="27" y="27" width="458" height="458" rx="83" fill="none" stroke="#00d9ee" stroke-width="7" opacity=".38" filter="url(#glow)"/>
+  <rect x="27" y="27" width="458" height="458" rx="83" fill="url(#chassis)" stroke="url(#rim)" stroke-width="3.5"/>
+  <rect x="32" y="32" width="448" height="448" rx="79" fill="none" stroke="#097d99" stroke-width="1" opacity=".8"/>
+  <path d="M 36 136 L 97 75 Q 123 35 148 33 L 129 59 L 95 98 Q 86 104 69 104 L 55 108 Z" fill="#24536a" opacity=".55"/>
+  <path d="M 476 136 L 415 75 Q 389 35 364 33 L 383 59 L 417 98 Q 426 104 443 104 L 457 108 Z" fill="#24536a" opacity=".55"/>
+  <path d="M 36 376 L 94 433 Q 125 477 148 479 L 131 453 L 93 416 Q 86 407 70 407 L 53 402 Z" fill="#12394e" opacity=".72"/>
+  <path d="M 476 376 L 418 433 Q 387 477 364 479 L 381 453 L 419 416 Q 426 407 442 407 L 459 402 Z" fill="#12394e" opacity=".72"/>
+  <path d="M 35 157 Q 35 109 63 104 L 83 104 Q 94 104 104 93 L 142 52 Q 146 38 161 34 M 477 157 Q 477 109 449 104 L 429 104 Q 418 104 408 93 L 370 52 Q 366 38 351 34 M 35 355 Q 35 404 64 408 L 83 408 Q 94 408 105 420 L 142 461 Q 146 475 162 478 M 477 355 Q 477 404 448 408 L 429 408 Q 418 408 407 420 L 370 461 Q 366 475 350 478" fill="none" stroke="#000a10" stroke-width="3"/>
+</g>
+<g id="hud">
+  <path d="M 282.16 59.83 A 188 188 0 0 1 393.49 117.78" fill="none" stroke="#145b71" stroke-width="5"/><path d="M 402.10 127.69 A 188 188 0 0 1 442.17 219.84" fill="none" stroke="#0b4054" stroke-width="5"/><path d="M 442.17 272.16 A 188 188 0 0 1 384.22 383.49" fill="none" stroke="#145b71" stroke-width="5"/><path d="M 374.31 392.10 A 188 188 0 0 1 282.16 432.17" fill="none" stroke="#0b4054" stroke-width="5"/><path d="M 229.84 432.17 A 188 188 0 0 1 118.51 374.22" fill="none" stroke="#145b71" stroke-width="5"/><path d="M 109.90 364.31 A 188 188 0 0 1 69.83 272.16" fill="none" stroke="#0b4054" stroke-width="5"/><path d="M 69.83 219.84 A 188 188 0 0 1 127.78 108.51" fill="none" stroke="#145b71" stroke-width="5"/><path d="M 137.69 99.90 A 188 188 0 0 1 229.84 59.83" fill="none" stroke="#0b4054" stroke-width="5"/>
+  <circle cx="256" cy="246" r="164" fill="none" stroke="#00bdd5" stroke-width="1.6" stroke-dasharray="1.2 7.2" stroke-linecap="round" opacity=".82"/>
+  <path d="M 412.83 198.05 A 164 164 0 0 1 413.65 291.20 M 99.17 293.95 A 164 164 0 0 1 99.17 198.05" fill="none" stroke="#00e8f3" stroke-width="1.3"/>
+  <g stroke="#00f1ff" stroke-linecap="round" stroke-width="2.3">
+    <path d="M 256 43 V 66 M 256 398 V 429 M 57 246 H 78 M 434 246 H 455"/>
+    <path d="M 133 135 L 140 127 M 372 127 L 379 135"/>
+  </g>
+</g>
+<g id="reactor">
+  <circle cx="256" cy="246" r="148" fill="none" stroke="#00d5eb" stroke-width="4" filter="url(#glow)" opacity=".4"/>
+  
+    <path d="M 268.64 101.55 A 145 145 0 0 1 400.45 233.36 L 356.62 237.20 A 101 101 0 0 0 264.80 145.38 Z" transform="translate(0 6)" fill="#002e44" stroke="#026b86" stroke-width="1.6"/>
+    <path d="M 268.64 101.55 A 145 145 0 0 1 400.45 233.36 L 356.62 237.20 A 101 101 0 0 0 264.80 145.38 Z" fill="url(#segment)" stroke="#b6ffff" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M 270.01 112.73 A 134 134 0 0 1 389.27 231.99 L 368.38 234.19 A 113 113 0 0 0 267.81 133.62 Z" fill="#00dbe7" opacity=".28"/>
+    <path d="M 271.05 102.79 A 144 144 0 0 1 399.21 230.95" fill="none" stroke="#e1ffff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 266.66 144.56 A 102 102 0 0 1 357.44 235.34" fill="none" stroke="#00faff" stroke-width="1.5" opacity=".9"/>
+
+    <path d="M 400.45 258.64 A 145 145 0 0 1 268.64 390.45 L 264.80 346.62 A 101 101 0 0 0 356.62 254.80 Z" transform="translate(0 6)" fill="#002e44" stroke="#026b86" stroke-width="1.6"/>
+    <path d="M 400.45 258.64 A 145 145 0 0 1 268.64 390.45 L 264.80 346.62 A 101 101 0 0 0 356.62 254.80 Z" fill="url(#segment)" stroke="#b6ffff" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M 389.27 260.01 A 134 134 0 0 1 270.01 379.27 L 267.81 358.38 A 113 113 0 0 0 368.38 257.81 Z" fill="#00dbe7" opacity=".28"/>
+    <path d="M 399.21 261.05 A 144 144 0 0 1 271.05 389.21" fill="none" stroke="#e1ffff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 357.44 256.66 A 102 102 0 0 1 266.66 347.44" fill="none" stroke="#00faff" stroke-width="1.5" opacity=".9"/>
+
+    <path d="M 243.36 390.45 A 145 145 0 0 1 111.55 258.64 L 155.38 254.80 A 101 101 0 0 0 247.20 346.62 Z" transform="translate(0 6)" fill="#002e44" stroke="#026b86" stroke-width="1.6"/>
+    <path d="M 243.36 390.45 A 145 145 0 0 1 111.55 258.64 L 155.38 254.80 A 101 101 0 0 0 247.20 346.62 Z" fill="url(#segment)" stroke="#b6ffff" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M 241.99 379.27 A 134 134 0 0 1 122.73 260.01 L 143.62 257.81 A 113 113 0 0 0 244.19 358.38 Z" fill="#00dbe7" opacity=".28"/>
+    <path d="M 240.95 389.21 A 144 144 0 0 1 112.79 261.05" fill="none" stroke="#e1ffff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 245.34 347.44 A 102 102 0 0 1 154.56 256.66" fill="none" stroke="#00faff" stroke-width="1.5" opacity=".9"/>
+
+    <path d="M 111.55 233.36 A 145 145 0 0 1 243.36 101.55 L 247.20 145.38 A 101 101 0 0 0 155.38 237.20 Z" transform="translate(0 6)" fill="#002e44" stroke="#026b86" stroke-width="1.6"/>
+    <path d="M 111.55 233.36 A 145 145 0 0 1 243.36 101.55 L 247.20 145.38 A 101 101 0 0 0 155.38 237.20 Z" fill="url(#segment)" stroke="#b6ffff" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M 122.73 231.99 A 134 134 0 0 1 241.99 112.73 L 244.19 133.62 A 113 113 0 0 0 143.62 234.19 Z" fill="#00dbe7" opacity=".28"/>
+    <path d="M 112.79 230.95 A 144 144 0 0 1 240.95 102.79" fill="none" stroke="#e1ffff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 154.56 235.34 A 102 102 0 0 1 245.34 144.56" fill="none" stroke="#00faff" stroke-width="1.5" opacity=".9"/>
+
+  <circle cx="256" cy="246" r="80" fill="url(#ring)" stroke="#2dbcd7" stroke-width=".9"/>
+  <circle cx="256" cy="246" r="72" fill="#05273c" stroke="#00b9d0" stroke-width=".75"/>
+  <circle cx="256" cy="246" r="64" fill="url(#core)" stroke="#04617f" stroke-width=".85"/>
+  <path d="M 318.39 254.77 A 63 63 0 0 1 194.16 258.02" fill="none" stroke="#22f8ff" stroke-width="1.4"/>
+</g>
+<g id="status-nodes">
+  <circle cx="256" cy="80" r="12" fill="#00ddea" opacity=".55" filter="url(#glow)"/><circle cx="256" cy="80" r="11" fill="#073147" stroke="#1683a3" stroke-width="2"/><circle cx="256" cy="80" r="7.3" fill="url(#node)"/>
+  <circle cx="114" cy="330" r="12" fill="#00ddea" opacity=".55" filter="url(#glow)"/><circle cx="114" cy="330" r="11" fill="#073147" stroke="#1683a3" stroke-width="2"/><circle cx="114" cy="330" r="7.3" fill="url(#node)"/>
+  <circle cx="398" cy="330" r="12" fill="#00ddea" opacity=".55" filter="url(#glow)"/><circle cx="398" cy="330" r="11" fill="#073147" stroke="#1683a3" stroke-width="2"/><circle cx="398" cy="330" r="7.3" fill="url(#node)"/>
+</g>
+</svg>

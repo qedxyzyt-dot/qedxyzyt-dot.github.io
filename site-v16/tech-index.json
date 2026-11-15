@@ -1,0 +1,247 @@
+{
+  "title": "Mapa técnico do portfólio de engenharia — linguagem versus stack",
+  "referenceDate": "2026-11-14",
+  "basePath": "https://github.com/qedxyzyt-dot",
+  "notes": [],
+  "projects": [
+    {
+      "slug": "jarvis",
+      "name": "Jarvis + Astra",
+      "languages": [
+        "C#",
+        "JavaScript"
+      ],
+      "tools": [
+        "MCP",
+        "DevSpace",
+        "orquestração de ferramentas",
+        "Control Center"
+      ],
+      "evidence": "Componentes locais verificáveis no ASUS: interfaces do Control Center em C# e helpers DevSpace em JavaScript. Linguagens do runtime hospedado dos agentes não reivindicadas",
+      "caseUrl": "./cases/?project=jarvis"
+    },
+    {
+      "slug": "lost-time",
+      "name": "Lost Time",
+      "languages": [
+        "Kotlin",
+        "C#"
+      ],
+      "tools": [
+        "Jetpack Compose",
+        "Room",
+        ".NET",
+        "HTTP local"
+      ],
+      "evidence": "Código e app Android",
+      "caseUrl": "./cases/?project=lost-time"
+    },
+    {
+      "slug": "select-anywhere",
+      "name": "Select Anywhere",
+      "languages": [
+        "Kotlin"
+      ],
+      "tools": [
+        "Accessibility API",
+        "ML Kit",
+        "OCR"
+      ],
+      "evidence": "159 fontes .kt no app Android Galaxy; README confirma Kotlin e Jetpack Compose",
+      "caseUrl": "./cases/?project=select-anywhere"
+    },
+    {
+      "slug": "voice2text",
+      "name": "Voice2Text",
+      "languages": [
+        "C#"
+      ],
+      "tools": [
+        ".NET",
+        "WPF",
+        "Whisper",
+        "WASAPI"
+      ],
+      "evidence": "Fontes Windows",
+      "caseUrl": "./cases/?project=voice2text"
+    },
+    {
+      "slug": "tcc",
+      "name": "Voice Control / TCC",
+      "languages": [
+        "Python"
+      ],
+      "tools": [
+        "DSP",
+        "RNNoise",
+        "DPDFNet2 (CEVA)",
+        "ONNX"
+      ],
+      "evidence": "Pipeline de áudio no ASUS: virtual_mic_ui.py, windows_realtime.py, rnnoise_processor.py",
+      "caseUrl": "./cases/?project=tcc"
+    },
+    {
+      "slug": "crm",
+      "name": "CRM Serverless",
+      "languages": [
+        "JavaScript",
+        "Python"
+      ],
+      "tools": [
+        "React",
+        "AWS CDK",
+        "Lambda",
+        "DynamoDB",
+        "Meta API"
+      ],
+      "evidence": "Frontend React/JSX, backend Python e AWS CDK em Python (iac/app.py e stack_constructs/*.py) inspecionados",
+      "caseUrl": "./cases/?project=crm"
+    },
+    {
+      "slug": "omniclip",
+      "name": "OmniClip",
+      "languages": [
+        "TypeScript",
+        "Rust"
+      ],
+      "tools": [
+        "React",
+        "Tauri",
+        "comunicação entre dispositivos"
+      ],
+      "evidence": "Arquivos TypeScript/TSX e Rust em src/ e src-tauri/ do Galaxy",
+      "caseUrl": "./cases/?project=omniclip"
+    },
+    {
+      "slug": "transcrever",
+      "name": "Transcrever",
+      "languages": [
+        "C#",
+        "Python"
+      ],
+      "tools": [
+        "FFmpeg",
+        "Whisper",
+        "pipelines de revisão"
+      ],
+      "evidence": "Programa C# verificado; Python limitado a scripts locais de QA/exportação em transcrever-quality/artifacts/review/qa",
+      "caseUrl": "./cases/?project=transcrever"
+    },
+    {
+      "slug": "clickfx",
+      "name": "ClickFX / Cursor FX",
+      "languages": [
+        "C#"
+      ],
+      "tools": [
+        ".NET",
+        "Windows desktop",
+        "mouse hooks"
+      ],
+      "evidence": "Arquivo .csproj e fontes C# inspecionados",
+      "caseUrl": "./cases/?project=clickfx"
+    },
+    {
+      "slug": "xournal-plus-plus",
+      "name": "Xournal++ Realism Fork",
+      "languages": [
+        "C++",
+        "C# (companion)"
+      ],
+      "tools": [
+        "GTK",
+        "Cairo",
+        "Wacom",
+        ".NET 8 (companion)"
+      ],
+      "evidence": "Código C++ no fork Xournal++ 1.3.8; Program.cs no protótipo auxiliar Wacom, separado do fork",
+      "caseUrl": "./cases/?project=xournal-plus-plus"
+    },
+    {
+      "slug": "better-notifications",
+      "name": "Better Notifications",
+      "languages": [
+        "Kotlin"
+      ],
+      "tools": [
+        "Android",
+        "overlays",
+        "notificações"
+      ],
+      "evidence": "48 arquivos .kt no app Android Galaxy e README técnico confirmado",
+      "caseUrl": "./cases/?project=better-notifications"
+    },
+    {
+      "slug": "easy-sign",
+      "name": "Easy Sign",
+      "languages": [
+        "Java"
+      ],
+      "tools": [
+        "Android Keystore",
+        "PDF",
+        "assinatura"
+      ],
+      "evidence": "29 arquivos .java no código Android Galaxy; nenhum .kt encontrado no source principal",
+      "caseUrl": "./cases/?project=easy-sign"
+    },
+    {
+      "slug": "cash-map",
+      "name": "Cash Map",
+      "languages": [
+        "Dart"
+      ],
+      "tools": [
+        "Flutter",
+        "Android",
+        "visualização financeira"
+      ],
+      "evidence": "Build Android Flutter localizado no Galaxy em cashflow_heatmap/build/app/intermediates/flutter/release/flutter_assets; Dart inferido da toolchain Flutter. Fontes de aplicação ainda não localizadas para inspeção",
+      "caseUrl": "./cases/?project=cash-map"
+    },
+    {
+      "slug": "fuvest",
+      "name": "Notas de Corte FUVEST",
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Python"
+      ],
+      "tools": [
+        "GitHub Pages",
+        "dados públicos FUVEST",
+        "visualização de séries históricas"
+      ],
+      "evidence": "Dois repositórios publicados e verificados: interface HTML/JS/CSS; scripts Python de extração no projeto de transferência externa. Histórico vestibular 2000–2026, transferência 2019–2027 (edições disponíveis).",
+      "caseUrl": "./cases/?project=fuvest"
+    },
+    {
+      "slug": "qed",
+      "name": "Canal QED",
+      "category": "audiovisual",
+      "languages": [],
+      "tools": [
+        "YouTube",
+        "LaTeX",
+        "produção audiovisual"
+      ],
+      "evidence": "Não é aplicação de software",
+      "caseUrl": "./cases/?project=qed"
+    },
+    {
+      "slug": "iee",
+      "name": "IEE-USP",
+      "languages": [
+        "MATLAB"
+      ],
+      "tools": [
+        "Simulink",
+        "modelagem",
+        "análise de sensibilidade"
+      ],
+      "evidence": "Documentação de iniciação científica",
+      "caseUrl": "./cases/?project=iee"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+/* Lost Time V12 — Pixel 9 Pro reference composited around real application screenshots. */
+.losttime-v12-frame{background:#19161e!important;border-color:#594b57!important;color:#f8f0f6;overflow:hidden}
+.ltv12{padding:clamp(24px,3.9vw,56px);background:linear-gradient(118deg,#19151e,#2a1d2d);display:grid;gap:25px}
+.ltv12-head{display:flex;justify-content:space-between;align-items:end;gap:25px}
+.ltv12-head>div:first-child{max-width:550px}
+.ltv12-head small{font:750 11px/1.65 ui-monospace,Consolas,monospace;letter-spacing:.12em;color:#f1b4ca}
+.ltv12-head h2{font:750 clamp(39px,5vw,66px)/1.04 Bahnschrift,"Segoe UI",sans-serif;letter-spacing:-.072em;margin:12px 0 20px}
+.ltv12-head h2 em{font:italic 400 .93em Georgia,serif;color:#edb0cd}
+.ltv12-head p{font-size:clamp(13px,1.12vw,16px);line-height:1.6;color:#ded2dd;margin:0}
+.ltv12-head .ltv12-caption{font-size:12px;color:#b8a4b4;margin-top:11px}
+.ltv12-modes{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.ltv12-modes button{appearance:none;border:1px solid #806776;background:#362935;color:#ebe2e9;
+ padding:11px 15px;border-radius:50px;font:750 12px/1.2 "Segoe UI",sans-serif;cursor:pointer;white-space:nowrap}
+.ltv12-modes button[aria-pressed="true"]{background:#f1e3eb;color:#211822;border-color:#f1e3eb}
+.ltv12-modes button:hover{border-color:#edd4e2}
+.ltv12-modes button:focus-visible,.ltv12-panel a:focus-visible{outline:3px solid #ebb0cd;outline-offset:5px}
+.ltv12-panel[hidden]{display:none!important}
+.ltv12-pixel-gallery,.ltv12-play-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:clamp(9px,1.4vw,24px)}
+.ltv12-device,.ltv12-play-figure{min-width:0;margin:0}
+.ltv12-device a{display:block;min-width:0;border-radius:13px;overflow:hidden;border:1px solid #534756;
+box-shadow:0 18px 37px rgba(4,3,8,.22)}
+.ltv12-device-image{display:block;aspect-ratio:460 / 850;width:100%;
+background-image:url("../assets/evidence/lost-time-pixel9-triptych-v12.svg");background-size:300% 100%;
+background-repeat:no-repeat}
+.ltv12-device-image--0{background-position:0% 50%}
+.ltv12-device-image--1{background-position:50% 50%}
+.ltv12-device-image--2{background-position:100% 50%}
+.ltv12-device figcaption,.ltv12-play-figure figcaption{display:flex;justify-content:center;gap:8px;margin-top:10px;align-items:center}
+.ltv12-device figcaption span,.ltv12-play-figure figcaption span{font:750 10px ui-monospace,Consolas,monospace;color:#efb8d2}
+.ltv12-device figcaption strong,.ltv12-play-figure figcaption strong{font:750 12px/1.4 "Segoe UI",sans-serif;color:#f3e7ed}
+.ltv12-play-figure>a{display:block;overflow:hidden;border:1px solid #544759;border-radius:11px;background:#090a12;line-height:0}
+.ltv12-play-figure>a img{display:block;width:100%;height:auto;aspect-ratio:9 / 16;object-fit:contain}
+.losttime-v12-frame>figcaption{padding:16px 26px!important;border-color:#423946!important;
+background:#1a1720;color:#beb0bd!important;line-height:1.6;font-size:12px}
+@media(max-width:1030px){.ltv12-head{align-items:start;flex-direction:column}.ltv12-modes{justify-content:flex-start}}
+@media(max-width:640px){
+ .ltv12{padding:22px 0;gap:14px}
+ .ltv12-head{padding:0 18px}
+ .ltv12-head h2{font-size:clamp(39px,10vw,56px)}
+ .ltv12-modes{gap:8px}
+ .ltv12-modes button{font-size:11px;padding:10px 12px}
+ .ltv12-pixel-gallery,.ltv12-play-gallery{display:flex;align-items:start;gap:14px;
+  padding:13px max(18px,calc((100vw - 290px)/2)) 22px;overflow-x:auto;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#8d7282 #30222f}
+ .ltv12-device,.ltv12-play-figure{flex:0 0 min(74vw,290px);scroll-snap-align:center}
+ .ltv12-device figcaption strong,.ltv12-play-figure figcaption strong{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.ltv12-modes button{transition:none}}

@@ -1,0 +1,287 @@
+/* Case personalities v1. Every family keeps the editorial shell but gets a
+   different art direction, visual hierarchy and evidence type. No fake metrics,
+   no stock photos and no colored glow underneath banners. */
+.cosmos-grain{background:#101014!important}
+.atelier-beams{display:none!important}
+.feature-crm .feature-canvas,.feature-astra .feature-canvas,.feature-voice .feature-canvas{
+ background:#17171c!important;
+}
+.feature-astra .feature-canvas{background:#081923!important}
+.feature-voice .feature-canvas{background:#e7e3dd!important}
+.feature-android .feature-canvas{background:#1f1a22!important}
+.project .project-portrait{background:#242329!important}
+.project .project-portrait::before,.project .project-portrait::after{display:none!important}
+.project .portrait-ghost{display:none!important}
+.case-hero-ambient{display:none!important}
+.case-artframe{box-shadow:none!important}
+.case-special::before{display:none!important}
+.feature-case::before,.project::after{display:none!important}
+.feature-case:hover,.project:hover{box-shadow:0 14px 32px rgba(19,19,24,.055)}
+.feature-astra .feature-mock-window{color:#d7fcff;border-color:#184959}
+.feature-astra .feature-mock-window strong{color:#e0fbff}
+.feature-astra .feature-canvas .feature-brand-icon{background:#062834;border:1px solid #1e6472}
+.case-body .case-hero{background:#17171c}
+.case-body .case-artframe{background:#191920}
+.case-body .case-art{background:#191920}
+.case-body .case-artframe-label{font-size:10px;color:#c9c5cd}
+.case-body .case-artframe figcaption{color:#b8b5bc;line-height:1.65}
+.case-body .case-scroll-strip{background:#e8e4dc}
+.case-body .case-pillar{box-shadow:none}
+.case-body .case-language-fact{padding:17px 0;border-bottom:1px solid #45424b}
+.case-body .case-language-fact small{display:block;color:#bbb5bf;font:10px ui-monospace,Consolas,monospace;letter-spacing:.085em}
+.case-body .case-language-fact strong{display:block;margin:8px 0;color:#f0eee9;font-size:15px;font-weight:750}
+.case-body .case-language-fact a{color:#b9c8e6;text-underline-offset:5px;font-size:11px}
+.case-body .case-media-replaced{border-color:#494550}
+.case-body .case-media-replaced figcaption{padding:17px 23px;border-top:1px solid rgba(241,238,241,.18)}
+/* Recruiter-facing technology map: static semantic table + machine JSON source. */
+.tech-index-section{padding:125px 0 130px;background:#ece9e3;color:#23232a;border-top:1px solid #d9d6cf;border-bottom:1px solid #d4d0c9}
+.tech-index-lead{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.6fr);gap:22px 80px;align-items:end;margin-bottom:40px}
+.tech-index-lead .eyebrow{grid-column:1/-1;margin:0;color:#686570}
+.tech-index-lead h2{font-family:var(--display);font-size:clamp(46px,5.6vw,84px);letter-spacing:-.075em;line-height:1.03;margin:0}
+.tech-index-lead h2 em{font-family:Georgia,serif;font-weight:400;color:#77717b}
+.tech-index-lead>p:not(.eyebrow){color:#64636a;line-height:1.75;font-size:15px;margin:0}
+.tech-index-data-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;justify-self:start;border-bottom:1px solid #6e6973;padding-bottom:7px;color:#302e38;font-size:12px;font-weight:750;grid-column:2}
+.tech-index-data-link img{width:16px;height:16px}
+.tech-index-table-wrap{background:#fdfcf9;border:1px solid #d6d1ca;border-radius:10px;overflow:hidden}
+.tech-index-table{border-collapse:collapse;width:100%;table-layout:fixed;text-align:left}
+.tech-index-table caption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.tech-index-table thead{background:#242329;color:#f8f5ee}
+.tech-index-table thead th{font:750 10px ui-monospace,Consolas,monospace;letter-spacing:.08em;text-transform:uppercase;padding:18px 17px}
+.tech-index-table thead th:nth-child(1){width:21%}
+.tech-index-table thead th:nth-child(2){width:17%}
+.tech-index-table thead th:nth-child(3){width:33%}
+.tech-index-table thead th:nth-child(4){width:29%}
+.tech-index-table tbody tr{border-bottom:1px solid #e3dfd9;transition:background .18s}
+.tech-index-table tbody tr:last-child{border-bottom:0}
+.tech-index-table tbody tr:hover{background:#f3f1ec}
+.tech-index-table tbody th,.tech-index-table tbody td{padding:17px;vertical-align:top;font-size:12px;line-height:1.6;color:#52505a;overflow-wrap:anywhere}
+.tech-index-table tbody th{font-size:13px;font-weight:750;color:#28272d}
+.tech-index-table tbody th a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.tech-index-table tbody th a:hover{border-color:#76717d}
+.tech-index-table td:nth-child(2){font-weight:750;color:#25242a}
+.tech-unconfirmed{font-style:italic;color:#77727e}
+.tech-index-foot{font-size:11px;line-height:1.7;color:#6c6872;margin:19px 0 0}
+.tech-index-foot a{color:#33313a}
+/* VideoCase: gallery, real YouTube media, no invented engagement metrics. */
+html[data-project="qed"] .case-hero{background:#211b1d}
+html[data-project="qed"] .case-hero h1{font-family:Georgia,serif;font-style:italic;font-weight:450;letter-spacing:-.06em}
+html[data-project="qed"] .case-artframe{border-color:#65555d;background:#1b1518}
+html[data-project="qed"] .case-proof{background:#2b2428}
+html[data-project="qed"] .case-architecture{background:#eee9e2}
+html[data-project="qed"] .case-architecture .case-process li{background:#fcfaf6}
+.qed-screening{padding:37px;background:#1c171a;color:#f4eee8}
+.qed-screening-lead{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr);gap:11px 40px;align-items:center;padding-bottom:34px;border-bottom:1px solid #625760}
+.qed-screening-lead>span{grid-column:1/-1;color:#c9b6be;font:750 10px ui-monospace,Consolas,monospace;letter-spacing:.13em}
+.qed-screening-lead strong{font:italic 400 clamp(26px,3.2vw,48px)/1.13 Georgia,serif;letter-spacing:-.035em}
+.qed-screening-lead p{line-height:1.7;font-size:14px;color:#c9b9c2}
+.qed-screening-lead>a{grid-column:2;color:#eee4e7;font-size:12px;justify-self:start;text-underline-offset:6px}
+.qed-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-top:30px}
+.qed-episode{min-width:0;border:1px solid #564952;border-radius:7px;overflow:hidden;background:#281f24}
+.qed-episode>a{color:inherit;text-decoration:none;display:block}
+.qed-poster{position:relative;aspect-ratio:16/11;overflow:hidden;background:#392d35;isolation:isolate}
+.qed-poster::before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(160deg,transparent 0 30px,rgba(255,255,255,.02) 30px 31px)}
+.qed-symbol{font:italic 400 55px Georgia,serif;opacity:.16;position:absolute;inset:0;display:grid;place-items:center}
+.qed-poster img{display:block;width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.qed-poster img.is-unavailable{display:none}
+.qed-play{position:absolute;z-index:2;bottom:12px;right:12px;display:grid;place-items:center;background:#f4eee8;color:#2b252a;border-radius:50%;width:43px;height:43px;font-size:14px;transition:transform .18s}
+.qed-episode:hover .qed-play{transform:scale(1.08)}
+.qed-episode-body{padding:20px 19px 24px}
+.qed-episode-body small{display:block;color:#c8b1bd;font:10px ui-monospace,Consolas,monospace;line-height:1.6}
+.qed-episode-body h3{font-size:20px;line-height:1.28;letter-spacing:-.035em;margin:14px 0 19px}
+.qed-video-action{font-size:12px;color:#f8f0f5;text-decoration:underline;text-underline-offset:6px}
+/* ResearchCase: annotated technical identity, no restricted plots. */
+html[data-project="nero"] .case-hero{background:#131e29}
+html[data-project="iee"] .case-hero{background:#162133}
+html[data-project="tcc"] .case-hero{background:#101c20}
+html[data-project="nero"] .case-proof,html[data-project="iee"] .case-proof{background:#14232d}
+.nero-research-scene{background:#111d28;padding:45px;display:grid;gap:36px}
+.nero-brandboard{display:grid;grid-template-columns:240px 1fr;gap:34px;align-items:center}
+.nero-mark{background:#f7f6f2;border-radius:12px;padding:16px;display:grid;place-items:center;min-height:245px}
+.nero-mark img{max-width:100%;height:auto;object-fit:contain}
+.nero-brandboard small{font:750 10px ui-monospace,Consolas,monospace;color:#9fc8ef;letter-spacing:.12em}
+.nero-brandboard h3{font-family:var(--display);font-size:clamp(34px,4.2vw,63px);letter-spacing:-.064em;margin:14px 0}
+.nero-brandboard p{line-height:1.7;color:#d0d9e0;font-size:14px;max-width:620px}
+.nero-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.nero-steps>div{border-top:1px solid #42637c;padding:18px 4px;display:grid;gap:8px}
+.nero-steps span{color:#81a5c5;font:700 11px ui-monospace,Consolas,monospace}
+.nero-steps strong{font-size:15px;color:#eef3f6}
+.nero-steps small{font-size:11px;color:#bdcbd8}
+.iee-paper-scene{padding:32px 40px 38px;background:#f2eee5;color:#262d3a}
+.iee-paper-top{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font:750 10px ui-monospace,Consolas,monospace;letter-spacing:.08em;color:#45617a;border-bottom:1px solid #c3c5c6;padding-bottom:24px}
+.iee-paper-top a{color:#425a75}
+.iee-paper-main{display:grid;grid-template-columns:230px 1fr;align-items:center;gap:35px;padding:42px 0 35px}
+.iee-paper-crest{font-family:Georgia,serif;font-size:72px;font-weight:700;letter-spacing:-.08em;color:#345777}
+.iee-paper-crest span{font-family:var(--display);font-size:23px;letter-spacing:-.02em;color:#d38b35}
+.iee-paper-main small{display:block;color:#6a6b75;font:750 10px ui-monospace,Consolas,monospace}
+.iee-paper-main h3{font-family:Georgia,serif;font-size:clamp(30px,3.1vw,47px);font-weight:450;line-height:1.15;margin:16px 0;color:#283444}
+.iee-paper-main p{font-size:13px;line-height:1.75;color:#566270}
+.iee-paper-strip{display:flex;gap:10px 26px;flex-wrap:wrap;border-top:1px solid #c6c3be;padding-top:20px;color:#566374;font-size:11px;font-weight:700}
+/* FinanceCase: project-found identity without fictional bank transactions. */
+html[data-project="cash-map"] .case-hero{background:#17241e}
+html[data-project="cash-map"] .case-artframe{border-color:#576d55}
+.cash-product-scene{padding:50px;background:#15251b;color:#f5f5ec}
+.cash-product-identity{display:grid;grid-template-columns:180px minmax(0,1fr);gap:35px;align-items:center}
+.cash-product-identity img{max-width:100%;height:auto;object-fit:contain}
+.cash-product-identity span{font:750 10px ui-monospace,Consolas,monospace;letter-spacing:.16em;color:#c5d8b9}
+.cash-product-identity h3{font-family:var(--display);letter-spacing:-.06em;font-size:clamp(34px,4.2vw,62px);line-height:1.06;margin:13px 0}
+.cash-product-identity p{color:#bdcebf;font-size:14px;line-height:1.75;max-width:640px}
+.cash-evidence-trail{display:flex;gap:12px;flex-wrap:wrap;margin-top:44px}
+.cash-evidence-trail span{font:750 10px ui-monospace,Consolas,monospace;color:#cae3c6;border-top:1px solid #496849;padding:18px 0;flex:1;min-width:150px}
+/* AgentsCase uses authentic Jarvis cobalt/cyan, not generic green mock UI. */
+html[data-project="jarvis"] .case-hero{background:#071b25}
+html[data-project="jarvis"] .case-proof{background:#0b2530}
+html[data-project="jarvis"] .case-artframe{border-color:#2d5963}
+.agents-project-scene{background:#071d28;color:#f1fafe;padding:40px 45px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;align-items:center}
+.agents-symbol{text-align:center;border-right:1px solid #1c5964;padding-right:25px}
+.agents-symbol img{display:block;max-width:150px;width:100%;height:auto;margin:0 auto 16px}
+.agents-symbol span{font:750 10px ui-monospace,Consolas,monospace;color:#8edee9}
+.agents-path{display:grid;grid-template-columns:1fr 14px 1fr;gap:8px;align-items:stretch}
+.agents-path article{background:#0e2c39;border:1px solid #295666;border-radius:7px;padding:22px}
+.agents-path article small{font:750 10px ui-monospace,Consolas,monospace;color:#90e5e9}
+.agents-path article h3{font-size:24px;letter-spacing:-.06em;margin:13px 0}
+.agents-path article p{font-size:12px;color:#b6d2da;line-height:1.7}
+.agents-connector{width:100%;align-self:center;height:1px;background:#5bc2cb}
+.agents-control-line{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;border-top:1px solid #25515b;padding-top:21px}
+.agents-control-line span{color:#a3cbd3;font:11px ui-monospace,Consolas,monospace}
+/* The remaining 12 projects have their own editorial rhythm, without fake screenshots. */
+html[data-project="voice2text"] .case-hero{background:#24232f}
+html[data-project="lost-time"] .case-hero{background:#231a20}
+html[data-project="select-anywhere"] .case-hero{background:#1a2237}
+html[data-project="omniclip"] .case-hero{background:#131e25}
+html[data-project="clickfx"] .case-hero{background:#1b1c30}
+html[data-project="transcrever"] .case-hero{background:#201c29}
+html[data-project="better-notifications"] .case-hero{background:#142238}
+html[data-project="easy-sign"] .case-hero{background:#222224}
+html[data-project="circuitos"] .case-hero{background:#182831}
+html[data-project="xournal-plus-plus"] .case-hero{background:#201d25}
+html[data-project="voice2text"] .case-artframe,
+html[data-project="select-anywhere"] .case-artframe,
+html[data-project="lost-time"] .case-artframe{border-radius:18px}
+html[data-project="circuitos"] .case-architecture{background:#e5eceb}
+html[data-project="xournal-plus-plus"] .case-architecture{background:#eae8e2}
+html[data-project="voice2text"] .case-proof{background:#252334}
+html[data-project="lost-time"] .case-proof{background:#2e2025}
+html[data-project="select-anywhere"] .case-proof{background:#1c2740}
+html[data-project="omniclip"] .case-proof{background:#182b37}
+html[data-project="clickfx"] .case-proof{background:#232338}
+html[data-project="transcrever"] .case-proof{background:#29232c}
+html[data-project="better-notifications"] .case-proof{background:#1f2d46}
+html[data-project="easy-sign"] .case-proof{background:#24242a}
+html[data-project="circuitos"] .case-proof{background:#1d363e}
+@media(max-width:900px){
+ .tech-index-lead{grid-template-columns:1fr;gap:15px}
+ .tech-index-lead .eyebrow{grid-column:auto}
+ .tech-index-data-link{grid-column:auto}
+ .tech-index-table thead th:nth-child(4){width:25%}
+ .qed-screening{padding:25px}
+ .nero-brandboard{grid-template-columns:170px 1fr}
+ .nero-mark{min-height:190px}
+ .iee-paper-main{grid-template-columns:180px 1fr}
+}
+@media(max-width:720px){
+ .tech-index-section{padding:82px 0}
+ .tech-index-table-wrap{background:transparent;border:0;overflow:visible}
+ .tech-index-table,.tech-index-table tbody{display:block}
+ .tech-index-table thead{display:none}
+ .tech-index-table tbody tr{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px;padding:19px;border:1px solid #d7d3cd;border-radius:8px;background:#fdfcf9}
+ .tech-index-table tbody th,.tech-index-table tbody td{padding:0;display:block;font-size:12px}
+ .tech-index-table tbody th{font-size:16px;margin-bottom:4px}
+ .tech-index-table tbody td::before{content:attr(data-label) " — ";color:#88848c;font:750 10px ui-monospace,Consolas,monospace}
+ .qed-screening-lead{grid-template-columns:1fr}
+ .qed-screening-lead>span{grid-column:1}
+ .qed-screening-lead>a{grid-column:1}
+ .qed-episodes{grid-template-columns:1fr}
+ .qed-poster{aspect-ratio:16/9}
+ .nero-research-scene,.cash-product-scene{padding:25px}
+ .nero-brandboard,.cash-product-identity{grid-template-columns:1fr}
+ .nero-mark{width:160px;min-height:160px;padding:7px}
+ .nero-mark img{max-width:100%}
+ .nero-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .iee-paper-main{grid-template-columns:1fr;padding:28px 0}
+ .iee-paper-crest{font-size:57px}
+ .iee-paper-scene{padding:25px}
+ .agents-project-scene{grid-template-columns:1fr;padding:25px}
+ .agents-symbol{display:flex;align-items:center;gap:16px;padding:0;border:0;border-bottom:1px solid #23515e;padding-bottom:17px}
+ .agents-symbol img{width:72px;margin:0}
+ .agents-path{grid-template-columns:1fr}
+ .agents-connector{height:12px;width:1px;justify-self:center}
+ .cash-evidence-trail{margin-top:21px}
+}
+@media(prefers-reduced-motion:reduce){
+ .qed-play{transition:none}
+}
+
+/* The orbit updates its transform per frame: CSS transform easing would add lag
+   and visibly drift after the keyboard stop control has been activated. */
+.cosmos-node{transition:filter .2s ease!important}
+.cosmos-projects.orbit-running .cosmos-node{will-change:transform}
+@media(prefers-reduced-motion:reduce){.cosmos-projects .cosmos-node{will-change:auto}}
+
+
+/* One consistent navigation pattern across the homepage and all case studies. */
+.case-header{isolation:isolate}
+.case-nav .nav-menu-toggle{display:none}
+@media(max-width:1000px){
+ .case-nav{gap:10px;min-height:72px}
+ .case-nav>div{margin-left:auto;gap:8px}
+ .case-nav>div a:not(.case-nav-cta){display:none}
+ .case-nav .nav-menu-toggle{display:grid;min-width:44px;height:44px}
+ .case-nav-cta{min-height:44px;display:inline-flex;align-items:center;border-radius:6px;padding:9px 13px}
+ .case-header>.mobile-nav{display:grid}
+}
+@media(max-width:530px){
+ .case-nav{min-height:67px}
+ .case-nav .case-brand strong{display:none}
+ .case-nav .case-nav-cta{padding-inline:12px}
+}
+
+
+/* Three real Android app galleries — source is the project's Play Store creative set,
+   not an interaction recording made within this portfolio. */
+.case-product-gallery{padding:35px 36px 38px;display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:30px;align-items:center;min-height:475px}
+.case-product-gallery-heading{min-width:0}
+.case-product-gallery-heading small{display:block;font:750 10px ui-monospace,Consolas,monospace;letter-spacing:.11em;line-height:1.7}
+.case-product-gallery-heading h3{font-family:var(--display);font-size:clamp(38px,4vw,67px);font-weight:720;letter-spacing:-.069em;line-height:1.03;margin:24px 0}
+.case-product-gallery-heading p{font-size:14px;line-height:1.8;max-width:470px}
+.case-product-gallery-shots{display:flex;justify-content:center;align-items:end;gap:12px;min-width:0}
+.case-product-shot{margin:0;min-width:0;flex:0 1 31%;max-width:225px}
+.case-product-shot img{width:100%;height:auto;max-height:420px;object-fit:contain;aspect-ratio:432/960;border-radius:9px;display:block;border:1px solid rgba(255,255,255,.2);box-shadow:0 9px 22px rgba(0,0,0,.18)}
+.case-product-shot figcaption{font:750 10px ui-monospace,Consolas,monospace;letter-spacing:.055em;text-align:center;margin-top:12px;line-height:1.7}
+html[data-project="select-anywhere"] .case-product-gallery{background:#111a35;color:#f7f9ff}
+html[data-project="select-anywhere"] .case-product-gallery-heading small,html[data-project="select-anywhere"] .case-product-shot figcaption{color:#b5c3f8}
+html[data-project="select-anywhere"] .case-product-gallery-heading p{color:#c1cbef}
+html[data-project="better-notifications"] .case-product-gallery{background:#0b172b;color:#f8faff}
+html[data-project="better-notifications"] .case-product-gallery-heading small,html[data-project="better-notifications"] .case-product-shot figcaption{color:#a7c9ff}
+html[data-project="better-notifications"] .case-product-gallery-heading p{color:#c4d1e8}
+html[data-project="easy-sign"] .case-product-gallery{background:#ece9e1;color:#292b31}
+html[data-project="easy-sign"] .case-product-gallery-heading small,html[data-project="easy-sign"] .case-product-shot figcaption{color:#59606c}
+html[data-project="easy-sign"] .case-product-gallery-heading p{color:#565962}
+html[data-project="easy-sign"] .case-product-shot img{border-color:#cbc9c3}
+html[data-project="easy-sign"] .case-media-replaced figcaption{background:#dedbd5;color:#49484f}
+@media(max-width:950px){
+ .case-product-gallery{grid-template-columns:1fr;gap:28px}
+ .case-product-gallery-heading{max-width:660px}
+ .case-product-gallery-shots{justify-content:center}
+ .case-product-shot{flex-basis:31%}
+}
+@media(max-width:560px){
+ .case-product-gallery{padding:24px 16px 31px}
+ .case-product-gallery-heading h3{font-size:clamp(32px,9vw,47px);margin:16px 0}
+ .case-product-gallery-shots{gap:5px}
+ .case-product-shot{flex-basis:32%}
+ .case-product-shot figcaption{font-size:8px;letter-spacing:0}
+}
+
+
+/* Replace atmospheric radial glows with quiet material surfaces. Individual case
+   identities now come from authentic media, typography and interaction. */
+.feature-crm .feature-canvas{background:#171c29!important}
+.feature-android .feature-canvas{background:#201a26!important}
+.case-art .scene-crm{background:#121d28}
+.case-art .scene-voice{background:#e5e2de}
+.case-art .scene-agents{background:#0b2430}
+.case-art .scene-mobile{background:#19273b}
+.case-art .scene-research{background:#18283a}
+.case-art .scene-ink{background:#22232e}
+.case-art .scene-audio{background:#152831}
+.case-art .scene-flow{background:#142631}

@@ -1,0 +1,28 @@
+/* V11 — semantic cards, objective first, no decorative asset-disclaimer banners. */
+.project .portrait-cover-label{display:none!important}
+.project>.project-objective{display:block!important;margin:3px 0 12px!important;
+ padding:11px 0 11px 13px;border-left:3px solid var(--project-color,#726e78);
+ color:#28272d!important;font-size:clamp(13px,1.12vw,15px)!important;line-height:1.5!important;font-weight:690}
+.project>.project-objective>span{display:block;font:750 9px/1.5 ui-monospace,Consolas,monospace;
+ letter-spacing:.13em;color:#807b83;margin-bottom:5px}
+.project>.project-objective+p:not(.project-evidence){font-size:12.5px!important;line-height:1.6!important;
+ margin:0 0 13px!important;color:#68666d!important;display:-webkit-box;-webkit-box-orient:vertical;
+ -webkit-line-clamp:4;overflow:hidden}
+.project .project-top{margin-bottom:18px}
+.project h3{margin-bottom:14px}
+.project .project-case-link{margin-top:16px}
+.project .tech{margin-top:7px}
+.demo-editorial p{max-width:690px;line-height:1.65}
+.project#iee .project-portrait{background:#fff9f2!important;border-color:#e0cbb7}
+.project#iee .portrait-logo{width:78px;height:78px;object-fit:contain}
+.project#iee .portrait-ghost{opacity:.12}
+.project#fuvest .project-portrait{background:#1b1e35!important}
+@media(max-width:730px){.project>.project-objective{font-size:14px!important}
+ .project>.project-objective+p:not(.project-evidence){-webkit-line-clamp:5}
+}
+/* The project catalog must be readable immediately, including full-page captures and keyboard navigation. */
+.motion-enabled .project[data-atelier-reveal],
+.motion-enabled .section-head[data-atelier-reveal]{opacity:1!important;transform:none!important;transition-delay:0ms!important}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .motion-enabled .project[data-atelier-reveal]:hover{transform:translateY(-5px)!important}
+}

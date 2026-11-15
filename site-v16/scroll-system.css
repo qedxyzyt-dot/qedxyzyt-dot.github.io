@@ -1,0 +1,43 @@
+/* Accessible authored scroll tracks. Native scrolling remains the source of truth;
+   custom thumbs are synchronized to real scroll offsets and keyboard/touch input.
+   With JS unavailable native browser scrollbar stays visible and functional. */
+.a11y-motion-opt-out {
+  position:fixed; z-index:500; top:-120px; left:10px;
+  padding:13px 19px; border-radius:6px; background:#fbfaf6;
+  border:2px solid #212129; color:#1c1c22; font:700 13px "Segoe UI",sans-serif;
+}
+.a11y-motion-opt-out:focus-visible {top:10px;outline:3px solid #8581c5;outline-offset:3px}
+html.scroll-enhanced {scrollbar-width:none}
+html.scroll-enhanced::-webkit-scrollbar{width:0;height:0}
+.site-scroll-track{
+ position:fixed; z-index:110; right:4px; top:85px; bottom:10px; width:10px;
+ border-radius:999px; background:rgba(28,27,33,.07);
+ touch-action:none; outline:none; cursor:default;
+}
+.site-scroll-thumb{
+ display:block;position:absolute;left:1px;right:1px;top:0;
+ min-height:42px;border-radius:999px;background:#8e8a93;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);
+ transition:background-color .18s ease;will-change:top;
+}
+.site-scroll-track:hover .site-scroll-thumb,.site-scroll-track:focus-visible .site-scroll-thumb,.site-scroll-track[data-dragging="true"] .site-scroll-thumb{background:#3b3942}
+.site-scroll-track:focus-visible{outline:2px solid #7e78a6;outline-offset:4px}
+.rail-scroll-track{
+ position:relative;display:none;align-items:center;margin:0 18px 17px;
+ height:15px;border-radius:3px;background:rgba(238,234,242,.065);
+ touch-action:none;outline:none;
+}
+.rail-scroll-thumb{
+ display:block;position:absolute;height:4px;top:5px;left:0;
+ border-radius:99px;background:#aaa6b3;box-shadow:0 0 0 1px rgba(0,0,0,.12);
+}
+.rail-scroll-track:focus-visible{outline:2px solid #ded9e1;outline-offset:2px}
+.rail-scroll-track:hover .rail-scroll-thumb,.rail-scroll-track[data-dragging="true"] .rail-scroll-thumb{background:#f6f2f8;height:5px}
+@media(max-width:850px){
+ .site-scroll-track{top:74px;right:2px;width:8px;background:rgba(28,27,33,.04)}
+ .site-scroll-thumb{left:1px;right:1px}
+ .cosmos-mobile-rail.rail-scroll-enhanced{scrollbar-width:none;padding-bottom:8px}
+ .cosmos-mobile-rail.rail-scroll-enhanced::-webkit-scrollbar{height:0;display:none}
+ .rail-scroll-track[data-active="true"]{display:block}
+}
+@media(prefers-reduced-motion:reduce){.site-scroll-thumb,.rail-scroll-thumb{transition:none}}

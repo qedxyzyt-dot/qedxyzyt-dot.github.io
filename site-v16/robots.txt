@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qedxyzyt-dot.github.io/sitemap.xml

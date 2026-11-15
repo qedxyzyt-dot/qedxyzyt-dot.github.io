@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 1254 1254">
+  <defs>
+    <radialGradient id="icon-bg" cx="43%" cy="35%" r="78%">
+      <stop offset="0%" stop-color="#202225"/>
+      <stop offset="54%" stop-color="#151719"/>
+      <stop offset="100%" stop-color="#090A0B"/>
+    </radialGradient>
+    <linearGradient id="speed" x1="230" y1="0" x2="475" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="58%" stop-color="#FFFFFF" stop-opacity="0.48"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1254" height="1254" fill="url(#icon-bg)"/>
+
+  <!-- Pencil -->
+  <path fill="#FFFFFF" d="M448,358 L437,353 L421,353 L380,372 L369,382 L363,395 L363,409 L365,416 L384,453 L477,408 L460,371 Z"/>
+  <path fill="#FFFFFF" d="M484,424 L393,468 L393,470 L531,742 L621,697 Z"/>
+  <path fill="#FFFFFF" d="M625,715 L543,756 L597,794 L624,781 Z"/>
+
+  <!-- Motion / speed -->
+  <path fill="url(#speed)" d="M241,531 L251,532 L247,533 L249,538 L248,541 L252,544 L243,545 L383,546 L388,541 L388,535 L383,530 Z"/>
+  <path fill="url(#speed)" d="M243,613 L252,614 L247,619 L249,620 L247,621 L250,624 L247,627 L249,628 L423,628 L429,622 L428,616 L423,612 Z"/>
+  <path fill="url(#speed)" d="M296,696 L305,697 L301,708 L305,709 L296,710 L466,711 L471,705 L471,700 L466,695 Z"/>
+
+  <!-- Open flowing signature: stroke only, never filled -->
+  <path fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+        d="M395,893 C452,862 518,850 584,838 C600,832 612,817 621,807 C640,807 666,812 692,804 C674,784 671,752 682,716 C697,665 729,611 768,580 C802,553 833,545 851,559 C871,575 872,606 857,640 C836,688 798,739 756,775 C729,798 707,808 692,804 C715,822 744,825 776,815 C814,803 851,775 884,750 C905,734 923,724 934,726 C944,728 946,738 941,751 C934,770 936,785 947,795 C960,807 982,810 1008,804 C1040,797 1073,781 1102,762"/>
+  <path fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"
+        d="M611,788 L621,807"/>
+</svg>

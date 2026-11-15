@@ -1,0 +1,27 @@
+/* V12: gallery of source-authenticated original Google Play promotional PNGs. */
+.playstore-v12-frame{border-color:#334251!important;overflow:hidden}
+.ps-v12{--ps-dark:#111c2b;--ps-light:#f3f7ff;--ps-accent:#86d6e5;display:grid;gap:25px;padding:clamp(21px,3.3vw,50px);background:var(--ps-dark);color:var(--ps-light)}
+.ps-better .ps-v12{--ps-dark:#102330;--ps-accent:#8de2e3;background:linear-gradient(145deg,#0b1723,#15313a)}
+.ps-easy .ps-v12{--ps-dark:#242336;--ps-accent:#f9cf8e;background:linear-gradient(145deg,#242336,#312c38)}
+.ps-v12-head{max-width:850px}
+.ps-v12-head small,.ps-v12-source{font:750 11px/1.6 ui-monospace,Consolas,monospace;letter-spacing:.12em;color:var(--ps-accent)}
+.ps-v12-head h2{font:760 clamp(35px,4.8vw,65px)/1.05 Bahnschrift,"Segoe UI",sans-serif;letter-spacing:-.055em;margin:11px 0 15px;max-width:800px}
+.ps-v12-head>p:not(.ps-v12-source){font-size:clamp(13px,1.25vw,17px);line-height:1.67;max-width:820px;color:#d7e1ed;margin:0}
+.ps-v12-source{display:block;margin:18px 0 0;font-size:10px}
+.ps-v12-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(9px,1.5vw,21px);min-width:0}
+.ps-v12-art{min-width:0;margin:0;display:flex;flex-direction:column;gap:11px}
+.ps-v12-art a{display:block;border-radius:9px;overflow:hidden;background:#0b101a;border:1px solid #69717f;transition:transform .2s ease,border-color .2s ease}
+.ps-v12-art a:hover{transform:translateY(-3px);border-color:var(--ps-accent)}
+.ps-v12-art a:focus-visible{outline:3px solid var(--ps-accent);outline-offset:3px}
+.ps-v12-art img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain}
+.ps-v12-art figcaption{font:750 10px/1.6 ui-monospace,Consolas,monospace;letter-spacing:.06em;color:#dce5f3;text-align:center}
+.ps-v12-hint{margin:0;color:#aebdcb;font:12px/1.6 "Segoe UI",sans-serif}
+.playstore-v12-frame>figcaption{font-size:12px;line-height:1.6;color:#b8c5d4!important;padding:15px 26px!important;background:#111827}
+@media(max-width:700px){
+ .ps-v12{padding:24px 14px;gap:18px}
+ .ps-v12-head h2{font-size:clamp(32px,9vw,49px)}
+ .ps-v12-gallery{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:3px 2px 15px;scrollbar-color:#b1bfd0 transparent}
+ .ps-v12-art{flex:0 0 min(79vw,310px);scroll-snap-align:start}
+ .ps-v12-art img{max-height:600px}
+}
+@media(prefers-reduced-motion:reduce){.ps-v12-art a{transition:none}}

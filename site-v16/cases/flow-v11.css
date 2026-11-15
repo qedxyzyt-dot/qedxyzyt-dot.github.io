@@ -1,0 +1,74 @@
+/* V11 — application flow, compact decisions, viewport-aware sections.
+   Flow is structural content, not a set of links or an interactive mock. */
+.case-architecture{padding-block:clamp(42px,5.3vw,72px)!important;background:#ebe9e4!important}
+.case-architecture .case-section-head{align-items:end;margin-bottom:clamp(30px,4vw,48px)}
+.case-architecture .case-section-head h2{font-size:clamp(36px,4.4vw,62px);line-height:1.01;margin-top:11px;max-width:900px}
+.case-architecture .case-section-head>p{font-size:14px;max-width:420px;color:#5d5a60}
+.case-process.app-flow{--flow-ink:#56505d;display:grid;grid-template-columns:repeat(var(--flow-count,5),minmax(0,1fr));gap:0;margin:0;list-style:none;overflow:visible}
+.case-process.app-flow .app-flow-step{position:relative;background:transparent!important;border:0!important;
+ border-radius:0;box-shadow:none;min-height:164px;padding:0 clamp(13px,1.4vw,25px) 0 0;
+ display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:16px;
+ color:#24232b;transition:transform .22s ease}
+.case-process.app-flow .app-flow-step::before{content:"";width:38px;height:38px;border-radius:50%;position:absolute;
+ top:0;left:0;background:#fcfaf7;border:2px solid #38343b;
+ box-shadow:0 0 0 5px #ebe9e4;z-index:2;pointer-events:none}
+.case-process.app-flow .app-flow-step.is-start::before{background:#28272b;border-color:#28272b}
+.case-process.app-flow .app-flow-step.is-end::before{background:#f1d7a9;border-color:#292428}
+.case-process.app-flow .app-flow-step:not(:last-child)::after{content:"";position:absolute;top:20px;
+ height:2px;left:44px;right:0;background:#605760;
+ pointer-events:none}
+.case-process.app-flow .app-flow-top{display:flex;flex-direction:column;gap:17px}
+.case-process.app-flow .process-n{position:relative;z-index:3;font:750 11px/1 ui-monospace,Consolas,monospace;
+ display:grid;place-items:center;color:#35303a;width:42px;height:42px}
+.case-process.app-flow .is-start .process-n{color:#fff}
+.case-process.app-flow .app-flow-phase{font:750 10px/1.5 ui-monospace,Consolas,monospace;
+ letter-spacing:.13em;color:#857d87;white-space:nowrap}
+.case-process.app-flow strong{max-width:260px;font-size:clamp(15px,1.33vw,21px);line-height:1.25;
+ letter-spacing:-.028em;color:#27252b;font-weight:730}
+.case-process.app-flow .is-end strong{color:#4e3452}
+.case-process.app-flow .app-flow-connector{position:absolute;top:16px;left:auto;right:15px;display:block;width:9px;height:9px;
+ border-top:2px solid #524956;border-right:2px solid #524956;transform:rotate(45deg);z-index:3;
+ background:#ebe9e4;box-shadow:0 0 0 2px #ebe9e4}
+.case-process.app-flow .is-end .app-flow-connector{display:none}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+ .case-process.app-flow .app-flow-step:hover{transform:translateY(-4px)}
+ .case-process.app-flow .app-flow-step:hover::before{box-shadow:0 0 0 6px #ddd6db}
+}
+.case-thinking{padding-block:clamp(46px,5.4vw,83px)!important}
+.case-thinking .case-section-head{margin-bottom:clamp(22px,3vw,36px)}
+.case-thinking .case-section-head h2{font-size:clamp(37px,4vw,58px);max-width:870px;line-height:1.03}
+.case-thinking .case-section-head>p{max-width:360px;line-height:1.55;font-size:13px}
+.case-thinking .case-pillar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.case-thinking .case-pillar{min-height:0!important;padding:clamp(19px,2.3vw,30px);
+ border-radius:10px;display:flex;flex-direction:column;justify-content:flex-start}
+.case-thinking .case-pillar h3{font-size:clamp(20px,2vw,30px);line-height:1.13;margin:22px 0 12px}
+.case-thinking .case-pillar p{font-size:clamp(12px,1vw,14px);line-height:1.65}
+.case-thinking .pillar-n{color:#78717b}
+@media(max-width:900px){
+ .case-process.app-flow{grid-template-columns:1fr;gap:0;max-width:730px;margin:0 auto}
+ .case-process.app-flow .app-flow-step{min-height:105px!important;padding:0 0 12px 72px;
+  display:flex;flex-direction:column;gap:8px}
+ .case-process.app-flow .app-flow-top{display:block}
+ .case-process.app-flow .process-n{position:absolute;top:0;left:0}
+ .case-process.app-flow .app-flow-phase{display:block;padding:3px 0 0}
+ .case-process.app-flow strong{font-size:clamp(17px,3vw,22px);max-width:none}
+ .case-process.app-flow .app-flow-step:not(:last-child)::after{left:20px;right:auto;top:43px;bottom:-4px;height:auto;width:2px;
+ background:linear-gradient(#6b596b,#c2b7bd)}
+ .case-process.app-flow .app-flow-connector{right:auto;top:auto;bottom:11px;left:16px;
+ transform:rotate(135deg);background:#ebe9e4;box-shadow:0 0 0 2px #ebe9e4}
+ .case-thinking .case-pillar-grid{grid-template-columns:1fr}
+ .case-thinking .case-pillar{padding:22px 25px}
+ .case-thinking .case-pillar h3{margin:14px 0 10px;font-size:25px}
+}
+@media(max-width:680px){
+ .case-architecture{padding-block:48px!important}
+ .case-architecture .case-section-head{margin-bottom:31px}
+ .case-architecture .case-section-head h2{font-size:clamp(35px,10vw,49px)}
+ .case-architecture .case-section-head>p{font-size:13px;line-height:1.6}
+ .case-thinking{padding-block:48px!important}
+ .case-thinking .case-section-head h2{font-size:clamp(34px,9.6vw,48px)}
+}
+@media(prefers-reduced-motion:reduce){.case-process.app-flow .app-flow-step{transition:none!important}}
+/* Architecture and engineering headings remain readable immediately; content does not wait for scroll animation. */
+.motion-enabled .case-architecture .case-section-head[data-atelier-reveal],
+.motion-enabled .case-thinking .case-section-head[data-atelier-reveal]{opacity:1!important;transform:none!important;transition:none!important}

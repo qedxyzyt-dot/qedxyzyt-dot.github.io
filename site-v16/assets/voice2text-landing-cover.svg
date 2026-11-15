@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Voice2Text — Pensou? Falou. Virou texto.">
+  <defs>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#81e3d3"/><stop offset=".52" stop-color="#bce9f0"/><stop offset="1" stop-color="#b199f1"/></linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263039"/><stop offset="1" stop-color="#111519"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="13"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="#f7f6f0"/>
+  <circle cx="930" cy="440" r="300" fill="#dceee4" opacity=".78"/>
+  <path d="M-50 176C206 27 335 202 579 119S942 81 1246 196" fill="none" stroke="#afc7bb" stroke-width="2" opacity=".8"/>
+  <path d="M-50 514C286 363 485 612 729 494S1042 440 1250 568" fill="none" stroke="#d0c3d4" stroke-width="2" opacity=".8"/>
+  <text x="80" y="95" fill="#153b35" font-family="Arial,sans-serif" font-weight="700" font-size="30">voice<tspan fill="#4c9287">2</tspan>text</text>
+  <text x="80" y="255" fill="#1a221e" font-family="Arial,sans-serif" font-size="80" font-weight="600" letter-spacing="-4">Pensou?</text>
+  <text x="412" y="255" fill="#397b70" font-family="Georgia,serif" font-size="86" font-style="italic" letter-spacing="-4">Falou.</text>
+  <text x="80" y="360" fill="#1a221e" font-family="Arial,sans-serif" font-size="91" font-weight="600" letter-spacing="-5">Virou texto.</text>
+  <text x="83" y="418" fill="#5e7167" font-family="Arial,sans-serif" font-size="22">Ditado local no Windows, em seu ritmo.</text>
+  <rect x="608" y="461" width="480" height="100" rx="50" fill="none" stroke="url(#neon)" stroke-width="16" opacity=".6" filter="url(#blur)"/>
+  <rect x="608" y="461" width="480" height="100" rx="50" fill="url(#shade)" stroke="url(#neon)" stroke-width="4"/>
+  <text x="833" y="488" font-family="Arial,sans-serif" font-size="15" text-anchor="middle" fill="#fff" font-weight="600">Ouvindo · 00:07</text>
+  <g stroke="#f0ffff" stroke-width="4" stroke-linecap="round">
+    <path d="M687 515v13m10-22v31m10-27v22m10-31v40m10-25v11m10-31v41m10-24v13m10-29v33m10-18v11m10-23v27m10-34v47m10-25v13m10-28v35m10-19v11m10-24v29m10-32v41m10-23v14m10-27v32m10-17v9m10-24v29m10-14v9m10-18v22m10-12v9"/>
+  </g>
+  <text x="83" y="565" font-family="Arial,sans-serif" font-size="14" fill="#6c8076" letter-spacing="3">VOICE2TEXT / DESKTOP</text>
+</svg>

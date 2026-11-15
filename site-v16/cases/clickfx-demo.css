@@ -1,0 +1,34 @@
+/* ClickFX case: interactive source-informed optical demo, no Windows capture */
+.clickfx-case-frame{background:#111923!important;border-color:#344454!important}
+.clickfx-showroom{padding:clamp(20px,3.6vw,43px);background:#101923;color:#f4f6fc;display:grid;gap:23px}
+.clickfx-showroom-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.clickfx-showroom-head small{color:#a8c0d2;font:700 11px ui-monospace,Consolas,monospace;letter-spacing:.11em}
+.clickfx-showroom-head h2{font-size:clamp(37px,5vw,78px);letter-spacing:-.075em;line-height:1.02;margin:17px 0;font-weight:740}
+.clickfx-showroom-head h2 em{font:italic 400 .93em Georgia,serif;color:#c6e5ea}
+.clickfx-showroom-head p{color:#b8c8d5;max-width:650px;font-size:14px;line-height:1.7;margin:0}
+.clickfx-showroom-head>img{width:72px;height:72px;object-fit:contain;flex:0 0 auto}
+.clickfx-control-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.clickfx-control-bar button{appearance:none;min-height:44px;cursor:pointer;color:#f8f7f4;font-weight:750;font-size:13px;border-radius:6px;transition:background .15s,border-color .15s}
+.clickfx-mode{display:flex;align-items:center;justify-content:space-between;gap:23px;padding:10px 18px;border:1px solid #4b5b6d;background:#1d2c3c}
+.clickfx-mode[aria-pressed=true]{background:#e8edf5;color:#1b2432;border-color:#e8edf5}
+.clickfx-mode span{font:700 10px ui-monospace,Consolas,monospace;opacity:.65}
+.clickfx-trigger{margin-left:auto;border:1px solid #547c92;background:#224a60;padding:10px 18px}
+.clickfx-control-bar button:hover{filter:brightness(1.14)}
+.clickfx-control-bar button:focus-visible,.clickfx-surface canvas:focus-visible{outline:2px solid #b4dcff;outline-offset:3px}
+.clickfx-surface{position:relative;border:1px solid #597184;border-radius:12px;overflow:hidden;background:#101b25;isolation:isolate;aspect-ratio:800/420}
+.clickfx-surface canvas{display:block;width:100%;height:100%;aspect-ratio:auto;touch-action:pan-y;cursor:crosshair}
+.clickfx-surface-hint{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;gap:12px;pointer-events:none;color:#e7eff4;font:700 10px ui-monospace,Consolas,monospace;text-shadow:0 1px 6px #101923}
+.clickfx-after{display:flex;gap:12px 24px;justify-content:space-between;flex-wrap:wrap;color:#adbdcb;font:11px/1.6 ui-monospace,Consolas,monospace}
+.clickfx-after b{color:#f4e9e0}
+.clickfx-case-frame>figcaption{color:#a3b2c0!important;border-color:#334455!important}
+@media(max-width:620px){
+ .clickfx-showroom{padding:18px 12px;gap:17px}
+ .clickfx-surface{aspect-ratio:4/3}
+ .clickfx-showroom-head>img{width:52px;height:52px}
+ .clickfx-showroom-head p{font-size:12px}
+ .clickfx-control-bar{gap:6px}
+ .clickfx-mode{padding:9px 11px;gap:10px}
+ .clickfx-trigger{width:100%;margin:0}
+ .clickfx-surface-hint{font-size:8px;left:10px;right:10px;bottom:9px}
+}
+@media(prefers-reduced-motion:reduce){.clickfx-control-bar button{transition:none}}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="95%" y2="100%">
+      <stop offset="0" stop-color="#121c34"/>
+      <stop offset=".52" stop-color="#0c1022"/>
+      <stop offset="1" stop-color="#21142f"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="100%" x2="100%" y2="5%">
+      <stop offset="0" stop-color="#16e5dd"/>
+      <stop offset=".42" stop-color="#75b9ff"/>
+      <stop offset="1" stop-color="#aa74ff"/>
+    </linearGradient>
+    <linearGradient id="point" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".72" stop-color="#d9e6ff"/>
+      <stop offset="1" stop-color="#98b9ff"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="45%" cy="57%" r="56%">
+      <stop offset="0" stop-color="#36e8f2" stop-opacity=".17"/>
+      <stop offset=".64" stop-color="#8059de" stop-opacity=".065"/>
+      <stop offset="1" stop-color="#8059de" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="58" fill="url(#bg)"/>
+  <rect x="8" y="8" width="240" height="240" rx="58" fill="url(#aura)"/>
+  <rect x="11.5" y="11.5" width="233" height="233" rx="55" fill="none" stroke="#8796df" stroke-opacity=".35" stroke-width="2.5"/>
+  <path d="M 65 76 A 87 87 0 0 1 173 48" fill="none" stroke="url(#wave)" stroke-width="7.2" stroke-linecap="round" opacity=".8"/>
+  <path d="M 44 117 A 85 85 0 0 0 83 207" fill="none" stroke="#27d5e4" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+  <path d="M 202 104 A 83 83 0 0 1 181 193" fill="none" stroke="#9973fc" stroke-width="7" stroke-linecap="round" opacity=".73"/>
+  <path d="M 66 123 A 65 65 0 0 1 104 70" fill="none" stroke="#58f6ed" stroke-opacity=".62" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 189 149 A 60 60 0 0 1 143 194" fill="none" stroke="#bc80ff" stroke-opacity=".65" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 86 182 A 59 59 0 0 0 110 197" fill="none" stroke="#71dfff" stroke-opacity=".65" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 93 70 L 103 173 L 129 145 L 148 181 L 167 170 L 147 135 L 184 126 Z" fill="#070f27" opacity=".5" transform="translate(5 6)"/>
+  <path d="M 93 70 L 103 173 L 129 145 L 148 181 L 167 170 L 147 135 L 184 126 Z"
+      fill="url(#point)" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M 108 89 L 114 152 L 128 137 L 143 162" fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M187 44 L192 57 L205 62 L192 67 L187 80 L182 67 L169 62 L182 57 Z"
+      fill="#88f8fc" opacity=".9"/>
+</svg>
