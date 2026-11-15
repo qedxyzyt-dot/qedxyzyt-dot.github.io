@@ -20,7 +20,7 @@
 @media(prefers-reduced-motion:reduce){.qed-avatar-link{transition:none}}
 /* Hero social links: the YouTube mark retains its native red brand color. */
 .cosmos-social .cosmos-social-qed img{filter:none;width:18px;height:18px}
-.cosmos-social .cosmos-social-qed:focus-visible{outline:2px solid #aaf3d9;outline-offset:5px;border-radius:3px}
+.cosmos-social .cosmos-social-qed:focus-visible{outline:2px solid #CCD2DA;outline-offset:5px;border-radius:3px}
 @media(max-width:450px){
  .cosmos-social{
   display:grid;grid-template-columns:repeat(2,max-content);

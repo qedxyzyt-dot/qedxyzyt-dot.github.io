@@ -12,7 +12,7 @@
 .cosmos-projects{position:absolute;z-index:1;inset:0;pointer-events:none;overflow:visible}
 .cosmos-node{position:absolute;top:0;left:0;transform:translate3d(0,0,0);display:flex;flex-direction:column;align-items:center;justify-content:center;width:86px;height:86px;text-decoration:none;border-radius:22px;outline-offset:7px;pointer-events:auto;will-change:transform;transition:filter .2s ease}
 .cosmos-node img{display:block;width:72px;height:72px;object-fit:contain;box-shadow:0 11px 24px rgba(0,0,0,.5),0 0 24px rgba(126,174,217,.12);border-radius:16px;transition:transform .2s ease,box-shadow .2s ease}
-.cosmos-node:hover img,.cosmos-node:focus-visible img{transform:translateY(-7px) scale(1.13);box-shadow:0 18px 33px rgba(0,0,0,.5),0 0 34px rgba(191,251,181,.38)}
+.cosmos-node:hover img,.cosmos-node:focus-visible img{transform:translateY(-7px) scale(1.13);box-shadow:0 18px 33px rgba(0,0,0,.5),0 0 34px rgba(204,210,218,.36)}
 .cosmos-node .cosmos-label{opacity:0;pointer-events:none;white-space:nowrap;position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%) translateY(5px);background:#f3f5ef;color:#0e1b20;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:750;letter-spacing:-.02em;box-shadow:0 8px 25px rgba(0,0,0,.25);transition:opacity .18s ease,transform .18s ease}
 .cosmos-node:hover .cosmos-label,.cosmos-node:focus-visible .cosmos-label{opacity:1;transform:translateX(-50%) translateY(0)}
 .cosmos-core{position:absolute;z-index:3;left:50%;top:47%;transform:translate(-50%,-50%);text-align:center;width:min(700px,calc(100% - 50px));pointer-events:none}
@@ -90,7 +90,7 @@
  .cosmos-mobile-label span{color:#798d83}
  .cosmos-mobile-rail{display:flex;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;gap:12px;padding:0 18px 30px;scrollbar-color:#3c5d5b transparent}
  .cosmos-mobile-rail a{flex:0 0 124px;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 7px 13px;background:#171f2b;border:1px solid #33474f;border-radius:10px;text-decoration:none;color:#dbe7df;min-height:126px;font-size:11px;font-weight:750;text-align:center}
- .cosmos-mobile-rail a:hover,.cosmos-mobile-rail a:focus-visible{border-color:#d4ff8a;background:#21352b}
+ .cosmos-mobile-rail a:hover,.cosmos-mobile-rail a:focus-visible{border-color:#CCD2DA;background:#242832}
  .cosmos-mobile-rail img{height:67px;width:67px;border-radius:14px}
  .education-grid{grid-template-columns:1fr}
 }

@@ -91,8 +91,8 @@
 .project#cash-map .project-portrait .portrait-ghost,
 .project#crm .project-portrait .portrait-ghost{opacity:.12}
 @media (prefers-color-scheme:dark){
- .other-work-actions .other-work-primary{color:#aaf3d9}
- .other-work-card:hover,.other-work-card:focus-within{border-color:#aaf3d9}
+ .other-work-actions .other-work-primary{color:#CCD2DA}
+ .other-work-card:hover,.other-work-card:focus-within{border-color:#CCD2DA}
  .other-work-actions img.ui-inline-arrow{filter:invert(1)}
 }
 @media(max-width:810px){
