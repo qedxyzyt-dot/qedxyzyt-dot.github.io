@@ -142,22 +142,6 @@
       "caseUrl": "./cases/?project=clickfx"
     },
     {
-      "slug": "xournal-plus-plus",
-      "name": "Xournal++ Realism Fork",
-      "languages": [
-        "C++",
-        "C# (companion)"
-      ],
-      "tools": [
-        "GTK",
-        "Cairo",
-        "Wacom",
-        ".NET 8 (companion)"
-      ],
-      "evidence": "Código C++ no fork Xournal++ 1.3.8; Program.cs no protótipo auxiliar Wacom, separado do fork",
-      "caseUrl": "./cases/?project=xournal-plus-plus"
-    },
-    {
       "slug": "better-notifications",
       "name": "Better Notifications",
       "languages": [
@@ -188,15 +172,13 @@
     {
       "slug": "cash-map",
       "name": "Cash Map",
-      "languages": [
-        "Dart"
-      ],
+      "languages": [],
       "tools": [
         "Flutter",
         "Android",
         "visualização financeira"
       ],
-      "evidence": "Build Android Flutter localizado no Galaxy em cashflow_heatmap/build/app/intermediates/flutter/release/flutter_assets; Dart inferido da toolchain Flutter. Fontes de aplicação ainda não localizadas para inspeção",
+      "evidence": "Artefatos Android/Flutter identificados; não há fonte Dart inspecionada que comprove a linguagem do aplicativo.",
       "caseUrl": "./cases/?project=cash-map"
     },
     {

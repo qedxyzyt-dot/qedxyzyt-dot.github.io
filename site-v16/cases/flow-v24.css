@@ -1,0 +1,55 @@
+/* V24 — Evidence-based workflow summaries.
+   Only used in case pages where a documented sequence exists. */
+.case-process.app-flow {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.case-process.app-flow .app-flow-step {
+  min-height:225px;
+  gap:10px;
+}
+.case-process.app-flow .app-flow-top {
+  margin-bottom:4px;
+}
+.case-process.app-flow .app-flow-step strong {
+  display:block;
+  max-width:255px;
+  font-size:clamp(17px,1.42vw,22px);
+  line-height:1.23;
+}
+.case-process.app-flow .app-flow-detail {
+  max-width:250px;
+  margin:0;
+  font-size:clamp(12px,.92vw,14px);
+  line-height:1.6;
+  font-weight:400;
+  letter-spacing:0;
+  color:#494751;
+  text-wrap:pretty;
+}
+.case-process.app-flow .is-end strong {
+  color:#353742;
+}
+@media (prefers-color-scheme:dark) {
+  .case-process.app-flow .app-flow-detail{color:#D1CED8}
+  .case-process.app-flow .is-end strong{color:#F0EBF5}
+  .case-architecture .case-flow-intro{color:#C5C3CE}
+}
+@media (max-width:900px) {
+  .case-process.app-flow{
+    grid-template-columns:1fr;
+    max-width:740px;
+  }
+  .case-process.app-flow .app-flow-step {
+    min-height:136px!important;
+    padding:0 0 22px 72px;
+    gap:7px;
+  }
+  .case-process.app-flow .app-flow-step strong{max-width:100%;font-size:20px}
+  .case-process.app-flow .app-flow-detail{max-width:590px;font-size:13px}
+}
+@media (max-width:380px) {
+  .case-process.app-flow .app-flow-step{padding-left:64px;padding-right:0}
+  .case-process.app-flow .app-flow-step strong{font-size:18px}
+  .case-process.app-flow .app-flow-detail{font-size:12px}
+  .case-process.app-flow .app-flow-phase{letter-spacing:.07em;white-space:normal}
+}

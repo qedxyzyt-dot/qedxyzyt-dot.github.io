@@ -12,7 +12,7 @@
    "tcc":"audio","lost-time":"app","select-anywhere":"accessibility",
    "voice2text":"dictation","jarvis":"agents","crm":"cloud",
    "omniclip":"sync","cash-map":"finance","clickfx":"interaction",
-   "xournal-plus-plus":"ink","transcrever":"media",
+   "transcrever":"media",
    "better-notifications":"mobile","easy-sign":"documents","circuitos":"academia"
  };
  const family=categories[id]||"product";
@@ -25,22 +25,17 @@
    audio:["02 / ÁUDIO EM TEMPO REAL","Do sinal à escuta.","05 / DSP & PESQUISA"],
    finance:["02 / EXPERIÊNCIA FINANCEIRA","A experiência e o seu contexto.","05 / COMPONENTES & EVIDÊNCIA"],
    agents:["02 / ORQUESTRAÇÃO DE FERRAMENTAS","Um ambiente com responsabilidades.","05 / ENGENHARIA DE AGENTES"],
-   app:["02 / FLUXO DE PRODUTO","O caminho entre intenção e ação.","05 / PRODUTO & DESENVOLVIMENTO"]
+   app:["02 / FUNCIONAMENTO","O caminho entre intenção e ação.","03 / SOFTWARE E DESENVOLVIMENTO"]
  };
- const [chapter,titles,skillTitle]=labels[family]||["02 / FUNCIONAMENTO","Decisões de implementação.","05 / SOFTWARE & FERRAMENTAS"];
- const architecture=document.querySelector(".case-architecture .case-kicker");
- const architectureTitle=document.getElementById("architecture-title");
- if(architecture)architecture.textContent=chapter;
- if(architectureTitle)architectureTitle.textContent=id==="qed"?"Como os conteúdos são produzidos.":id==="iee"?"Como a pesquisa foi conduzida.":id==="nero"?"Fluxo da pesquisa.":id==="circuitos"?"Fluxo de curadoria.":"Fluxo da aplicação.";
- const sectionKicker=document.querySelector(".case-proof .case-kicker");
- if(sectionKicker)sectionKicker.textContent=skillTitle;
+ // Flow titles and visibility are evidence-driven in case.js. Avoid generic
+ // chapter headings that would overwrite the project-specific explanation.
  const desc=document.querySelector('meta[name="description"]');
  if(desc)desc.content=item.name+" — "+item.intro.slice(0,155);
  const proofLabel=document.querySelector(".case-facts div:nth-child(3) strong");
  const proofLabels={
    qed:"Vídeos e canal públicos",iee:"Orientação acadêmica e publicação correlata",
    nero:"Pesquisa e método documentados",jarvis:"Ferramentas locais documentadas",
-   "lost-time":"Peças Google Play do produto","xournal-plus-plus":"Fixtures técnicas do fork",
+   "lost-time":"Artes originais do aplicativo na Google Play",
    "cash-map":"Descrição e identidade do projeto"
  };
  if(proofLabel)proofLabel.textContent=proofLabels[id]||"Código e decisões documentados";
@@ -51,39 +46,35 @@
   else brand.textContent="Identidade editorial";
  }
  const vocab={
-  qed:["QUESTÃO / PROVA / DEMONSTRAÇÃO / PRODUÇÃO / DIDÁTICA","Uma explicação que permanece.","Do enunciado à solução."],
-  nero:["SÉRIES TEMPORAIS / MODELO / REFERÊNCIA / INCERTEZA","Uma hipótese merece teste.","Onde o método encontra seus limites."],
-  iee:["GERADOR / INVERSOR / AUTOVALORES / MODELAGEM / SISTEMAS ELÉTRICOS","Modelar para compreender.","Entre matemática e engenharia elétrica."],
-  tcc:["FALA / RUÍDO / DENOISING / LATÊNCIA / ESCUTA","Voz natural é prioridade.","O que a medição não escuta."],
-  "lost-time":["TEMPO / ATENÇÃO / LIMITES / HISTÓRICO / ESCOLHA","Retomar atenção é uma escolha.","O cuidado está na interface."],
-  "select-anywhere":["SELEÇÃO / ACESSIBILIDADE / GEOMETRIA / OCR / PRIVACIDADE","Mais texto ao alcance.","Precisão como decisão de produto."],
-  voice2text:["VOZ / CAPTURA / ASR / FOCO / EDIÇÃO","Uma ideia segue até o editor.","O ditado que respeita o contexto."],
-  jarvis:["AUTORIZAÇÃO / WORKSPACE / MCP / TESTES / HANDOFF","Agentes entregam evidências.","Confiabilidade antes de autonomia."],
-  crm:["META / WHATSAPP / WORKSPACE / EVENTOS / CRÉDITOS","Integração é responsabilidade.","Operação assíncrona sob controle."],
-  omniclip:["DISPOSITIVOS / CLIPBOARD / PERMISSÃO / DESTINO / CONFIRMAÇÃO","Continuidade sem ruído.","O momento da transferência."],
-  "cash-map":["CLAREZA / FINANÇAS / INTERFACE / VALIDAÇÃO / EVOLUÇÃO","Uma interface deve explicar.","Decisões de apresentação e produto."],
-  clickfx:["CURSOR / MOVIMENTO / FEEDBACK / WINDOWS / PERCEPÇÃO","Detalhes que acompanham a ação.","O gesto como parte da interface."],
-  "xournal-plus-plus":["TRAÇO / CAIRO / TEXTURA / GTK / FORK","A tinta também tem arquitetura.","Entre a mão e o píxel."],
-  transcrever:["ÁUDIO / TRANSCRIÇÃO / SEGMENTAÇÃO / REVISÃO / EXPORTAÇÃO","Automatizar sem perder o sentido.","Quando manter é melhor que cortar."],
-  "better-notifications":["CORES / BORDAS / ACESSIBILIDADE / NOTIFICAÇÕES / ANDROID","A atenção encontra um sinal.","Visibilidade sem distração."],
-  "easy-sign":["DOCUMENTO / ASSINATURA / PDF / POSIÇÃO / PRIVACIDADE","Assinar deve ser simples.","Do documento à decisão."],
-  circuitos:["QUESTÕES / CURADORIA / AVALIAÇÃO / TEX / PROVENIÊNCIA","Organizar também é ensinar.","Seleção antes da transcrição."]
+  qed:["QUESTÃO / PROVA / DEMONSTRAÇÃO / PRODUÇÃO / DIDÁTICA","Do enunciado à solução."],
+  nero:["SÉRIES TEMPORAIS / MODELO / REFERÊNCIA / INCERTEZA","Onde o método encontra seus limites."],
+  iee:["GERADOR / INVERSOR / AUTOVALORES / MODELAGEM / SISTEMAS ELÉTRICOS","Entre matemática e engenharia elétrica."],
+  tcc:["FALA / RUÍDO / DENOISING / LATÊNCIA / ESCUTA","O que a medição não escuta."],
+  "lost-time":["TEMPO / ATENÇÃO / LIMITES / HISTÓRICO / ESCOLHA","O cuidado está na interface."],
+  "select-anywhere":["SELEÇÃO / ACESSIBILIDADE / GEOMETRIA / OCR / PRIVACIDADE","Precisão na seleção de texto."],
+  voice2text:["VOZ / CAPTURA / ASR / FOCO / EDIÇÃO","O ditado que respeita o contexto."],
+  jarvis:["AUTORIZAÇÃO / PROJETO / MCP / TESTES / ENTREGA","Confiabilidade antes de autonomia."],
+  crm:["META / WHATSAPP / WORKSPACE / EVENTOS / CRÉDITOS","Operação assíncrona sob controle."],
+  omniclip:["DISPOSITIVOS / CLIPBOARD / PERMISSÃO / DESTINO / CONFIRMAÇÃO","O momento da transferência."],
+  "cash-map":["CLAREZA / FINANÇAS / INTERFACE / VALIDAÇÃO / EVOLUÇÃO","Decisões para visualizar despesas."],
+  clickfx:["CURSOR / MOVIMENTO / FEEDBACK / WINDOWS / PERCEPÇÃO","O gesto como parte da interface."],
+  transcrever:["ÁUDIO / TRANSCRIÇÃO / SEGMENTAÇÃO / REVISÃO / EXPORTAÇÃO","Quando manter é melhor que cortar."],
+  "better-notifications":["CORES / BORDAS / ACESSIBILIDADE / NOTIFICAÇÕES / ANDROID","Visibilidade sem distração."],
+  "easy-sign":["DOCUMENTO / ASSINATURA / PDF / POSIÇÃO / PRIVACIDADE","Do documento à decisão."],
+  circuitos:["QUESTÕES / CURADORIA / AVALIAÇÃO / TEX / PROVENIÊNCIA","Seleção antes da transcrição."]
  };
  const current=vocab[id];
  if(current){
    const strap=document.querySelector(".case-scroll-strip>div");
    if(strap)strap.textContent=(current[0]+" / "+current[0]);
-   const endHeading=document.querySelector(".case-end h2");
-   if(endHeading)endHeading.textContent=current[1];
    const detailHeading=document.getElementById("details-title");
-   if(detailHeading)detailHeading.textContent=current[2];
+   if(detailHeading)detailHeading.textContent=current[1];
  }
  const figureHeader=document.querySelector(".case-artframe-label span:first-child");
  if(figureHeader)figureHeader.textContent={
    crm:"INTEGRAÇÕES / CAMADAS E EVENTOS",
    voice2text:"CAPTURA / PROCESSAMENTO / INSERÇÃO",
    tcc:"DENOISING / SIGNAL PATH",
-   "xournal-plus-plus":"ESCRITA DIGITAL / RENDERIZAÇÃO",
    transcrever:"SEGMENTAÇÃO / REVISÃO",
    clickfx:"CURSOR FX / OVERLAY WINDOWS",
    circuitos:"CURADORIA / FLUXO DE QUESTÕES"
@@ -109,7 +100,7 @@
          <div class="qed-episode-body"><small>0${i+1} · ${v.eyebrow} · ${v.year}</small><h3>${v.title}</h3><span class="qed-video-action">Abrir no YouTube ↗</span></div>
        </a></article>`).join("");
    replaceFigure(`<div class="qed-screening" aria-label="Três vídeos publicados no canal QED">
-    <div class="qed-screening-lead"><span>CANAL QED · AULAS DE MATEMÁTICA</span><strong>Raciocínio que se acompanha, não apenas se assiste.</strong><p>Três Shorts de destaque fornecidos pelo autor, confirmados como vídeos do canal QED. Miniaturas servidas pelo YouTube; a audiência acumulada informada pelo autor ainda requer contagem datada.</p>
+    <div class="qed-screening-lead"><span>CANAL QED · AULAS DE MATEMÁTICA</span><strong>Raciocínio que se acompanha, não apenas se assiste.</strong><p>Vídeos publicados no canal QED, com miniaturas, links diretos e indicadores datados de audiência na página inicial.</p>
     <a href="https://www.youtube.com/channel/UCiwhkT-ZkNQlmupN7jduBUA" ${source}>Visitar o canal completo ↗</a></div>
     <div class="qed-episodes">${cards}</div></div>`,
     "Três Shorts do canal QED confirmados por metadados públicos do YouTube. Sem autoplay nem contagens não verificadas. Miniaturas de seus titulares.");
@@ -205,11 +196,11 @@
    const screenshot=d.shots.map(([file,alt,label])=>`<figure class="owner-proof-shot"><div class="owner-proof-view">
       <img class="owner-proof-image" src="../assets/evidence/user-20261114/${file}" alt="${alt}" loading="eager" decoding="async" width="640" height="840">
      </div><figcaption>${label}</figcaption></figure>`).join("");
-   const features=d.features.map(([index,title,description])=>`<article class="owner-proof-feature"><span>${index} / FLUXO DE PRODUTO</span><h4>${title}</h4><p>${description}</p></article>`).join("");
+   const features=d.features.map(([index,title,description])=>`<article class="owner-proof-feature"><span>${index} / FUNCIONALIDADE</span><h4>${title}</h4><p>${description}</p></article>`).join("");
    replaceFigure(`<div class="owner-proof-gallery owner-proof-${id} is-missing">
       <div class="owner-proof-intro"><small>${d.overline}</small><h3>${d.title}</h3><p>${d.intro}</p><span class="owner-proof-note">${d.note}</span></div>
       <div class="owner-proof-shots" aria-label="Imagens do aplicativo">${screenshot}</div>
-      <div class="owner-proof-features" aria-label="Funcionalidades do produto">${features}</div>
+      <div class="owner-proof-features" aria-label="Funcionalidades do aplicativo">${features}</div>
     </div>`,
     id==="cash-map"?"Cash Map · calendário financeiro, categorias e mapa de calor.":"OmniClip Enhanced · controles de sincronização Android e Windows.");
    const root=frame.querySelector(".owner-proof-gallery");
@@ -232,12 +223,12 @@
       <p>Ferramentas de desenvolvimento integradas ao ChatGPT: os agentes consultam um workspace autorizado, trabalham no código e devolvem resultados de engenharia.</p></div>
       <div class="agents-product-system">
         <div class="agents-chat-card"><div class="agents-chat-header"><img src="../assets/projects/openai-symbol-v11.svg" width="34" height="34" loading="eager" alt="Marca da OpenAI"><span>ChatGPT</span></div>
-          <strong>Pedido em linguagem natural</strong><p>Inspecione o projeto, proponha mudanças, valide e apresente as evidências.</p>
+          <strong>Pedido em linguagem natural</strong><p>Análise de código, modificações revisadas e testes documentados.</p>
           <div class="agents-chat-feedback"><span class="agent-dot"></span> Ferramentas de projeto conectadas</div></div>
         <div class="agents-link" aria-hidden="true"><span>MCP</span><svg viewBox="0 0 76 20" width="76" height="20"><path d="M2 10 H68 M60 3 L69 10 L60 17" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
         <div class="agents-targets">
           <div class="agent-machine"><img src="../assets/projects/jarvis.svg" width="49" height="49" alt=""><div><small>GALAXY BOOK</small><strong>Jarvis</strong><span>Fontes, arquivos e ferramentas</span></div></div>
-          <div class="agent-machine"><img src="../assets/projects/astra-original-v11.svg" width="49" height="49" alt="Ícone do Astra Control Center"><div><small>ASUS Z13</small><strong>Astra</strong><span>Edição, build e QA no staging</span></div></div>
+          <div class="agent-machine"><img src="../assets/projects/astra-original-v11.svg" width="49" height="49" alt="Ícone do Astra Control Center"><div><small>ASUS Z13</small><strong>Astra</strong><span>Edição assistida, compilação e validação</span></div></div>
         </div>
       </div>
       <div class="agents-outcomes"><span>01 / Abrir contexto</span><span>02 / Usar ferramentas</span><span>03 / Testar</span><span>04 / Entregar</span></div>

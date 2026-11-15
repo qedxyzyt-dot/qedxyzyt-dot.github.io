@@ -12,7 +12,7 @@
    pillars:[
     ["ChatGPT + ferramentas","O chat deixa de ser somente uma resposta textual: ele pode consultar um projeto autorizado, inspecionar código, realizar alterações permitidas e retornar resultados verificáveis."],
     ["Dois ambientes, uma interface","Jarvis trabalha no Galaxy Book; Astra, no ASUS. Cada execução respeita a pasta autorizada, as ferramentas disponíveis e as restrições de acesso do respectivo dispositivo."],
-    ["Autonomia com rastreabilidade","Instruções locais, diff, build, testes e handoff compõem um fluxo de desenvolvimento guiado por resultados — com limites de segurança e revisão humana."]
+    ["Autonomia com rastreabilidade","Regras locais, revisão de alterações, compilação, testes e entregas documentadas compõem o fluxo de desenvolvimento, com controle de permissões e revisão humana."]
    ],
    proof:["Integração funcional de ferramentas MCP com workspaces Windows distintos, usada na própria construção deste portfólio.","O acesso ao computador depende de permissões explícitas; a execução ocorre fora da janela textual, não como capacidade ilimitada do modelo.","Experiência próxima à de um assistente de programação: ler, modificar e validar código no contexto de uma conversa."]
   },
@@ -38,13 +38,13 @@
   },
   "lost-time":{
    status:"Android publicado",
-   summary:"Bem-estar digital com visualização do tempo de uso, histórico e metas de atenção. O produto reúne dados de utilização em painéis claros e estende a experiência ao Windows.",
+   summary:"Bem-estar digital com visualização do tempo de uso, histórico e metas de atenção. O aplicativo reúne dados de utilização em painéis claros e estende a experiência ao Windows.",
    pillars:[
     ["Visão do tempo","Acompanhar o uso do dispositivo em uma interface que transforma registros diários em informação legível."],
     ["Histórico semanal","Perceber padrões e comparar dias para reconhecer oportunidades de uso mais consciente."],
     ["Metas de foco","Definir limites e organizar objetivos de atenção sem transformar o aplicativo em mais uma fonte de distração."]
    ],
-   proof:["Aplicativo Android disponível na Google Play, com companion Windows documentado.","Telas reais do aplicativo presentes nas peças de comunicação do produto.","Experiência voltada à autonomia e privacidade na análise de hábitos digitais."]
+   proof:["Aplicativo Android disponível na Google Play, com companion Windows documentado.","Telas reais do aplicativo presentes nas peças de divulgação do aplicativo.","Experiência voltada à autonomia e privacidade na análise de hábitos digitais."]
   },
   "select-anywhere":{
    status:"Android publicado",
@@ -54,7 +54,7 @@
     ["Precisão e contexto","A geometria de seleção procura respeitar trechos exatos; o suporte pode variar conforme o aplicativo de origem."],
     ["OCR local","Quando a árvore de acessibilidade é insuficiente, o reconhecimento visual amplia os cenários de leitura."]
    ],
-   proof:["Kotlin, APIs Android de acessibilidade e ML Kit/OCR em desenvolvimento do produto.","Interfaces ilustradas pelas capturas do aplicativo preparado para a loja.","Controle explícito pelo usuário sobre o texto selecionado e copiado."]
+   proof:["Kotlin, APIs Android de acessibilidade e ML Kit/OCR no aplicativo.","Interfaces ilustradas pelas capturas do aplicativo preparado para a loja.","Controle explícito pelo usuário sobre o texto selecionado e copiado."]
   },
   "tcc":{
    status:"Pesquisa aplicada em processamento de áudio",
@@ -66,16 +66,6 @@
    ],
    proof:["Aplicativo e instrumentação Python/Windows com interfaces de DSP.","Arquitetura que combina denoiser, dinâmica, medição e saída virtual.","Pesquisa aplicada para comunicação em ambientes de ruído urbano."]
   },
-  "xournal-plus-plus":{
-   status:"Fork de software livre / engenharia gráfica",
-   summary:"Extensão do Xournal++ com renderização de tinta esferográfica e grafite, ferramentas de apresentação e experimentos de interação com caneta.",
-   pillars:[
-    ["Tinta com materialidade","Estilos opcionais ballpoint e graphite na renderização Cairo, preservando a geometria dos traços no formato do projeto."],
-    ["Laser para apresentação","Controles de destaque temporário permitem apontar elementos durante explicações, com persistência breve e desaparecimento gradual."],
-    ["Engenharia de compatibilidade","Mudanças construídas sobre o Xournal++ 1.3.8, respeitando o código livre de origem e isolando experimentos de stylus."]
-   ],
-   proof:["Fork C++/GTK/Cairo derivado do repositório aberto Xournal++.","Testes gráficos e ajustes de UX documentados no ASUS.","Contribuições locais ao comportamento visual, mantendo crédito ao upstream."]
-  },
   "omniclip":{
    status:"Aplicativo de continuidade Android / Windows",
    summary:"OmniClip Enhanced mantém a área de transferência disponível entre smartphone e computador, com estados de pareamento, conexão e sincronização apresentados ao usuário.",
@@ -84,7 +74,7 @@
     ["Controle por conteúdo","O envio de textos e imagens pode ser habilitado separadamente para respeitar o contexto de cada dispositivo."],
     ["Continuidade de uso","Reconexão e controles de pareamento reduzem interrupções entre tarefas no celular e no PC."]
    ],
-   proof:["Aplicativo com componentes TypeScript/Rust e interface Android/desktop documentados.","Tela do produto mostra conexão ativa entre dois computadores; endereços de rede permanecem omitidos.","Interação centrada em estado, controle e confirmação de transferência."]
+   proof:["Aplicativo com componentes TypeScript/Rust e interface Android/desktop documentados.","A tela do aplicativo mostra conexão ativa entre dois computadores; endereços de rede permanecem omitidos.","Interação centrada em estado, controle e confirmação de transferência."]
   },
   "transcrever":{
    status:"Ferramenta de produtividade audiovisual",
@@ -114,7 +104,7 @@
     ["Personalização","Cores, padrões e comportamento das notificações podem ser ajustados para adequar o feedback ao contexto."],
     ["Privacidade e atenção","A configuração procura equilibrar visibilidade, controle e discrição."]
    ],
-   proof:["Implementação Kotlin para Android; telas de configuração, efeitos e privacidade presentes no material do produto.","Interação visual baseada em eventos do sistema.","Configuração sob controle do usuário."]
+   proof:["Implementação Kotlin para Android; telas de configuração, efeitos e privacidade presentes no material de divulgação.","Interação visual baseada em eventos do sistema.","Configuração sob controle do usuário."]
   },
   "easy-sign":{
    status:"Aplicativo Android",
@@ -122,20 +112,20 @@
    pillars:[
     ["PDF em primeiro plano","A visualização do documento orienta a escolha do local de assinatura."],
     ["Posicionamento preciso","A interação permite revisar o alinhamento no documento antes da saída."],
-    ["Processamento local","O código Android usa componentes Java, PDF e Android Keystore; requisitos legais dependem do tipo de assinatura e da jurisdição."]
+    ["Assinatura visual e segurança","O traço inserido no PDF não equivale, por si só, a uma assinatura digital certificada. O código Android inclui componentes Java, PDF e Android Keystore."]
    ],
    proof:["Fontes Java e telas do aplicativo preparado para a Play Store.","Fluxo de abertura, visualização e assinatura em documento de exemplo.","Experiência centrada em precisão e privacidade do arquivo."]
   },
   "cash-map":{
    status:"Aplicativo financeiro Android",
    summary:"Cash Map organiza informações financeiras em três perspectivas complementares: calendário mensal, composição dos gastos e distribuição diária.",
-   contribution:"Desenvolvimento do produto e suas experiências de consulta mensal, classificação e visualização de despesas.",
+   contribution:"Desenvolvimento do aplicativo e suas experiências de consulta mensal, classificação e visualização de despesas.",
    pillars:[
     ["Calendário financeiro","O mês reúne lançamentos, vencimentos e lembretes para reconhecer compromissos e navegar por datas."],
     ["Categorias e modalidades","Um gráfico em anel ajuda a compreender a composição de gastos, com separação entre modalidades e categorias."],
     ["Mapa de calor diário","A intensidade dos dias destaca padrões ao longo do mês e conecta a visão agregada aos registros daquele período."]
    ],
-   proof:["Aplicativo Android com visões de calendário, categorias e distribuição diária.","Telas do produto ilustram visualização temporal e composição financeira.","Valores e registros particulares foram retirados dos materiais de divulgação."]
+   proof:["Aplicativo Android com visões de calendário, categorias e distribuição diária.","Telas do aplicativo ilustram visualização temporal e composição financeira.","Valores e registros particulares foram retirados dos materiais de divulgação."]
   },
   "qed":{
    status:"Conteúdo publicado no YouTube",
@@ -164,14 +154,13 @@
  set("#case-status",item.status);
  set("#case-intro",item.summary);
  const contribution={
-   "jarvis":"Integração de agentes e ferramentas ao fluxo de desenvolvimento no ChatGPT, coordenação de execução e QA.",
+   "jarvis":"Integração de agentes e ferramentas ao fluxo de desenvolvimento no ChatGPT, coordenação de tarefas e validação.",
    "crm":"Implementação de componentes de integração e automações em uma plataforma colaborativa, com contribuição individual no ecossistema serverless.",
    "voice2text":"Desenvolvimento e evolução da experiência Windows de ditado, interface WPF e fluxo de inserção.",
-   "lost-time":"Concepção e desenvolvimento do produto Android de bem-estar digital e integração com Windows.",
+   "lost-time":"Concepção e desenvolvimento do aplicativo Android de bem-estar digital e integração com Windows.",
    "select-anywhere":"Desenvolvimento Android de seleção contextual, acessibilidade e OCR.",
    "tcc":"Pesquisa aplicada em DSP, interfaces Windows e experimentos de melhoria de voz.",
    "nero":"Investigação acadêmica com modelos neurais, análise de séries temporais e avaliação de métodos.",
-   "xournal-plus-plus":"Modificações no fork C++ do Xournal++ e experimentação de renderização Cairo e apresentação.",
    "omniclip":"Desenvolvimento de integração entre dispositivos e experiência de sincronização.",
    "transcrever":"Desenvolvimento de fluxos de reconhecimento, segmentação e revisão de mídia.",
    "clickfx":"Desenvolvimento de interações e efeitos gráficos Windows, incluindo Warp e Ripple.",
@@ -194,19 +183,9 @@
      article.append(number,h,p);pillars.append(article);
    }
  }
- const labels=document.querySelectorAll(".case-proof-panel article span");
- ["IMPLEMENTAÇÃO","DECISÃO DE ENGENHARIA","VALOR PARA QUEM USA"].forEach((text,i)=>{if(labels[i])labels[i].textContent=text;});
- if(item.proof){
-   ["#case-evidence","#case-limits","#case-next"].forEach((sel,i)=>set(sel,item.proof[i]));
- }
- set(".case-proof .case-kicker","04 / ARQUITETURA, TECNOLOGIAS & RESULTADO");
- const proofTitle=document.querySelector(".case-proof h2");
- if(proofTitle)proofTitle.innerHTML="Da solução<br><em>ao uso.</em>";
- set(".case-architecture .case-section-head > p","Da entrada ao resultado: como cada etapa se conecta à seguinte.");
  set(".case-thinking .case-section-head > p","Decisões técnicas que impactam o funcionamento e a experiência.");
  const lastFigure=document.querySelector(".case-artframe > figcaption");
- if(id==="xournal-plus-plus" && lastFigure)lastFigure.textContent="Saídas de teste do renderer Cairo no fork Xournal++ · mesma geometria de entrada, duas rasterizações distintas.";
- if(lastFigure&& !["lost-time","qed","cash-map","omniclip","voice2text","jarvis","iee","nero","clickfx","xournal-plus-plus","select-anywhere","better-notifications","easy-sign"].includes(id)){
+ if(lastFigure&& !["lost-time","qed","cash-map","omniclip","voice2text","jarvis","iee","nero","clickfx","select-anywhere","better-notifications","easy-sign"].includes(id)){
    lastFigure.textContent="Mapa visual do funcionamento e dos componentes. Detalhes técnicos e fontes são apresentados nas seções seguintes.";
  }
  const authorLabel=document.querySelector(".case-facts div:nth-child(3) strong");
@@ -218,7 +197,6 @@
    "select-anywhere":"Capturas e código Android",
    "tcc":"DSP e pesquisa aplicada",
    "nero":"Método e arquitetura de ML",
-   "xournal-plus-plus":"Fork e testes gráficos",
    "omniclip":"Aplicativo e sincronização",
    "transcrever":"Fluxo de automação",
    "clickfx":"Código e efeitos Windows",
@@ -235,7 +213,6 @@
    "select-anywhere":["SELECT ANYWHERE / ANDROID","SELEÇÃO DE TEXTO"],
    "better-notifications":["BETTER NOTIFICATIONS / ANDROID","EFEITOS DE NOTIFICAÇÃO"],
    "easy-sign":["EASY SIGN / ANDROID","VISUALIZAÇÃO DE PDF"],
-   "xournal-plus-plus":["XOURNAL++ / RENDERIZAÇÃO","TRAÇOS E ENGENHARIA GRÁFICA"],
    "tcc":["VOICE CONTROL / DSP","CAMINHO DO SINAL"],
    "crm":["CRM / CLOUD & INTEGRAÇÕES","ARQUITETURA DE SERVIÇOS"]
  };

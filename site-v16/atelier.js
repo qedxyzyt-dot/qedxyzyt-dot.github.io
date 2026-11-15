@@ -71,7 +71,7 @@
  // becomes hidden if the browser doesn't support them.
  function initReveals(){
    const elements = [
-     ...document.querySelectorAll(".featured-work-head,.feature-case,.section-head,.project,.education-intro,.education-item,.method-layout>div,.timeline li,.contact-inner,.case-story,.case-section-head,.case-pillar,.case-proof-grid,.case-end,.case-special,.case-related")
+     ...document.querySelectorAll(".featured-work-head,.feature-case,.section-head,.project,.education-intro,.education-item,.method-layout>div,.timeline li,.contact-inner,.case-story,.case-section-head,.case-pillar,.case-special,.case-related")
    ];
    if(!elements.length || reduce.matches || !("IntersectionObserver" in window)) return;
    const observer = new IntersectionObserver(entries=>{

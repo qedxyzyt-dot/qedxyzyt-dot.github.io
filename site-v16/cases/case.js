@@ -37,9 +37,6 @@
  put("case-question", item.question);
  put("case-decision", item.decision);
  put("case-role", "CONTRIBUIÇÃO / "+item.role);
- put("case-evidence", item.evidence);
- put("case-limits", item.limits);
- put("case-next", item.next);
  const brand=document.createElement("div");brand.className="case-brand-identity";
  const iconMeta=document.createElement("div");const iconName=document.createElement("strong");iconName.textContent=item.name;
  iconMeta.append(iconName);
@@ -74,21 +71,93 @@
  if(item.showDemo)addLink("../demos/index.html?project="+encodeURIComponent(item.showDemo),"Explorar a sequência ilustrativa ↗");
  if(item.external)addLink(item.external,"Ver fonte pública ↗",!!item.showDemo);
  addLink("#details-title","Conhecer decisões técnicas ↓",true);
+ // Display a sequence only when the project evidence supports a meaningful,
+ // ordered explanation. Parallel integrations and unverified prototypes are
+ // deliberately not forced into a linear diagram.
+ const flowSpecs={
+   "jarvis":{heading:"Da tarefa à entrega verificável.",intro:"O agente trabalha dentro de um projeto autorizado e apresenta os resultados para revisão.",steps:[
+     ["ESCOPO","Definir a tarefa","O pedido delimita objetivo, pastas e ações permitidas."],
+     ["PERMISSÕES","Ler as regras locais","O ambiente e as instruções do projeto determinam o que pode ser executado."],
+     ["EXECUÇÃO","Usar ferramentas MCP","Leituras e alterações são realizadas dentro do escopo autorizado."],
+     ["CONFERÊNCIA","Testar e documentar","A entrega registra alterações, testes e limites identificados."]
+   ]},
+   "lost-time":{heading:"Como o tempo de uso vira informação.",intro:"O acompanhamento utiliza dados de uso do Android e controles de foco configurados pela pessoa.",steps:[
+     ["COLETA","Eventos de uso Android","O sistema operacional disponibiliza eventos dos aplicativos usados."],
+     ["REGISTRO","Histórico local","Os dados são organizados e armazenados para consulta no dispositivo."],
+     ["LEITURA","Painéis e categorias","Telas apresentam totais, padrões diários e históricos de uso."],
+     ["CONTROLE","Metas e períodos de foco","Limites e sessões de foco são configurados para reduzir distrações."]
+   ]},
+   "select-anywhere":{heading:"Como selecionar texto em outras telas.",intro:"A leitura pela acessibilidade é priorizada; o OCR entra quando a interface não fornece o texto diretamente.",steps:[
+     ["LEITURA","Árvore de acessibilidade","O Android fornece texto e elementos disponíveis na interface."],
+     ["ALTERNATIVA","OCR no dispositivo","Quando necessário, o reconhecimento local identifica caracteres visíveis."],
+     ["SELEÇÃO","Delimitar o trecho","A pessoa ajusta a área desejada, conforme a compatibilidade da tela."],
+     ["CÓPIA","Confirmar e copiar","O trecho selecionado é entregue à área de transferência."]
+   ]},
+   "voice2text":{heading:"Da fala ao campo de texto correto.",intro:"Captura e transcrição são locais; a inserção depende da verificação da janela de destino.",steps:[
+     ["ENTRADA","Atalho e captura WASAPI","A interface indica a gravação de áudio no Windows."],
+     ["RECONHECIMENTO","VAD e Whisper local","A fala é segmentada e convertida em texto no computador."],
+     ["TEXTO","Consolidar a transcrição","O resultado é preparado antes de qualquer tentativa de inserção."],
+     ["DESTINO","Verificar o foco","A colagem só é tentada quando o campo ativo pode ser confirmado."]
+   ]},
+   "tcc":{heading:"O caminho do áudio com supressão de ruído.",intro:"Cadeia experimental de processamento local; o diagrama não representa desempenho ou latência já validados.",steps:[
+     ["ENTRADA","Microfone a 48 kHz","O sinal original é capturado para tratamento em tempo real."],
+     ["SUPRESSÃO","Denoiser neural","RNNoise e CEVA DPDFNet2 são avaliados como alternativas de redução de ruído."],
+     ["AJUSTES","Equalização e dinâmica","EQ, compressor e limitador podem complementar o tratamento."],
+     ["SAÍDA","Microfone virtual","O VB-CABLE encaminha o áudio processado às aplicações de comunicação."]
+   ]},
+   "transcrever":{heading:"Da gravação aos trechos revisados.",intro:"A transcrição auxilia a localizar cortes, mas a decisão final permanece humana.",steps:[
+     ["FONTE","Áudio de entrada","Uma gravação autorizada é preparada para análise."],
+     ["TEXTO","Reconhecimento com Whisper","A fala é transcrita para apoiar a localização de intervalos."],
+     ["CANDIDATOS","Segmentação temporal","Trechos potencialmente dispensáveis são destacados para inspeção."],
+     ["REVISÃO","Escuta antes da exportação","Os cortes são conferidos para preservar explicações e contexto."]
+   ]},
+   "easy-sign":{heading:"O percurso visível nas telas do Easy Sign.",intro:"As artes originais mostram a assinatura visual de PDF, não uma certificação digital de documentos.",steps:[
+     ["DOCUMENTO","Abrir um PDF","O arquivo é exibido no visualizador do aplicativo."],
+     ["ASSINATURA","Escolher uma assinatura","A interface permite acessar assinaturas disponíveis."],
+     ["POSIÇÃO","Ajustar no documento","O traço é inserido e posicionado sobre a página."],
+     ["EXPORTAÇÃO","Gerar o PDF editado","O comando de exportação aparece no editor do aplicativo."]
+   ]},
+   "fuvest":{heading:"Da fonte oficial à comparação histórica.",intro:"Os dois painéis preservam a distinção entre vestibular tradicional e transferência externa.",steps:[
+     ["FONTES","Documentos FUVEST","Notas de corte e editais oficiais são referenciados por edição."],
+     ["ORGANIZAÇÃO","Séries por modalidade","Cursos, campi e anos são separados conforme cada processo seletivo."],
+     ["CONSULTA","Filtros e busca","O visitante seleciona carreira, curso, período ou modalidades disponíveis."],
+     ["ANÁLISE","Gráficos e PDFs","As comparações visuais mantêm acesso às fontes e às lacunas de dados."]
+   ]},
+   "iee":{heading:"Etapas da análise de estabilidade.",intro:"Esquema do método estudado no artigo sobre geradores síncronos; não exibe medições nem resultados inéditos.",steps:[
+     ["MODELO","Gerador síncrono","O comportamento dinâmico é representado por equações de estado descritor."],
+     ["SIMULAÇÃO","MATLAB e Simulink","Os modelos são preparados para estudo e análise."],
+     ["ESTABILIDADE","Linearização e autovalores","A análise de pequenas perturbações examina a resposta dinâmica."],
+     ["PARÂMETROS","Estudo de sensibilidade","Investiga-se a influência dos parâmetros sobre a estabilidade."]
+   ]}
+ };
+ const flow=flowSpecs[id];
+ const architecture=document.querySelector(".case-architecture");
  const process=$("case-process");
- process.classList.add("app-flow");
- process.style.setProperty("--flow-count",String(item.layers.length));
- process.setAttribute("aria-label", "Sequência de etapas de " + item.name);
- item.layers.forEach((name,i)=>{
-   const li=document.createElement("li");
-   li.className="app-flow-step"+(i===0?" is-start":i===item.layers.length-1?" is-end":"");
-   const top=document.createElement("div");top.className="app-flow-top";
-   const number=document.createElement("span");number.className="process-n";number.textContent=String(i+1).padStart(2,"0");
-   const phase=document.createElement("small");phase.className="app-flow-phase";phase.textContent=i===0?"ENTRADA":i===item.layers.length-1?"RESULTADO":"ETAPA "+String(i+1).padStart(2,"0");
-   top.append(number,phase);
-   const title=document.createElement("strong");title.textContent=name;
-   const link=document.createElement("span");link.className="app-flow-connector";link.setAttribute("aria-hidden","true");
-   li.append(top,title,link);process.appendChild(li);
- });
+ if(!flow){
+   architecture?.remove();
+   const step=document.querySelector(".case-thinking .case-kicker");
+   if(step)step.textContent="02 / DECISÕES TÉCNICAS";
+ }else{
+   put("architecture-title",flow.heading);
+   const explanation=document.querySelector(".case-flow-intro");
+   if(explanation)explanation.textContent=flow.intro;
+   process.classList.add("app-flow");
+   process.style.setProperty("--flow-count",String(flow.steps.length));
+   process.setAttribute("aria-label","Etapas documentadas de "+item.name);
+   for(const [i,[phase,name,detail]] of flow.steps.entries()){
+     const li=document.createElement("li");
+     li.className="app-flow-step"+(i===0?" is-start":i===flow.steps.length-1?" is-end":"");
+     const top=document.createElement("div");top.className="app-flow-top";
+     const number=document.createElement("span");number.className="process-n";
+     number.textContent=String(i+1).padStart(2,"0");
+     const phaseEl=document.createElement("small");phaseEl.className="app-flow-phase";phaseEl.textContent=phase;
+     top.append(number,phaseEl);
+     const title=document.createElement("strong");title.textContent=name;
+     const paragraph=document.createElement("p");paragraph.className="app-flow-detail";paragraph.textContent=detail;
+     const connector=document.createElement("span");connector.className="app-flow-connector";connector.setAttribute("aria-hidden","true");
+     li.append(top,title,paragraph,connector);process.appendChild(li);
+   }
+ }
  const pillars=$("case-pillars");
  item.pillars.forEach(([title,description],i)=>{
    const article=document.createElement("article");article.className="case-pillar";
@@ -97,19 +166,18 @@
    const p=document.createElement("p");p.textContent=description;
    article.append(span,h,p);pillars.appendChild(article);
  });
- const stack=$("case-stack");item.tech.forEach(t=>{const tag=document.createElement("span");tag.textContent=t;stack.appendChild(tag)});
  const art=$("case-art");
  function flowArt(steps,mode){
   const nodes=steps.map((step,i)=>`<div class="scene-flow-node"><span>0${i+1}</span><strong>${step}</strong></div>`).join('<span class="scene-flow-arrow" aria-hidden="true">→</span>');
   return `<div class="scene-flow scene-flow-${mode}"><div class="scene-overline">REFERÊNCIA DIDÁTICA / ESTRUTURA DE PROCESSAMENTO</div><div class="scene-flow-track">${nodes}</div><div class="scene-flow-footer">Cada bloco representa uma responsabilidade conceitual, não uma operação executada.</div></div>`;
  }
  function crmArt(){
-  return `<div class="scene-crm"><div class="scene-crm-window"><div class="scene-window-head"><span class="window-dots"><i></i><i></i><i></i></span><span>CRM / INTEGRATIONS CONTROL PLANE</span><span>MAPA DE CAMADAS</span></div>
+  return `<div class="scene-crm"><div class="scene-crm-window"><div class="scene-window-head"><span class="window-dots"><i></i><i></i><i></i></span><span>CRM / ARQUITETURA DE INTEGRAÇÕES</span><span>MAPA DE CAMADAS</span></div>
   <div class="scene-crm-body">
-   <div class="scene-crm-sidebar"><b>WORKSPACE</b><span>Visão geral</span><span>Relacionamentos</span><span class="selected">Atividades</span><span>Integrações</span><span>Automações <small>WIP</small></span></div>
+   <div class="scene-crm-sidebar"><b>WORKSPACE</b><span>Visão geral</span><span>Relacionamentos</span><span class="selected">Atividades</span><span>Integrações</span><span>Automações <small>em desenvolvimento</small></span></div>
    <div class="scene-crm-main"><div class="scene-crm-title"><div><small>CAMADA DE INTEGRAÇÕES</small><h3>Um domínio. Vários canais.</h3></div><span class="scene-label">ESQUEMA</span></div>
-    <div class="scene-crm-integrations"><div><small>CHANNEL 01</small><strong>WhatsApp Business</strong><p>Meta Cloud API · Coexistence</p></div><div class="scene-crm-line" aria-hidden="true">⇄</div><div><small>DOMÍNIO</small><strong>CRM</strong><p>Multi-workspace · regras</p></div><div class="scene-crm-line" aria-hidden="true">⇄</div><div><small>CHANNEL 02</small><strong>Calendar</strong><p>Activities · Workers</p></div></div>
-    <div class="scene-crm-bottom"><div><small>EDITOR DE AUTOMAÇÕES</small><strong>Motor de workflows</strong><p>Gatilhos → operações → auditoria</p></div><div><small>ORÇAMENTO POR OPERAÇÃO</small><strong>Reserva de créditos</strong><p>Estimar → reservar → consumir</p></div></div>
+    <div class="scene-crm-integrations"><div><small>CANAL 01</small><strong>WhatsApp Business</strong><p>Meta Cloud API · coexistência</p></div><div class="scene-crm-line" aria-hidden="true">⇄</div><div><small>DOMÍNIO</small><strong>CRM</strong><p>Multi-workspace · regras</p></div><div class="scene-crm-line" aria-hidden="true">⇄</div><div><small>CANAL 02</small><strong>Google Agenda</strong><p>Atividades · serviços</p></div></div>
+    <div class="scene-crm-bottom"><div><small>EDITOR DE AUTOMAÇÕES</small><strong>Editor de automações</strong><p>Gatilhos → operações → auditoria</p></div><div><small>ORÇAMENTO POR OPERAÇÃO</small><strong>Reserva de créditos</strong><p>Estimar → autorizar → registrar</p></div></div>
    </div>
   </div></div><span class="scene-stamp">CAMADAS DE INTEGRAÇÃO · CRM SERVERLESS</span></div>`;
  }
@@ -117,8 +185,8 @@
   return `<div class="scene-voice interactive-voice" data-step="0">
   <div class="voice-simulation-label"><span>VOICE2TEXT · DEMONSTRAÇÃO INTERATIVA</span><strong>Sem microfone, ASR ou clipboard reais</strong></div>
   <div class="scene-voice-editor">
-   <div class="scene-window-head"><span class="window-dots"><i></i><i></i><i></i></span><span>EDITOR / NOTA DE EXEMPLO</span><span>AMBIENTE FICTÍCIO</span></div>
-   <div class="scene-voice-workarea"><aside><span>ARQUIVOS</span><p>nota-de-exemplo.txt</p><p>rascunho.md</p><span>PROCESSAMENTO</span><p>Whisper local · Windows</p></aside><div><div class="scene-document-kicker">ÁREA DE TEXTO ILUSTRATIVA</div><h3 id="voice-scene-title">Primeiro, escolher a entrada.</h3><p class="scene-editable" id="voice-scene-editor">O editor está pronto para receber uma nota de exemplo.</p><div class="scene-doc-line"></div><div class="scene-doc-line short"></div></div></div>
+   <div class="scene-window-head"><span class="window-dots"><i></i><i></i><i></i></span><span>EDITOR / DOCUMENTO DE EXEMPLO</span><span>AMBIENTE FICTÍCIO</span></div>
+   <div class="scene-voice-workarea"><aside><span>ARQUIVOS</span><p>nota-de-exemplo.txt</p><p>anotacoes.md</p><span>PROCESSAMENTO</span><p>Whisper local · Windows</p></aside><div><div class="scene-document-kicker">ÁREA DE TEXTO ILUSTRATIVA</div><h3 id="voice-scene-title">Primeiro, escolher a entrada.</h3><p class="scene-editable" id="voice-scene-editor">O editor está pronto para receber uma nota de exemplo.</p><div class="scene-doc-line"></div><div class="scene-doc-line short"></div></div></div>
    <div class="scene-voice-pill"><span class="scene-mic-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="19" height="19"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5m-4 0h8"/></svg></span><div><strong id="voice-scene-pill">Entrada: microfone</strong><small id="voice-scene-subtitle">Escolha uma etapa no painel inferior</small></div><div class="scene-waveform" aria-hidden="true">${[8,14,6,20,11,25,17,9,20,15,7,11].map((h,i)=>`<i style="height:${h}px;animation-delay:-${(i%5)*0.17}s"></i>`).join("")}</div></div>
   </div>
   <div class="voice-stepper" role="group" aria-label="Etapas da demonstração">
@@ -131,7 +199,7 @@
   </div>`;
  }
  function agentsArt(){
-  return `<div class="scene-agents"><div class="scene-agents-console"><div class="scene-window-head"><span class="window-dots"><i></i><i></i><i></i></span><span>WORKSPACE / CHECKPOINTS</span><span>FONTE → EVIDÊNCIA</span></div><div class="scene-agents-rows"><div><span>01</span><strong>Escopo autorizado</strong><i>required</i></div><div><span>02</span><strong>AGENTS.md / regras locais</strong><i>read</i></div><div><span>03</span><strong>Inspeção de fontes</strong><i>bounded</i></div><div><span>04</span><strong>Validação</strong><i>review</i></div><div><span>05</span><strong>Handoff documentado</strong><i>ready for review</i></div></div><div class="scene-agents-dual"><span>ASUS / ASTRA</span><span>GALAXY / JARVIS</span><small>AMBIENTES INDEPENDENTES</small></div></div><span class="scene-stamp">ESTUDO DO FLUXO, NÃO EXECUÇÃO REMOTA</span></div>`;
+  return `<div class="scene-agents"><div class="scene-agents-console"><div class="scene-window-head"><span class="window-dots"><i></i><i></i><i></i></span><span>PROJETO / ETAPAS DE CONTROLE</span><span>FONTE → EVIDÊNCIA</span></div><div class="scene-agents-rows"><div><span>01</span><strong>Escopo autorizado</strong><i>AUTORIZADO</i></div><div><span>02</span><strong>AGENTS.md / regras locais</strong><i>REGRAS LIDAS</i></div><div><span>03</span><strong>Inspeção de fontes</strong><i>DELIMITADO</i></div><div><span>04</span><strong>Validação</strong><i>REVISADO</i></div><div><span>05</span><strong>Entrega documentada</strong><i>DISPONÍVEL</i></div></div><div class="scene-agents-dual"><span>ASUS / ASTRA</span><span>GALAXY / JARVIS</span><small>AMBIENTES INDEPENDENTES</small></div></div><span class="scene-stamp">ESTUDO DO FLUXO, NÃO EXECUÇÃO REMOTA</span></div>`;
  }
  function mobileArt(){
    const select=id==="select-anywhere";
@@ -185,44 +253,24 @@
  else if(id==="jarvis")art.innerHTML=agentsArt();
  else if(["select-anywhere","better-notifications","easy-sign"].includes(id))art.innerHTML=mobileArt();
  else if(id==="iee")art.innerHTML=researchArt();
- else if(id==="xournal-plus-plus")art.innerHTML=`<div class="xr-showcase" aria-label="Comparação de renderização Cairo do fork Xournal++">
-  <div class="xr-showcase-intro"><div><small>FORK XOURNAL++ 1.3.8 / C++ · CAIRO</small><h2>Uma linha.<br><em>Outra materialidade.</em></h2></div>
-    <p>Estudo de traços ballpoint no renderer Cairo. Duas saídas geradas com o mesmo percurso de teste permitem inspecionar variações reais de rasterização — sem confundir o resultado com escrita física.</p></div>
-  <div class="xr-render-pair">
-    <figure><div class="xr-image"><img src="../assets/evidence/xournal/ballpoint-400-baseline.png" width="896" height="464" alt="Saída de referência do Cairo: traço azul de um percurso sintético com escala CTM quatro vezes maior" loading="eager"></div><figcaption><span>01 / REFERÊNCIA</span><strong>Cairo CTM 4×</strong></figcaption></figure>
-    <figure><div class="xr-image"><img src="../assets/evidence/xournal/ballpoint-400-candidate.png" width="896" height="464" alt="Saída do renderer experimental Ballpoint V4 com o mesmo percurso sintético e escala Cairo quatro vezes maior" loading="eager"></div><figcaption><span>02 / VARIAÇÃO</span><strong>Ballpoint V4</strong></figcaption></figure>
-  </div>
-  <div class="xr-proofline"><span>MESMO PERCURSO / DUAS SAÍDAS REAIS DE TESTE</span><span>14 OUT 2026 · RENDERER ISOLADO</span></div>
- </div>`;
  else if(["tcc","transcrever"].includes(id))art.innerHTML=audioArt();
  else art.innerHTML=flowArt(item.layers,id);
  // A distinctive chapter for each of the two most complex software systems.
  const figure=document.querySelector(".case-artframe");
- if(id==="xournal-plus-plus"){
-   const chapter=document.createElement("section");chapter.className="case-special xr-chapter";chapter.setAttribute("aria-label","Engenharia de renderização e controles Xournal++");
-   chapter.innerHTML=`<div class="xr-chapter-head"><small>03 / RASTER, RENDERER E CONTROLES GTK</small><h2>O detalhe também é <em>engenharia.</em></h2><p>O experimento compara saídas de um painter Cairo isolado. A ampliação abaixo expõe como o traço é rasterizado, sem alterar a geometria de entrada.</p></div>
-    <figure class="xr-detail"><img src="../assets/evidence/xournal/ballpoint-detail.png" width="840" height="112" alt="Faixa ampliada do raster produzido pelo painter Ballpoint V4" loading="lazy"><figcaption>Inspeção de rasterização · faixa técnica do renderer experimental.</figcaption></figure>
-    <div class="xr-controls-panel">
-     <div><small>GTK / CONTROLES DE APRESENTAÇÃO</small><h3>Precisão também no tempo.</h3><p>O laser pointer já faz parte do Xournal++ original. No fork, um ensaio isolado explora ajustes independentes de permanência e dissipação dos traços.</p><p class="xr-technical">C++ · GTK · atraso legado · hold · fade</p></div>
-     <figure><img src="../assets/evidence/xournal/laser-gtk-controls.png" width="700" height="210" alt="Painel GTK local de teste com campos de atraso legado, permanência e duração do fade do laser" loading="lazy"><figcaption>Painel GTK de QA · componente isolado, não janela do aplicativo distribuído.</figcaption></figure>
-    </div>
-    <div class="xr-credits"><p>Imagens de teste do fork local, geradas em 14/10/2026. A diferença entre píxeis não demonstra fidelidade à tinta física, escrita Wacom ou integração do componente na versão instalada.</p><p>Software original: <a href="https://github.com/xournalpp/xournalpp" target="_blank" rel="noopener noreferrer">Xournal++ e colaboradores</a>. Fork experimental independente, com crédito ao upstream.</p></div>`;
-   figure.insertAdjacentElement("afterend",chapter);
- }
  if(id==="voice2text"){
    const chapter=document.createElement("section");chapter.className="case-special";chapter.setAttribute("aria-label","Duas experiências Voice2Text");
-   chapter.innerHTML=`<div class="case-special-head"><span>WINDOWS + ANDROID / EXPERIÊNCIA DE PRODUTO</span><h2>Uma ideia. <em>Dois modos de uso.</em></h2></div>
-   <figure class="case-original-asset"><img src="../assets/voice2text-landing-cover.svg" alt="Arte editorial da landing Voice2Text: Pensou? Falou. Virou texto. Uma pílula de ditado estilizada é ilustrada." width="1200" height="630" loading="lazy"><figcaption>Identidade visual da landing Voice2Text, dedicada às experiências Windows e Android.</figcaption></figure><div class="case-platform-grid"><article><small>01 / WINDOWS · FONTE INSPECIONADA</small><h3>Ditado que volta ao editor.</h3><p>Uma pílula WPF dá acesso à captura; Whisper local prepara o texto e a rotina de saída verifica o destino antes de tentar colar.</p><div class="case-platform-foot"><span>WPF / Whisper / Clipboard</span><strong>Código documentado</strong></div></article><article><small>02 / ANDROID · EXPERIÊNCIA MOBILE</small><h3>Sessões para revisitar depois.</h3><p>A frente Android organiza sessões de voz para posterior consulta e edição. A experiência móvel é desenvolvida separadamente do aplicativo Windows.</p><div class="case-platform-foot"><span>Mobile / On-device</span><strong>Frente Android em desenvolvimento</strong></div></article></div>`;
+   chapter.innerHTML=`<div class="case-special-head"><span>WINDOWS + ANDROID / FORMAS DE USO</span><h2>Uma ideia. <em>Dois modos de uso.</em></h2></div>
+   <figure class="case-original-asset"><img src="../assets/voice2text-landing-cover.svg" alt="Arte editorial da landing Voice2Text: Pensou? Falou. Virou texto. Uma pílula de ditado estilizada é ilustrada." width="1200" height="630" loading="lazy"><figcaption>Identidade visual da landing Voice2Text, dedicada às experiências Windows e Android.</figcaption></figure><div class="case-platform-grid"><article><small>01 / WINDOWS · FONTE INSPECIONADA</small><h3>Ditado que volta ao editor.</h3><p>Uma pílula WPF dá acesso à captura; Whisper local prepara o texto e a rotina de saída verifica o destino antes de tentar colar.</p><div class="case-platform-foot"><span>WPF / Whisper / Clipboard</span><strong>Código documentado</strong></div></article><article><small>02 / ANDROID · EXPERIÊNCIA MOBILE</small><h3>Sessões para revisitar depois.</h3><p>A versão Android segue desenvolvimento independente, com funcionalidades e validações avaliadas separadamente do aplicativo Windows.</p><div class="case-platform-foot"><span>Mobile / On-device</span><strong>Frente Android em desenvolvimento</strong></div></article></div>`;
    figure.insertAdjacentElement("afterend",chapter);
  }
  if(id==="crm"){
    const chapter=document.createElement("section");chapter.className="case-special";chapter.setAttribute("aria-label","Estados das integrações do CRM");
-   chapter.innerHTML=`<div class="case-special-head"><span>PROTOCOLOS / CONDIÇÕES / GATES</span><h2>Conectado no código.<br><em>Controlado na execução.</em></h2></div>
+   chapter.innerHTML=`<div class="case-special-head"><span>PROTOCOLOS / AUTORIZAÇÃO / ATIVAÇÃO</span><h2>Conectado no código.<br><em>Controlado na execução.</em></h2></div>
    <div class="case-condition-grid">
    <article><small>META / ENTRADA</small><strong>Business App → webhook assinado</strong><p>Parser de ecos, mensagens e histórico com validação do ingresso. Coexistência completa ainda não homologada.</p><span>IMPLEMENTAÇÃO DE PROTOCOLO</span></article>
-   <article><small>META / SAÍDA</small><strong>Templates → admissão de créditos</strong><p>UI e transporte previstos; envio real permanece bloqueado por gate financeiro no snapshot examinado.</p><span>SEM ENVIO OPERACIONAL COMPROVADO</span></article>
-   <article><small>CALENDAR / ACTIVITIES</small><strong>CRM ↔ Google Calendar</strong><p>Sincronização bidirecional gerenciada para atividades vinculadas, distinta do espelhamento Meta. Prova E2E pendente.</p><span>MODELO + WORKERS EM CÓDIGO</span></article>
-   <article><small>AUTOMAÇÕES / FINANÇAS</small><strong>Editor visual + reserva integral</strong><p>Grafo, preview sem efeitos e versões inativas. Planejador exige orçamento integral, mas não confirma hold atômico.</p><span>EDITOR + PLANNER EM EVOLUÇÃO</span></article></div>`;
+   <article><small>META / SAÍDA</small><strong>Templates → admissão de créditos</strong><p>UI e transporte previstos; envio real permanece condicionado à validação financeira e operacional.</p><span>SEM ENVIO OPERACIONAL COMPROVADO</span></article>
+   <article><small>CALENDAR / ACTIVITIES</small><strong>CRM ↔ Google Calendar</strong><p>Sincronização gerenciada para atividades vinculadas, distinta dos eventos da Meta. A operação ponta a ponta ainda requer validação.</p><span>COMPONENTES DE SINCRONIZAÇÃO</span></article>
+   <article><small>AUTOMAÇÕES / FINANÇAS</small><strong>Editor visual + reserva integral</strong><p>Grafo, prévia sem execução e versões inativas. O controle de créditos ainda depende de validação transacional.</p><span>EDITOR EM DESENVOLVIMENTO</span></article></div>`;
    figure.insertAdjacentElement("afterend",chapter);
  }
  if(item.relatedPublication){

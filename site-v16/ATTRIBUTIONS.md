@@ -1,4 +1,4 @@
-# Créditos e proveniência — Portfólio V16
+# Créditos e proveniência — Portfólio V24
 
 Este site apresenta obras do titular e descrições de experiências colaborativas; a presença de marcas de terceiros não implica patrocínio ou endosso.
 
@@ -6,7 +6,6 @@ Este site apresenta obras do titular e descrições de experiências colaborativ
 - **Simple Icons** (CC0 1.0 para o desenho): ícones GitHub e YouTube (`ui-youtube.svg`), https://simpleicons.org; os nomes e marcas comerciais pertencem aos seus titulares.
 - **Font Awesome Free** (arte Brands CC BY 4.0): ícone LinkedIn, https://fontawesome.com/license/free.
 - **Stageshow** (MIT): cenas demonstrativas opt-in; licença e avisos em /demos/. As cenas são ilustrativas, não gravações do aplicativo real.
-- **Xournal++**: marca e referência a software de código aberto, upstream https://github.com/xournalpp/xournalpp. Este portfólio descreve um fork experimental, sem endosso do upstream.
 - **USP, IEE-USP, Anhembi Morumbi, Google Play, YouTube e demais marcas**: marcas respectivas, empregadas descritivamente para identificar vínculos acadêmicos, aplicações e referências públicas.
 - **Lost Time, Easy Sign, Better Notifications, Select Anywhere**: imagens promocionais originais das aplicações do autor, sem apresentação como capturas realizadas pelo site.
 - **FUVEST**: capturas dos dashboards públicos do autor, apresentadas em duas vertentes distintas.

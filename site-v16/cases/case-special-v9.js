@@ -41,7 +41,7 @@
        <div class="crm-external">
          <article><small>WHATSAPP BUSINESS</small><strong>Meta Cloud API</strong><p>Embedded signup, templates e webhooks</p></article>
          <article><small>ATIVIDADES</small><strong>Google Calendar</strong><p>Eventos e sincronização sob permissões</p></article>
-         <article><small>AUTOMAÇÕES</small><strong>Workflows + SQS</strong><p>Editor visual e execução condicionada a gates</p></article>
+         <article><small>AUTOMAÇÕES</small><strong>Workflows + SQS</strong><p>Editor visual e ativação condicionada à autorização</p></article>
        </div>
      </div>
    </div>`

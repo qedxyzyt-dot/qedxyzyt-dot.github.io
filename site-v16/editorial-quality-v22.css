@@ -1,0 +1,35 @@
+/* V22 · audit follow-up, staging only: measurable contrast and touch areas.
+   Layered after V21 so the release remains reversible. */
+@media (prefers-color-scheme:light) {
+  .result-count {
+    color:#6A696F; /* >= 4.5:1 on #F4F2EE, 12px text */
+  }
+}
+.project .project-link {
+  min-height:34px;
+  display:inline-flex;
+  align-items:center;
+  padding-block:7px;
+  box-sizing:border-box;
+}
+.other-work-actions a {
+  min-height:36px;
+  padding-block:7px;
+  box-sizing:border-box;
+}
+@media(max-width:730px){
+  .filter {min-height:44px}
+  #cosmos-rail-next {min-width:44px;min-height:44px}
+  .project .project-link {min-height:40px}
+  .other-work-actions a {min-height:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  .project .project-link,.other-work-actions a {transition:none}
+}
+
+/* V23 — Compact project navigation replaces the oversized generic end chapter. */
+.case-footer-links{display:flex;align-items:center;gap:clamp(12px,2vw,24px);flex-wrap:wrap}
+.case-footer-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--ds-accent);font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.case-footer-links a:hover{color:var(--ds-accent-strong)}
+.case-footer-links a:focus-visible{outline:2px solid var(--ds-accent);outline-offset:3px;border-radius:2px}
+@media(max-width:680px){.case-footer-links{margin-bottom:12px}}
