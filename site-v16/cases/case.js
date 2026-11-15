@@ -14,7 +14,7 @@
  document.documentElement.dataset.caseTheme = item.theme;
  document.documentElement.dataset.project = id;
  document.body.classList.add("case-body");
- document.title = item.name + " — Projeto de engenharia | Augusto Massayoshi";
+ document.title = (id==="qed"?"Canal QED — Educação matemática":id==="iee"?"IEE-USP — Pesquisa acadêmica":item.name+" — Projeto de engenharia")+" | Augusto Massayoshi";
  // Update human-facing metadata and share state for client-side navigation.
  // GitHub Pages serves the same HTML for all ?project= values; crawlers that
  // do not execute JS see the generic case preview in the initial HTML.
@@ -29,7 +29,7 @@
  seo('meta[property="og:description"]',"content",item.intro.slice(0,190));
  seo('meta[property="og:url"]',"content",pageUrl);
  put("case-crumb-label", item.name);
- put("case-eyebrow", item.index+" / "+item.category);
+ put("case-eyebrow", id==="qed"?"PRODUÇÃO EDUCACIONAL / CANAL QED":id==="iee"?"PESQUISA ACADÊMICA / IEE-USP":item.index+" / "+item.category);
  put("case-title", item.headline);
  put("case-intro", item.intro);
  put("case-platform", item.platform);
@@ -41,15 +41,27 @@
  put("case-limits", item.limits);
  put("case-next", item.next);
  const brand=document.createElement("div");brand.className="case-brand-identity";
- const icon=document.createElement("img");icon.src="../assets/projects/"+(id==="iee"?"iee-official-traced-v12":encodeURIComponent(id))+".svg";icon.alt="";icon.width=72;icon.height=72;
  const iconMeta=document.createElement("div");const iconName=document.createElement("strong");iconName.textContent=item.name;
- iconMeta.append(iconName);brand.append(icon,iconMeta);
+ iconMeta.append(iconName);
+ if(id!=="qed"){
+   const icon=document.createElement("img");icon.src="../assets/projects/"+(id==="iee"?"iee-official-traced-v12":encodeURIComponent(id))+".svg";icon.alt="";icon.width=72;icon.height=72;
+   brand.append(icon);
+ }else brand.classList.add("case-brand-text-only");
+ brand.append(iconMeta);
  const eyebrow=$("case-eyebrow");eyebrow.parentElement.insertBefore(brand,eyebrow);
  if(id==="iee"){
    const academic=document.createElement("div");academic.className="case-affiliation";
    const usp=document.createElement("img");usp.src="../assets/projects/usp-logo.svg";usp.alt="Universidade de São Paulo";usp.width=90;usp.height=40;
    const msg=document.createElement("small");msg.textContent="Vínculo acadêmico · não representa patrocínio institucional";
    academic.append(usp,msg);document.querySelector(".case-facts").append(academic);
+ }
+ if(id==="qed"||id==="iee"){
+   put("architecture-title",id==="qed"?"Como os conteúdos são produzidos.":"Como a pesquisa foi conduzida.");
+   const facts=[...document.querySelectorAll(".case-facts>div")];
+   const proof=facts.find(node=>node.querySelector("small")?.textContent==="TIPO DE PROVA");
+   if(proof?.querySelector("strong"))proof.querySelector("strong").textContent=id==="qed"?"Vídeos públicos e canal YouTube":"Programa oficial do IEEE ICHVE 2026";
+   const caption=document.querySelector(".case-artframe figcaption");
+   if(caption)caption.textContent=id==="qed"?"Apresentação educativa com links para vídeos publicados; peças ilustrativas são identificadas como tais.":"Representação explicativa da pesquisa; não equivale a dados experimentais restritos ou resultados não publicados.";
  }
  const actions=$("case-actions");
  const addLink=(href,text,secondary=false)=>{ const link=document.createElement("a");link.href=href;link.className=secondary?"case-action-secondary":"case-action-primary";const label=document.createElement("span");label.textContent=text.replace(/[↗↓]/g,"").trim();const img=document.createElement("img");img.src="../assets/projects/ui-"+(text.includes("↓")?"arrow-down-right":"arrow-up-right")+".svg";img.className="ui-inline-arrow";img.alt="";img.setAttribute("aria-hidden","true");img.width=16;img.height=16;link.append(label,img);actions.appendChild(link);};

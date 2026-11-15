@@ -64,7 +64,7 @@
 .tech-index-foot a{color:#33313a}
 /* VideoCase: gallery, real YouTube media, no invented engagement metrics. */
 html[data-project="qed"] .case-hero{background:#211b1d}
-html[data-project="qed"] .case-hero h1{font-family:Georgia,serif;font-style:italic;font-weight:450;letter-spacing:-.06em}
+html[data-project="qed"] .case-hero h1{font-style:normal;font-weight:700;letter-spacing:-.055em}
 html[data-project="qed"] .case-artframe{border-color:#65555d;background:#1b1518}
 html[data-project="qed"] .case-proof{background:#2b2428}
 html[data-project="qed"] .case-architecture{background:#eee9e2}

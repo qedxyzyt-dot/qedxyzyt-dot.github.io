@@ -5,7 +5,11 @@
  * fallback while it loads or when the network is unavailable.
  */
 (() => {
- const cards=[...document.querySelectorAll("#grid article.project")];
+ const appCards=[...document.querySelectorAll("#grid article.project")];
+ const otherCards=[...document.querySelectorAll("#other-grid article.other-work-card")];
+ const cards=[...appCards,...otherCards];
+ const appGrid=document.getElementById("grid");
+ const otherSection=document.getElementById("outras-frentes");
  const buttons=[...document.querySelectorAll("[data-filter]")];
  const search=document.getElementById("search");
  const count=document.getElementById("count");
@@ -65,24 +69,29 @@
  }
  function render(){
   const tokens=searchParts(search.value);
-  let visible=0;
+  let visible=0,visibleApps=0,visibleOther=0;
   for(const card of cards){
    const categories=(card.dataset.category||"").split(/\s+/);
    const categoryMatch=active==="todos"||categories.includes(active);
    const searchText=normalize(card.textContent+" "+(index.get(card.id)||""));
    const textMatch=tokens.every(token=>hasWord(searchText,token));
    card.hidden=!(categoryMatch&&textMatch);
-   if(!card.hidden)visible++;
+   if(!card.hidden){
+    visible++;
+    if(appCards.includes(card))visibleApps++;else visibleOther++;
+   }
   }
-  const noun=visible===1?"projeto":"projetos";
+  appGrid.hidden=visibleApps===0;
+  if(otherSection)otherSection.hidden=visibleOther===0;
+  const noun=visible===1?"resultado":"resultados";
   const term=search.value.trim();
   count.textContent=term
-   ? visible+" "+noun+" para “"+term+"” · "+(active==="todos"?"todas as categorias":"filtro selecionado")
-   : visible+" "+noun+" encontrados";
+   ? visible+" "+noun+" para “"+term+"” · "+(active==="todos"?"todas as áreas":"filtro selecionado")
+   : visibleApps+" aplicações e ferramentas"+(visibleOther?" · "+visibleOther+" frentes de ensino e pesquisa":"");
   empty.hidden=visible!==0;
   if(!empty.hidden)empty.textContent=term
-   ? "Nenhum projeto encontrado para “"+term+"”. Tente outra linguagem ou tecnologia, ou escolha “Todos”."
-   : "Nenhum projeto neste filtro. Selecione “Todos” para ver o catálogo completo.";
+   ? "Nenhum resultado encontrado para “"+term+"”. Tente outra linguagem, tecnologia ou escolha “Todos”."
+   : "Nenhuma aplicação ou frente neste filtro. Selecione “Todos” para ver o portfólio completo.";
  }
 
  tableFallback();

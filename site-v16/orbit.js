@@ -18,7 +18,7 @@
    const link=document.createElement("a");
    link.className="cosmos-node";
    link.href=item.href;
-   link.setAttribute("aria-label","Abrir detalhes do projeto: "+item.title);
+   link.setAttribute("aria-label","Abrir detalhes da aplicação: "+item.title);
    const picture=document.createElement("img");
    picture.src=item.icon;picture.alt="";picture.width=72;picture.height=72;
    picture.decoding="async";
@@ -35,7 +35,7 @@
    railLink.append(railIcon,railLabel);rail.append(railLink);
  }
  const counter=document.querySelector(".cosmos-counter");
- if(counter)counter.textContent=projects.length+" / PROJETOS";
+ if(counter)counter.textContent=projects.length+" / APLICAÇÕES";
  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
  const optOut=document.getElementById("orbit-motion-opt-out");
  let phase=0,pointerOffset=0,targetPointerOffset=0,stoppedByUser=false;

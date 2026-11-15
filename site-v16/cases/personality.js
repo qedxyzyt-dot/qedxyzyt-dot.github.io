@@ -31,7 +31,7 @@
  const architecture=document.querySelector(".case-architecture .case-kicker");
  const architectureTitle=document.getElementById("architecture-title");
  if(architecture)architecture.textContent=chapter;
- if(architectureTitle)architectureTitle.textContent=id==="qed"?"Fluxo de produção.":["nero","iee"].includes(id)?"Fluxo da pesquisa.":id==="circuitos"?"Fluxo de curadoria.":"Fluxo da aplicação.";
+ if(architectureTitle)architectureTitle.textContent=id==="qed"?"Como os conteúdos são produzidos.":id==="iee"?"Como a pesquisa foi conduzida.":id==="nero"?"Fluxo da pesquisa.":id==="circuitos"?"Fluxo de curadoria.":"Fluxo da aplicação.";
  const sectionKicker=document.querySelector(".case-proof .case-kicker");
  if(sectionKicker)sectionKicker.textContent=skillTitle;
  const desc=document.querySelector('meta[name="description"]');

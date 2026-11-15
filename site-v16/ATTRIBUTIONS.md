@@ -10,7 +10,10 @@ Este site apresenta obras do titular e descrições de experiências colaborativ
 - **USP, IEE-USP, Anhembi Morumbi, Google Play, YouTube e demais marcas**: marcas respectivas, empregadas descritivamente para identificar vínculos acadêmicos, aplicações e referências públicas.
 - **Lost Time, Easy Sign, Better Notifications, Select Anywhere**: imagens promocionais originais das aplicações do autor, sem apresentação como capturas realizadas pelo site.
 - **FUVEST**: capturas dos dashboards públicos do autor, apresentadas em duas vertentes distintas.
-- **CRM, QED e Cash Map**: símbolos editoriais neutros criados para esta publicação; não representam identidade comercial oficial ou autorização de terceiros.
+- **CRM / APF Data**: `assets/projects/crm.svg` é cópia fiel do master vetorial `APFDataLogoIcon.svg` usado no frontend do projeto corporativo (SHA-256 `ab7ef5c22ec4a37c995c20165f7db99a4037140ba6ec432c286aa13dc79da294`). A marca pertence à organização; é usada aqui apenas como identificação de participação em projeto colaborativo, **sem endosso institucional** ou publicação de código/dados privados. A autorização formal da empresa para o contexto do portfólio pessoal não foi comprovada.
+- **Cash Map**: `assets/projects/cash-map.svg` corresponde integralmente ao vetor autoral recuperado do Galaxy `Cash_Outline_64_corrigido.svg` (SHA-256 `00b0dee61a4307783f38b4571bf11701fde25bce183da7029e8a57747cc2e28b`). O vínculo com o ícone da versão distribuída ainda não foi documentado; exibe-se como identidade existente do projeto, não como marca de loja verificada.
+- **Canal QED**: aparece na seção própria de educação, sem logotipo inventado ou retrato de direitos não confirmados. A página de detalhes continua acessível.
+- **IEE-USP**: aparece na seção de pesquisa, com identidade colorida fornecida pelo autor; vínculo acadêmico não implica patrocínio.
 - **Materiais sensíveis e trabalhos de clientes**: fontes, credenciais, logs internos e datasets não integram este artefato público.
 
 Última revisão editorial: 15/11/2026.
