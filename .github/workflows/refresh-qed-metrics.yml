@@ -1,0 +1,55 @@
+name: Refresh QED YouTube metrics
+
+on:
+  schedule:
+    # Four checks daily; avoid minute 00 at peak GitHub Actions load.
+    # UTC: 00:27, 06:27, 12:27, 18:27.
+    - cron: "27 0,6,12,18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: refresh-qed-metrics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Test snapshot parser with offline fixtures
+        run: node --test scripts/update-qed-channel.test.mjs
+
+      - name: Refresh public statistics and channel avatar
+        shell: bash
+        env:
+          YOUTUBE_DATA_API_KEY: ${{ secrets.YOUTUBE_DATA_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -z "$YOUTUBE_DATA_API_KEY" ]; then
+            echo "::notice::YouTube sync is not yet active: configure repository secret YOUTUBE_DATA_API_KEY."
+            exit 0
+          fi
+          node scripts/update-qed-channel.mjs
+          git add -- site-v16/qed-stats.json site-v16/assets/projects/qed-avatar.svg
+          if git diff --cached --quiet; then
+            echo "No changes to public YouTube data."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(qed): refresh dated public channel statistics"
+          # Fail safely if another author updated main; never force push.
+          git push origin HEAD:main
+          # GITHUB_TOKEN pushes do not trigger workflows automatically.
+          # workflow_dispatch is the documented exception.
+          gh workflow run publish-portfolio-v16.yml --repo "$GITHUB_REPOSITORY" --ref main

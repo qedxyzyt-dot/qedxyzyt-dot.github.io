@@ -43,10 +43,16 @@
  const brand=document.createElement("div");brand.className="case-brand-identity";
  const iconMeta=document.createElement("div");const iconName=document.createElement("strong");iconName.textContent=item.name;
  iconMeta.append(iconName);
- if(id!=="qed"){
-   const icon=document.createElement("img");icon.src="../assets/projects/"+(id==="iee"?"iee-official-traced-v12":encodeURIComponent(id))+".svg";icon.alt="";icon.width=72;icon.height=72;
-   brand.append(icon);
- }else brand.classList.add("case-brand-text-only");
+ const icon=document.createElement("img");
+ icon.src="../assets/projects/"+(id==="qed"?"qed-avatar":id==="iee"?"iee-official-traced-v12":encodeURIComponent(id))+".svg";
+ icon.alt=id==="qed"?"Foto de perfil do canal QED no YouTube":"";icon.width=72;icon.height=72;
+ brand.append(icon);
+ if(id==="qed"){
+   brand.classList.add("case-brand-qed");
+   const platform=document.createElement("span");platform.className="case-qed-platform";
+   const youtube=document.createElement("img");youtube.src="../assets/projects/ui-youtube.svg";youtube.alt="";youtube.width=17;youtube.height=17;youtube.setAttribute("aria-hidden","true");
+   platform.append(youtube,document.createTextNode("Canal no YouTube"));iconMeta.prepend(platform);
+ }
  brand.append(iconMeta);
  const eyebrow=$("case-eyebrow");eyebrow.parentElement.insertBefore(brand,eyebrow);
  if(id==="iee"){

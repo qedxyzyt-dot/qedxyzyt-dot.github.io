@@ -65,6 +65,9 @@
 /* VideoCase: gallery, real YouTube media, no invented engagement metrics. */
 html[data-project="qed"] .case-hero{background:#211b1d}
 html[data-project="qed"] .case-hero h1{font-style:normal;font-weight:700;letter-spacing:-.055em}
+html[data-project="qed"] .case-brand-identity>img{border-radius:50%;background:#2b2728}
+html[data-project="qed"] .case-qed-platform{display:inline-flex;align-items:center;gap:7px;color:#e4dcdf;font-size:11px;font-weight:650;margin:0 0 5px}
+html[data-project="qed"] .case-qed-platform img{width:17px;height:17px}
 html[data-project="qed"] .case-artframe{border-color:#65555d;background:#1b1518}
 html[data-project="qed"] .case-proof{background:#2b2428}
 html[data-project="qed"] .case-architecture{background:#eee9e2}

@@ -45,7 +45,7 @@
  };
  if(proofLabel)proofLabel.textContent=proofLabels[id]||"Código e decisões documentados";
  const brand=document.querySelector(".case-brand-identity span");
- if(brand){
+ if(brand && id!=="qed"){
   const authentic=["jarvis","omniclip","crm","clickfx","nero","tcc","lost-time","select-anywhere","voice2text","better-notifications","easy-sign","circuitos"];
   if(authentic.includes(id))brand.textContent=id==="nero"?"Símbolo do TPN · origem a confirmar":"Identidade visual do projeto";
   else brand.textContent="Identidade editorial";
