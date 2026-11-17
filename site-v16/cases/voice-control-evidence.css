@@ -21,6 +21,4 @@
 .vc-download p{color:#c9dcd7;line-height:1.7;margin:0;font-size:14px}
 .vc-download a{padding:15px 21px;border-radius:7px;background:#b5f0d6;color:#102521;font-weight:800;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;min-height:50px}
 .vc-download a:hover{background:#d0fce7}
-.vc-download .vc-download-sha{margin-top:13px;font-size:12px;color:#aecac7}
-.vc-download code{font-size:11px;overflow-wrap:anywhere;color:#bfd5d4}
 @media(max-width:820px){.vc-showcase-grid{grid-template-columns:1fr}.vc-download{align-items:stretch}.vc-download a{justify-content:center}}
