@@ -9,6 +9,9 @@
  }
  const id = requested||"jarvis";
  const item = data[id];
+ // Only the TCC case exposes the verified W261 interface screenshots.
+ const voiceShowcase=document.getElementById("vc-showcase");
+ if(voiceShowcase)voiceShowcase.hidden=id!=="tcc";
  const $ = (id) => document.getElementById(id);
  const put = (id, text) => { const el=$(id); if(el) el.textContent=text; };
  document.documentElement.dataset.caseTheme = item.theme;
@@ -58,6 +61,10 @@
    const msg=document.createElement("small");msg.textContent="Vínculo acadêmico · não representa patrocínio institucional";
    academic.append(usp,msg);document.querySelector(".case-facts").append(academic);
  }
+ if(id==="tcc"){
+   const proof=document.querySelector(".case-facts>div:last-child strong");
+   if(proof)proof.textContent="Capturas reais W261 + visual didático";
+ }
  if(id==="qed"||id==="iee"){
    put("architecture-title",id==="qed"?"Como os conteúdos são produzidos.":"Como a pesquisa foi conduzida.");
    const facts=[...document.querySelectorAll(".case-facts>div")];
@@ -69,7 +76,7 @@
  const actions=$("case-actions");
  const addLink=(href,text,secondary=false)=>{ const link=document.createElement("a");link.href=href;link.className=secondary?"case-action-secondary":"case-action-primary";const label=document.createElement("span");label.textContent=text.replace(/[↗↓]/g,"").trim();const img=document.createElement("img");img.src="../assets/projects/ui-"+(text.includes("↓")?"arrow-down-right":"arrow-up-right")+".svg";img.className="ui-inline-arrow";img.alt="";img.setAttribute("aria-hidden","true");img.width=16;img.height=16;link.append(label,img);actions.appendChild(link);};
  if(item.showDemo)addLink("../demos/index.html?project="+encodeURIComponent(item.showDemo),"Explorar a sequência ilustrativa ↗");
- if(item.external)addLink(item.external,"Ver fonte pública ↗",!!item.showDemo);
+ if(item.external)addLink(item.external,id==="tcc"?"Instalador Windows ↗":"Ver fonte pública ↗",!!item.showDemo);
  addLink("#details-title","Conhecer decisões técnicas ↓",true);
  // Display a sequence only when the project evidence supports a meaningful,
  // ordered explanation. Parallel integrations and unverified prototypes are

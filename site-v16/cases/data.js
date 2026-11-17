@@ -93,11 +93,11 @@ window.PORTFOLIO_CASES = {
     role:"Pesquisa experimental e evolução de um aplicativo Windows de processamento de voz, com avaliação perceptual e DSP.",
     layers:["Entrada 48 kHz","Denoiser / DSP","EQ / compressor / limiter","VB-CABLE","Software de comunicação"],
     pillars:[["Critério perceptivo","Comparações com RNNoise, CEVA DPDFNet2 em 48 kHz e soluções comerciais priorizam supressão de motocicletas durante a fala sem perda de inteligibilidade. Impressões perceptivas não substituem avaliação controlada."],["Fidelidade","Preservar voz baixa, fricativas e timbre natural é prioridade, com supressão de ruído sem metalização ou oscilação audível."],["Observabilidade","Latência, falhas de buffer, RMS e qualidade perceptiva são dimensões independentes; evidência visual de sincronismo não substitui medição de atraso."]],
-    evidence:"Documentação e ensaios offline locais; mídia pessoal e pesos/modelos não são distribuíveis no portfólio.",
+    evidence:"Capturas reais da interface W261 e documentação técnica; gravações privadas e fontes internos do aplicativo não são publicados neste portfólio.",
     limits:"Os resultados de qualidade perceptiva e latência ainda exigem ensaios padronizados; não há percentuais públicos de supressão validados.",
     next:"Produzir amostras demonstrativas próprias e autorizadas, normalizadas, com divulgação explícita de condições.",
     tech:["Python","RNNoise","DPDFNet2","ONNX","DSP","VB-CABLE"],
-    external:"https://github.com/gamathias14/reducao-de-ruido-algoritmica"
+    external:"https://github.com/Kasajizoo/voice-control-releases/releases/download/v0.2.61/VoiceControl-Setup.exe"
   },
   "omniclip":{
     name:"OmniClip",index:"07",category:"CONTINUIDADE / INTEROPERABILIDADE",platform:"ANDROID · WINDOWS",status:"Em desenvolvimento",
