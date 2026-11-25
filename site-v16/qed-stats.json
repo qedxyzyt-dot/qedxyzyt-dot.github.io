@@ -3,8 +3,8 @@
   "subscriberCountLabel": "29,1 mil",
   "subscriberCountPublic": 29100,
   "subscriberCountIsRounded": true,
-  "totalViews": 22258991,
+  "totalViews": 22259424,
   "videoCount": 777,
-  "checkedAt": "2026-11-24T22:40:14.334Z",
+  "checkedAt": "2026-11-25T08:58:27.367Z",
   "source": "YouTube Data API v3 channels.list; subscriberCount arredondado pela plataforma"
 }
