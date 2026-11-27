@@ -1,10 +1,10 @@
 {
   "channelId": "UCiwhkT-ZkNQlmupN7jduBUA",
-  "subscriberCountLabel": "29,1 mil",
-  "subscriberCountPublic": 29100,
+  "subscriberCountLabel": "29 mil",
+  "subscriberCountPublic": 29000,
   "subscriberCountIsRounded": true,
-  "totalViews": 22261203,
+  "totalViews": 22261600,
   "videoCount": 777,
-  "checkedAt": "2026-11-27T08:54:51.198Z",
+  "checkedAt": "2026-11-27T21:31:38.369Z",
   "source": "YouTube Data API v3 channels.list; subscriberCount arredondado pela plataforma"
 }
